@@ -1,0 +1,4 @@
+west:
+  command: /opt/homebrew/bin/west build -p always -b nucleo_f103rb antenna_app
+  topdir: /Users/tylerfield/zephyrproject
+  version: 1.5.0

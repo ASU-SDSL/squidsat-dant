@@ -1,0 +1,616 @@
+
+---
+events:
+  -
+    kind: "find_package-v1"
+    backtrace:
+      - "/Users/tylerfield/zephyr-clean/zephyr/cmake/modules/zephyr_default.cmake:28 (find_package)"
+      - "/Users/tylerfield/zephyr-clean/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "/Users/tylerfield/zephyr-clean/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:117 (include_boilerplate)"
+      - "CMakeLists.txt:3 (find_package)"
+    name: "ZephyrBuildConfiguration"
+    configs:
+      -
+        filename: "ZephyrBuildConfig.cmake"
+        kind: "cmake"
+      -
+        filename: "zephyrbuild-config.cmake"
+        kind: "cmake"
+    version_request:
+      exact: false
+    settings:
+      required: "optional"
+      quiet: true
+      global: false
+      policy_scope: false
+      bypass_provider: false
+      names:
+        - "ZephyrBuild"
+      search_paths:
+        - "/Users/tylerfield/zephyr-clean/zephyr/../*"
+      path_suffixes:
+        - ""
+      paths:
+        CMAKE_FIND_USE_CMAKE_PATH: true
+        CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+        CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: false
+        CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: false
+        CMAKE_FIND_USE_INSTALL_PREFIX: true
+        CMAKE_FIND_USE_PACKAGE_ROOT_PATH: true
+        CMAKE_FIND_USE_CMAKE_PACKAGE_REGISTRY: false
+        CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY: false
+        CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
+    candidates:
+      -
+        path: "/Users/tylerfield/zephyr-clean/zephyr/antenna_app/build/CMakeFiles/pkgRedirects/ZephyrBuildConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/tylerfield/zephyr-clean/zephyr/antenna_app/build/CMakeFiles/pkgRedirects/zephyrbuild-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/tylerfield/zephyr-clean/tools/ZephyrBuildConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/tylerfield/zephyr-clean/tools/zephyrbuild-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/tylerfield/zephyr-clean/bootloader/ZephyrBuildConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/tylerfield/zephyr-clean/bootloader/zephyrbuild-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/tylerfield/zephyr-clean/.west/ZephyrBuildConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/tylerfield/zephyr-clean/.west/zephyrbuild-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/tylerfield/zephyr-clean/.vscode/ZephyrBuildConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/tylerfield/zephyr-clean/.vscode/zephyrbuild-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/tylerfield/zephyr-clean/modules/ZephyrBuildConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/tylerfield/zephyr-clean/modules/zephyrbuild-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/tylerfield/zephyr-clean/zephyr/ZephyrBuildConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/tylerfield/zephyr-clean/zephyr/zephyrbuild-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/tylerfield/zephyr-clean/zephyr/cmake/ZephyrBuildConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/tylerfield/zephyr-clean/zephyr/cmake/zephyrbuild-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+    found: null
+    search_context:
+      ENV{PATH}:
+        - "/Users/tylerfield/.asdf/shims"
+        - "/Users/tylerfield/.asdf/bin"
+        - "/Users/tylerfield/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/Users/tylerfield/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/Library/Frameworks/Python.framework/Versions/3.13/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/sbin"
+        - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/X11/bin"
+        - "/Users/tylerfield/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/Users/tylerfield/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/Library/Frameworks/Python.framework/Versions/3.13/bin"
+        - "/Users/tylerfield/.orbstack/bin"
+        - "/Users/tylerfield/.vscode/extensions/ms-python.debugpy-2025.18.0-darwin-arm64/bundled/scripts/noConfigScripts"
+        - "/Users/tylerfield/.orbstack/bin"
+  -
+    kind: "find_package-v1"
+    backtrace:
+      - "/Users/tylerfield/zephyr-clean/zephyr/cmake/modules/zephyr_default.cmake:41 (find_package)"
+      - "/Users/tylerfield/zephyr-clean/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "/Users/tylerfield/zephyr-clean/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:117 (include_boilerplate)"
+      - "CMakeLists.txt:3 (find_package)"
+    name: "ZephyrAppConfiguration"
+    configs:
+      -
+        filename: "ZephyrAppConfig.cmake"
+        kind: "cmake"
+      -
+        filename: "zephyrapp-config.cmake"
+        kind: "cmake"
+    version_request:
+      exact: false
+    settings:
+      required: "optional"
+      quiet: true
+      global: false
+      policy_scope: false
+      bypass_provider: false
+      names:
+        - "ZephyrApp"
+      search_paths:
+        - "/Users/tylerfield/zephyr-clean/zephyr/antenna_app"
+      path_suffixes:
+        - ""
+      paths:
+        CMAKE_FIND_USE_CMAKE_PATH: true
+        CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+        CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: false
+        CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: false
+        CMAKE_FIND_USE_INSTALL_PREFIX: true
+        CMAKE_FIND_USE_PACKAGE_ROOT_PATH: true
+        CMAKE_FIND_USE_CMAKE_PACKAGE_REGISTRY: false
+        CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY: false
+        CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
+    candidates:
+      -
+        path: "/Users/tylerfield/zephyr-clean/zephyr/antenna_app/build/CMakeFiles/pkgRedirects/ZephyrAppConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/tylerfield/zephyr-clean/zephyr/antenna_app/build/CMakeFiles/pkgRedirects/zephyrapp-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/tylerfield/zephyr-clean/zephyr/antenna_app/ZephyrAppConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/tylerfield/zephyr-clean/zephyr/antenna_app/zephyrapp-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+    found: null
+    search_context:
+      ENV{PATH}:
+        - "/Users/tylerfield/.asdf/shims"
+        - "/Users/tylerfield/.asdf/bin"
+        - "/Users/tylerfield/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/Users/tylerfield/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/Library/Frameworks/Python.framework/Versions/3.13/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/sbin"
+        - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/X11/bin"
+        - "/Users/tylerfield/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/Users/tylerfield/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/Library/Frameworks/Python.framework/Versions/3.13/bin"
+        - "/Users/tylerfield/.orbstack/bin"
+        - "/Users/tylerfield/.vscode/extensions/ms-python.debugpy-2025.18.0-darwin-arm64/bundled/scripts/noConfigScripts"
+        - "/Users/tylerfield/.orbstack/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/Users/tylerfield/zephyr-clean/zephyr/cmake/modules/python.cmake:26 (find_program)"
+      - "/Users/tylerfield/zephyr-clean/zephyr/cmake/modules/zephyr_default.cmake:129 (include)"
+      - "/Users/tylerfield/zephyr-clean/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "/Users/tylerfield/zephyr-clean/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:117 (include_boilerplate)"
+      - "CMakeLists.txt:3 (find_package)"
+    mode: "program"
+    variable: "Python3_EXECUTABLE"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "FIRST"
+      SearchAppBundle: "FIRST"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "python"
+    candidate_directories:
+      - "/Users/tylerfield/.asdf/shims/"
+      - "/Users/tylerfield/.asdf/bin/"
+      - "/Users/tylerfield/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
+      - "/Users/tylerfield/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
+      - "/Library/Frameworks/Python.framework/Versions/3.13/bin/"
+      - "/opt/homebrew/bin/"
+      - "/opt/homebrew/sbin/"
+      - "/usr/local/bin/"
+      - "/System/Cryptexes/App/usr/bin/"
+      - "/usr/bin/"
+      - "/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
+      - "/opt/X11/bin/"
+      - "/Users/tylerfield/.orbstack/bin/"
+      - "/Users/tylerfield/.vscode/extensions/ms-python.debugpy-2025.18.0-darwin-arm64/bundled/scripts/noConfigScripts/"
+    searched_directories:
+      - "/Users/tylerfield/.asdf/shims/python"
+      - "/Users/tylerfield/.asdf/bin/python"
+      - "/Users/tylerfield/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/python"
+      - "/Users/tylerfield/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/python"
+      - "/Library/Frameworks/Python.framework/Versions/3.13/bin/python"
+      - "/opt/homebrew/bin/python"
+      - "/opt/homebrew/sbin/python"
+      - "/usr/local/bin/python"
+      - "/System/Cryptexes/App/usr/bin/python"
+      - "/usr/bin/python"
+      - "/bin/python"
+      - "/usr/sbin/python"
+      - "/sbin/python"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/python"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/python"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/python"
+      - "/opt/X11/bin/python"
+      - "/Users/tylerfield/.orbstack/bin/python"
+      - "/Users/tylerfield/.vscode/extensions/ms-python.debugpy-2025.18.0-darwin-arm64/bundled/scripts/noConfigScripts/python"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "/Users/tylerfield/.asdf/shims"
+        - "/Users/tylerfield/.asdf/bin"
+        - "/Users/tylerfield/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/Users/tylerfield/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/Library/Frameworks/Python.framework/Versions/3.13/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/sbin"
+        - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/X11/bin"
+        - "/Users/tylerfield/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/Users/tylerfield/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/Library/Frameworks/Python.framework/Versions/3.13/bin"
+        - "/Users/tylerfield/.orbstack/bin"
+        - "/Users/tylerfield/.vscode/extensions/ms-python.debugpy-2025.18.0-darwin-arm64/bundled/scripts/noConfigScripts"
+        - "/Users/tylerfield/.orbstack/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/Users/tylerfield/zephyr-clean/zephyr/cmake/modules/python.cmake:26 (find_program)"
+      - "/Users/tylerfield/zephyr-clean/zephyr/cmake/modules/zephyr_default.cmake:129 (include)"
+      - "/Users/tylerfield/zephyr-clean/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "/Users/tylerfield/zephyr-clean/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:117 (include_boilerplate)"
+      - "CMakeLists.txt:3 (find_package)"
+    mode: "program"
+    variable: "Python3_EXECUTABLE"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "FIRST"
+      SearchAppBundle: "FIRST"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "python3"
+    candidate_directories:
+      - "/Users/tylerfield/.asdf/shims/"
+      - "/Users/tylerfield/.asdf/bin/"
+      - "/Users/tylerfield/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
+      - "/Users/tylerfield/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
+      - "/Library/Frameworks/Python.framework/Versions/3.13/bin/"
+      - "/opt/homebrew/bin/"
+      - "/opt/homebrew/sbin/"
+      - "/usr/local/bin/"
+      - "/System/Cryptexes/App/usr/bin/"
+      - "/usr/bin/"
+      - "/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
+      - "/opt/X11/bin/"
+      - "/Users/tylerfield/.orbstack/bin/"
+      - "/Users/tylerfield/.vscode/extensions/ms-python.debugpy-2025.18.0-darwin-arm64/bundled/scripts/noConfigScripts/"
+    searched_directories:
+      - "/Users/tylerfield/.asdf/shims/python3"
+      - "/Users/tylerfield/.asdf/bin/python3"
+      - "/Users/tylerfield/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/python3"
+      - "/Users/tylerfield/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/python3"
+    found: "/Library/Frameworks/Python.framework/Versions/3.13/bin/python3"
+    search_context:
+      ENV{PATH}:
+        - "/Users/tylerfield/.asdf/shims"
+        - "/Users/tylerfield/.asdf/bin"
+        - "/Users/tylerfield/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/Users/tylerfield/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/Library/Frameworks/Python.framework/Versions/3.13/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/sbin"
+        - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/X11/bin"
+        - "/Users/tylerfield/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/Users/tylerfield/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/Library/Frameworks/Python.framework/Versions/3.13/bin"
+        - "/Users/tylerfield/.orbstack/bin"
+        - "/Users/tylerfield/.vscode/extensions/ms-python.debugpy-2025.18.0-darwin-arm64/bundled/scripts/noConfigScripts"
+        - "/Users/tylerfield/.orbstack/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/Users/tylerfield/zephyr-clean/zephyr/cmake/modules/ccache.cmake:10 (find_program)"
+      - "/Users/tylerfield/zephyr-clean/zephyr/cmake/modules/zephyr_default.cmake:129 (include)"
+      - "/Users/tylerfield/zephyr-clean/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "/Users/tylerfield/zephyr-clean/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:117 (include_boilerplate)"
+      - "CMakeLists.txt:3 (find_package)"
+    mode: "program"
+    variable: "CCACHE_FOUND"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "FIRST"
+      SearchAppBundle: "FIRST"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "ccache"
+    candidate_directories:
+      - "/Users/tylerfield/.asdf/shims/"
+      - "/Users/tylerfield/.asdf/bin/"
+      - "/Users/tylerfield/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
+      - "/Users/tylerfield/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
+      - "/Library/Frameworks/Python.framework/Versions/3.13/bin/"
+      - "/opt/homebrew/bin/"
+      - "/opt/homebrew/sbin/"
+      - "/usr/local/bin/"
+      - "/System/Cryptexes/App/usr/bin/"
+      - "/usr/bin/"
+      - "/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
+      - "/opt/X11/bin/"
+      - "/Users/tylerfield/.orbstack/bin/"
+      - "/Users/tylerfield/.vscode/extensions/ms-python.debugpy-2025.18.0-darwin-arm64/bundled/scripts/noConfigScripts/"
+    searched_directories:
+      - "/Users/tylerfield/.asdf/shims/ccache"
+      - "/Users/tylerfield/.asdf/bin/ccache"
+      - "/Users/tylerfield/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/ccache"
+      - "/Users/tylerfield/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/ccache"
+      - "/Library/Frameworks/Python.framework/Versions/3.13/bin/ccache"
+    found: "/opt/homebrew/bin/ccache"
+    search_context:
+      ENV{PATH}:
+        - "/Users/tylerfield/.asdf/shims"
+        - "/Users/tylerfield/.asdf/bin"
+        - "/Users/tylerfield/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/Users/tylerfield/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/Library/Frameworks/Python.framework/Versions/3.13/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/sbin"
+        - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/X11/bin"
+        - "/Users/tylerfield/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/Users/tylerfield/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/Library/Frameworks/Python.framework/Versions/3.13/bin"
+        - "/Users/tylerfield/.orbstack/bin"
+        - "/Users/tylerfield/.vscode/extensions/ms-python.debugpy-2025.18.0-darwin-arm64/bundled/scripts/noConfigScripts"
+        - "/Users/tylerfield/.orbstack/bin"
+  -
+    kind: "find_package-v1"
+    backtrace:
+      - "CMakeLists.txt:3 (find_package)"
+    name: "Zephyr"
+    configs:
+      -
+        filename: "ZephyrConfig.cmake"
+        kind: "cmake"
+      -
+        filename: "zephyr-config.cmake"
+        kind: "cmake"
+    version_request:
+      exact: false
+    settings:
+      required: "required_explicit"
+      quiet: false
+      global: false
+      policy_scope: true
+      bypass_provider: false
+      names:
+        - "Zephyr"
+      path_suffixes:
+        - ""
+      paths:
+        CMAKE_FIND_USE_CMAKE_PATH: true
+        CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+        CMAKE_FIND_USE_INSTALL_PREFIX: true
+        CMAKE_FIND_USE_PACKAGE_ROOT_PATH: true
+        CMAKE_FIND_USE_CMAKE_PACKAGE_REGISTRY: true
+        CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY: true
+        CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
+    candidates:
+      -
+        path: "/Users/tylerfield/zephyr-clean/zephyr/antenna_app/build/CMakeFiles/pkgRedirects/ZephyrConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/tylerfield/zephyr-clean/zephyr/antenna_app/build/CMakeFiles/pkgRedirects/zephyr-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/tylerfield/.asdf/ZephyrConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/tylerfield/.asdf/zephyr-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/tylerfield/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/ZephyrConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/tylerfield/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/zephyr-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/tylerfield/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/ZephyrConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/tylerfield/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/zephyr-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Library/Frameworks/Python.framework/Versions/3.13/ZephyrConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Library/Frameworks/Python.framework/Versions/3.13/zephyr-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/homebrew/ZephyrConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/homebrew/zephyr-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/ZephyrConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/zephyr-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/System/Cryptexes/App/usr/ZephyrConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/System/Cryptexes/App/usr/zephyr-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/ZephyrConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/zephyr-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/ZephyrConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/zephyr-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/X11/ZephyrConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/X11/zephyr-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/tylerfield/.orbstack/ZephyrConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/tylerfield/.orbstack/zephyr-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/tylerfield/.vscode/extensions/ms-python.debugpy-2025.18.0-darwin-arm64/bundled/scripts/noConfigScripts/ZephyrConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/tylerfield/.vscode/extensions/ms-python.debugpy-2025.18.0-darwin-arm64/bundled/scripts/noConfigScripts/zephyr-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+    found:
+      path: "/Users/tylerfield/zephyr-clean/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake"
+      mode: "config"
+      version: "4.3.99"
+    search_context:
+      ENV{PATH}:
+        - "/Users/tylerfield/.asdf/shims"
+        - "/Users/tylerfield/.asdf/bin"
+        - "/Users/tylerfield/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/Users/tylerfield/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/Library/Frameworks/Python.framework/Versions/3.13/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/sbin"
+        - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/X11/bin"
+        - "/Users/tylerfield/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/Users/tylerfield/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/Library/Frameworks/Python.framework/Versions/3.13/bin"
+        - "/Users/tylerfield/.orbstack/bin"
+        - "/Users/tylerfield/.vscode/extensions/ms-python.debugpy-2025.18.0-darwin-arm64/bundled/scripts/noConfigScripts"
+        - "/Users/tylerfield/.orbstack/bin"
+...
