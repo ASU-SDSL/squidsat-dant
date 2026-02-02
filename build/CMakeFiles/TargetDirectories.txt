@@ -178,12 +178,6 @@
 /Users/tylerfield/zephyrproject/build/zephyr/drivers/usb/common/stm32/CMakeFiles/rebuild_cache.dir
 /Users/tylerfield/zephyrproject/build/zephyr/drivers/usb_c/CMakeFiles/edit_cache.dir
 /Users/tylerfield/zephyrproject/build/zephyr/drivers/usb_c/CMakeFiles/rebuild_cache.dir
-/Users/tylerfield/zephyrproject/build/zephyr/drivers/can/CMakeFiles/drivers__can.dir
-/Users/tylerfield/zephyrproject/build/zephyr/drivers/can/CMakeFiles/edit_cache.dir
-/Users/tylerfield/zephyrproject/build/zephyr/drivers/can/CMakeFiles/rebuild_cache.dir
-/Users/tylerfield/zephyrproject/build/zephyr/drivers/can/transceiver/CMakeFiles/drivers__can__transceiver.dir
-/Users/tylerfield/zephyrproject/build/zephyr/drivers/can/transceiver/CMakeFiles/edit_cache.dir
-/Users/tylerfield/zephyrproject/build/zephyr/drivers/can/transceiver/CMakeFiles/rebuild_cache.dir
 /Users/tylerfield/zephyrproject/build/zephyr/drivers/clock_control/CMakeFiles/drivers__clock_control.dir
 /Users/tylerfield/zephyrproject/build/zephyr/drivers/clock_control/CMakeFiles/edit_cache.dir
 /Users/tylerfield/zephyrproject/build/zephyr/drivers/clock_control/CMakeFiles/rebuild_cache.dir

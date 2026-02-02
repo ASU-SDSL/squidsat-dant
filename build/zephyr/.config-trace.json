@@ -399,35 +399,44 @@
     "CONFIG_INPUT",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      43
+    ]
   ],
   [
     "CONFIG_WIFI",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      44
+    ]
   ],
   [
     "CONFIG_REGULATOR",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      45
+    ]
   ],
   [
     "CONFIG_SYSTEM_WORKQUEUE_STACK_SIZE",
     "y",
     "int",
     "1024",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/kernel/Kconfig",
-      611
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      46
     ]
   ],
   [
@@ -437,8 +446,8 @@
     "2048",
     "assign",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/prj.conf",
-      2
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      47
     ]
   ],
   [
@@ -448,57 +457,75 @@
     "y",
     "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/boards/st/nucleo_f103rb/nucleo_f103rb_defconfig",
-      4
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      48
     ]
   ],
   [
     "CONFIG_SPI",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      49
+    ]
   ],
   [
     "CONFIG_MIPI_DSI",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      50
+    ]
   ],
   [
     "CONFIG_MEMC",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      51
+    ]
   ],
   [
     "CONFIG_MODEM",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      52
+    ]
   ],
   [
     "CONFIG_UART_INTERRUPT_DRIVEN",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      53
+    ]
   ],
   [
     "CONFIG_GPIO_HOGS",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      54
+    ]
   ],
   [
     "CONFIG_NUM_IRQS",
@@ -516,10 +543,10 @@
     "y",
     "int",
     "72000000",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/soc/st/stm32/Kconfig.defconfig",
-      61
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      56
     ]
   ],
   [
@@ -527,10 +554,10 @@
     "y",
     "int",
     "128",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/arch/Kconfig",
-      248
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      57
     ]
   ],
   [
@@ -538,10 +565,10 @@
     "y",
     "hex",
     "0x8000000",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/soc/st/stm32/Kconfig.defconfig",
-      105
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      58
     ]
   ],
   [
@@ -549,29 +576,32 @@
     "y",
     "int",
     "1",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/kernel/Kconfig.smp",
-      43
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      59
     ]
   ],
   [
     "CONFIG_SOC_RESET_HOOK",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      60
+    ]
   ],
   [
     "CONFIG_CLOCK_CONTROL",
     "y",
     "bool",
     "y",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/soc/st/stm32/Kconfig.defconfig",
-      18
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      61
     ]
   ],
   [
@@ -579,10 +609,10 @@
     "y",
     "int",
     "256",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/kernel/Kconfig",
-      176
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      62
     ]
   ],
   [
@@ -590,10 +620,10 @@
     "y",
     "int",
     "2048",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/kernel/Kconfig",
-      185
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      63
     ]
   ],
   [
@@ -601,10 +631,10 @@
     "y",
     "int",
     "10000",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/kernel/Kconfig",
-      833
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      64
     ]
   ],
   [
@@ -612,10 +642,10 @@
     "y",
     "bool",
     "y",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/Kconfig.zephyr",
-      757
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      65
     ]
   ],
   [
@@ -623,10 +653,10 @@
     "y",
     "hex",
     "0",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/Kconfig.zephyr",
-      134
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      66
     ]
   ],
   [
@@ -634,10 +664,10 @@
     "y",
     "string",
     "__start",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/Kconfig.zephyr",
-      206
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      67
     ]
   ],
   [
@@ -645,9 +675,10 @@
     "y",
     "bool",
     "y",
-    "imply",
+    "assign",
     [
-      "CPU_CORTEX_M && ARM"
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      68
     ]
   ],
   [
@@ -664,44 +695,56 @@
     "CONFIG_COUNTER",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      70
+    ]
   ],
   [
     "CONFIG_SRAM_VECTOR_TABLE",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      71
+    ]
   ],
   [
     "CONFIG_SHARED_INTERRUPTS",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      72
+    ]
   ],
   [
     "CONFIG_STM32_FLASH_PREFETCH",
     "y",
     "bool",
     "y",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/soc/st/stm32/Kconfig",
-      37
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      73
     ]
   ],
   [
     "CONFIG_PM_DEVICE",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      74
+    ]
   ],
   [
     "CONFIG_ICACHE_LINE_SIZE",
@@ -730,10 +773,10 @@
     "y",
     "bool",
     "y",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/kernel/Kconfig",
-      1094
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      77
     ]
   ],
   [
@@ -741,10 +784,10 @@
     "y",
     "bool",
     "y",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/drivers/timer/Kconfig.cortex_m_systick",
-      11
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      78
     ]
   ],
   [
@@ -752,83 +795,98 @@
     "y",
     "int",
     "1",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/soc/st/stm32/Kconfig.defconfig",
-      92
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      79
     ]
   ],
   [
     "CONFIG_USE_DT_CODE_PARTITION",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      80
+    ]
   ],
   [
     "CONFIG_STM32_BACKUP_PROTECTION",
     "y",
     "bool",
     "y",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/soc/st/stm32/Kconfig.defconfig",
-      127
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      81
     ]
   ],
   [
     "CONFIG_MULTI_LEVEL_INTERRUPTS",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      82
+    ]
   ],
   [
     "CONFIG_PM",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      83
+    ]
   ],
   [
     "CONFIG_ZERO_LATENCY_IRQS",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      84
+    ]
   ],
   [
     "CONFIG_NUM_METAIRQ_PRIORITIES",
     "y",
     "int",
     "0",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/kernel/Kconfig",
-      94
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      85
     ]
   ],
   [
     "CONFIG_POWER_DOMAIN",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      86
+    ]
   ],
   [
     "CONFIG_NUM_PREEMPT_PRIORITIES",
     "y",
     "int",
     "15",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/kernel/Kconfig",
-      55
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      87
     ]
   ],
   [
@@ -846,48 +904,54 @@
     "y",
     "bool",
     "y",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/arch/Kconfig",
-      525
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      89
     ]
   ],
   [
     "CONFIG_DYNAMIC_INTERRUPTS",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      90
+    ]
   ],
   [
     "CONFIG_GEN_ISR_TABLES",
     "y",
     "bool",
     "y",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/arch/arm/core/cortex_m/Kconfig",
-      325
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      91
     ]
   ],
   [
     "CONFIG_INIT_STACKS",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      92
+    ]
   ],
   [
     "CONFIG_TIMESLICE_SIZE",
     "y",
     "int",
     "20",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/kernel/Kconfig",
-      693
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      93
     ]
   ],
   [
@@ -895,10 +959,10 @@
     "y",
     "hex",
     "0",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/Kconfig.zephyr",
-      106
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      94
     ]
   ],
   [
@@ -906,51 +970,66 @@
     "y",
     "bool",
     "y",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/kernel/Kconfig",
-      869
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      95
     ]
   ],
   [
     "CONFIG_INIT_ARCH_HW_AT_BOOT",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      96
+    ]
   ],
   [
     "CONFIG_BUILD_OUTPUT_S19",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      97
+    ]
   ],
   [
     "CONFIG_ROMSTART_RELOCATION_ROM",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      98
+    ]
   ],
   [
     "CONFIG_FLASH",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      99
+    ]
   ],
   [
     "CONFIG_CPU_HAS_CUSTOM_FIXED_SOC_MPU_REGIONS",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      100
+    ]
   ],
   [
     "CONFIG_GPIO",
@@ -959,49 +1038,64 @@
     "y",
     "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/boards/st/nucleo_f103rb/nucleo_f103rb_defconfig",
-      10
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      101
     ]
   ],
   [
     "CONFIG_MFD",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      102
+    ]
   ],
   [
     "CONFIG_CODE_DATA_RELOCATION_SRAM",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      103
+    ]
   ],
   [
     "CONFIG_CACHE",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      104
+    ]
   ],
   [
     "CONFIG_LOG",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      105
+    ]
   ],
   [
     "CONFIG_CODE_DATA_RELOCATION",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      106
+    ]
   ],
   [
     "CONFIG_RESET",
@@ -1018,46 +1112,55 @@
     "y",
     "int",
     "4",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/arch/Kconfig",
-      583
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      108
     ]
   ],
   [
     "CONFIG_ASSERT",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      109
+    ]
   ],
   [
     "CONFIG_DEVICE_DEPS",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      110
+    ]
   ],
   [
     "CONFIG_UART_USE_RUNTIME_CONFIGURE",
     "y",
     "bool",
     "y",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/drivers/serial/Kconfig",
-      53
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      111
     ]
   ],
   [
     "CONFIG_SYSCON",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      112
+    ]
   ],
   [
     "CONFIG_SOC_EARLY_INIT_HOOK",
@@ -1076,27 +1179,30 @@
     "y",
     "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/boards/st/nucleo_f103rb/nucleo_f103rb_defconfig",
-      6
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      114
     ]
   ],
   [
     "CONFIG_WINSTREAM",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      115
+    ]
   ],
   [
     "CONFIG_COMMON_LIBC_MALLOC_ARENA_SIZE",
     "y",
     "int",
     "-1",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/lib/libc/common/Kconfig",
-      64
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      116
     ]
   ],
   [
@@ -1104,19 +1210,22 @@
     "y",
     "bool",
     "y",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/arch/Kconfig",
-      572
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      117
     ]
   ],
   [
     "CONFIG_REBOOT",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      118
+    ]
   ],
   [
     "CONFIG_GEN_IRQ_START_VECTOR",
@@ -1145,10 +1254,10 @@
     "y",
     "int",
     "4",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/arch/Kconfig",
-      537
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      121
     ]
   ],
   [
@@ -1166,27 +1275,33 @@
     "CONFIG_BOOTLOADER_MCUBOOT",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      123
+    ]
   ],
   [
     "CONFIG_SCHED_CPU_MASK",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      124
+    ]
   ],
   [
     "CONFIG_KERNEL_MEM_POOL",
     "y",
     "bool",
     "y",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/kernel/Kconfig",
-      775
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      125
     ]
   ],
   [
@@ -1194,54 +1309,66 @@
     "y",
     "bool",
     "y",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/kernel/Kconfig",
-      14
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      126
     ]
   ],
   [
     "CONFIG_OUTPUT_DISASSEMBLY",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      127
+    ]
   ],
   [
     "CONFIG_LINKER_USE_RELAX",
     "y",
     "bool",
     "y",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/Kconfig.zephyr",
-      318
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      128
     ]
   ],
   [
     "CONFIG_WATCHDOG",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      129
+    ]
   ],
   [
     "CONFIG_BUILD_ONLY_NO_BLOBS",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      134
+    ]
   ],
   [
     "CONFIG_ACPI",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      147
+    ]
   ],
   [
     "CONFIG_ZEPHYR_ACPICA_MODULE",
@@ -1291,9 +1418,12 @@
     "CONFIG_CMSIS_DSP",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      164
+    ]
   ],
   [
     "CONFIG_ZEPHYR_CMSIS_NN_MODULE",
@@ -1310,9 +1440,12 @@
     "CONFIG_CMSIS_NN",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      171
+    ]
   ],
   [
     "CONFIG_ZEPHYR_CMSIS_6_MODULE",
@@ -1339,9 +1472,12 @@
     "CONFIG_CMSIS_M_CHECK_DEVICE_DEFINES",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      179
+    ]
   ],
   [
     "CONFIG_ZEPHYR_FATFS_MODULE",
@@ -1424,9 +1560,12 @@
     "CONFIG_ETHOS_U",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      219
+    ]
   ],
   [
     "CONFIG_ZEPHYR_HAL_ETHOS_U_MODULE",
@@ -1465,9 +1604,12 @@
     "CONFIG_USE_INFINEON_ABSTRACTION_RTOS",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      233
+    ]
   ],
   [
     "CONFIG_ZEPHYR_HAL_INTEL_MODULE",
@@ -1638,9 +1780,12 @@
     "CONFIG_TDK_HAL",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      303
+    ]
   ],
   [
     "CONFIG_ZEPHYR_HAL_TELINK_MODULE",
@@ -1701,9 +1846,12 @@
     "CONFIG_WIFI_NM_WPA_SUPPLICANT",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      327
+    ]
   ],
   [
     "CONFIG_ZEPHYR_HOSTAP_MODULE",
@@ -1764,9 +1912,12 @@
     "CONFIG_LIBSBC",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      344
+    ]
   ],
   [
     "CONFIG_ZEPHYR_LITTLEFS_MODULE",
@@ -1805,9 +1956,12 @@
     "CONFIG_HAS_SEMTECH_RADIO_DRIVERS",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      363
+    ]
   ],
   [
     "CONFIG_ZEPHYR_LVGL_MODULE",
@@ -1835,17 +1989,23 @@
     "CONFIG_PSA_CRYPTO",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      376
+    ]
   ],
   [
     "CONFIG_MBEDTLS",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      377
+    ]
   ],
   [
     "CONFIG_ZEPHYR_MCUBOOT_MODULE",
@@ -1884,9 +2044,12 @@
     "CONFIG_NANOPB",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      387
+    ]
   ],
   [
     "CONFIG_ZEPHYR_NRF_WIFI_MODULE",
@@ -1903,9 +2066,12 @@
     "CONFIG_NRF70_BUSLIB",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      394
+    ]
   ],
   [
     "CONFIG_ZEPHYR_OPEN_AMP_MODULE",
@@ -1922,9 +2088,12 @@
     "CONFIG_OPENTHREAD",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      402
+    ]
   ],
   [
     "CONFIG_ZEPHYR_OPENTHREAD_MODULE",
@@ -1941,9 +2110,12 @@
     "CONFIG_PERCEPIO_DFM",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      413
+    ]
   ],
   [
     "CONFIG_ZEPHYR_PERCEPIO_MODULE",
@@ -1960,9 +2132,12 @@
     "CONFIG_PICOLIBC_MODULE",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      420
+    ]
   ],
   [
     "CONFIG_ZEPHYR_PICOLIBC_MODULE",
@@ -2000,9 +2175,12 @@
     "CONFIG_USE_SEGGER_RTT",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      429
+    ]
   ],
   [
     "CONFIG_ZEPHYR_TF_M_TESTS_MODULE",
@@ -2030,9 +2208,12 @@
     "CONFIG_BUILD_WITH_TFA",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      438
+    ]
   ],
   [
     "CONFIG_ZEPHYR_TRUSTED_FIRMWARE_M_MODULE",
@@ -2071,9 +2252,12 @@
     "CONFIG_ZCBOR",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      457
+    ]
   ],
   [
     "CONFIG_ZEPHYR_NRF_HW_MODELS_MODULE",
@@ -2090,49 +2274,67 @@
     "CONFIG_LIBMETAL",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      461
+    ]
   ],
   [
     "CONFIG_LVGL",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      462
+    ]
   ],
   [
     "CONFIG_HAS_MEC_HAL",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      463
+    ]
   ],
   [
     "CONFIG_HAS_MPFS_HAL",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      464
+    ]
   ],
   [
     "CONFIG_HAS_MEC5_HAL",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      465
+    ]
   ],
   [
     "CONFIG_OPENAMP",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      466
+    ]
   ],
   [
     "CONFIG_HAS_STM32CUBE",
@@ -2158,25 +2360,34 @@
     "CONFIG_MIPI_SYST_LIB",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      469
+    ]
   ],
   [
     "CONFIG_HAS_TELINK_DRIVERS",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      470
+    ]
   ],
   [
     "CONFIG_MCUBOOT_BOOTUTIL_LIB",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      471
+    ]
   ],
   [
     "CONFIG_BOARD",
@@ -2215,9 +2426,12 @@
     "CONFIG_NET_DRIVERS",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      493
+    ]
   ],
   [
     "CONFIG_BOARD_NUCLEO_F103RB",
@@ -2329,27 +2543,33 @@
     "CONFIG_HWINFO",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      513
+    ]
   ],
   [
     "CONFIG_STM32_ENABLE_DEBUG_SLEEP_STOP",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      514
+    ]
   ],
   [
     "CONFIG_SWJ_ANALOG_PRIORITY",
     "y",
     "int",
     "49",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/soc/st/stm32/common/Kconfig",
-      37
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      515
     ]
   ],
   [
@@ -2366,19 +2586,22 @@
     "CONFIG_BUILD_OUTPUT_INFO_HEADER",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      517
+    ]
   ],
   [
     "CONFIG_GPIO_INIT_PRIORITY",
     "y",
     "int",
     "40",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/drivers/gpio/Kconfig",
-      50
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      518
     ]
   ],
   [
@@ -2396,9 +2619,12 @@
     "CONFIG_EXTRA_EXCEPTION_INFO",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      522
+    ]
   ],
   [
     "CONFIG_ARCH_HAS_SINGLE_THREAD_SUPPORT",
@@ -2434,9 +2660,12 @@
     "CONFIG_ARM_ZIMAGE_HEADER",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      530
+    ]
   ],
   [
     "CONFIG_ISA_THUMB2",
@@ -2464,10 +2693,10 @@
     "y",
     "bool",
     "y",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/arch/arm/core/Kconfig",
-      134
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      533
     ]
   ],
   [
@@ -2475,37 +2704,43 @@
     "y",
     "bool",
     "y",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/arch/arm/core/Kconfig",
-      152
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      534
     ]
   ],
   [
     "CONFIG_RUNTIME_NMI",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      535
+    ]
   ],
   [
     "CONFIG_PLATFORM_SPECIFIC_INIT",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      536
+    ]
   ],
   [
     "CONFIG_FAULT_DUMP",
     "y",
     "int",
     "2",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/arch/arm/core/Kconfig",
-      180
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      537
     ]
   ],
   [
@@ -2513,10 +2748,10 @@
     "y",
     "bool",
     "y",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/arch/arm/core/Kconfig",
-      299
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      538
     ]
   ],
   [
@@ -2524,11 +2759,8 @@
     "y",
     "bool",
     "y",
-    "default",
-    [
-      "/Users/tylerfield/zephyrproject/zephyr/arch/arm/core/Kconfig",
-      307
-    ]
+    "assign",
+    null
   ],
   [
     "CONFIG_FP16_ALT",
@@ -2612,44 +2844,53 @@
     "CONFIG_SW_VECTOR_RELAY",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      552
+    ]
   ],
   [
     "CONFIG_CORTEX_M_DWT",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      553
+    ]
   ],
   [
     "CONFIG_CORTEX_M_DEBUG_MONITOR_HOOK",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      554
+    ]
   ],
   [
     "CONFIG_TRAP_UNALIGNED_ACCESS",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      555
+    ]
   ],
   [
     "CONFIG_NULL_POINTER_EXCEPTION_DETECTION_NONE",
     "y",
     "bool",
     "y",
-    "default",
-    [
-      "/Users/tylerfield/zephyrproject/zephyr/arch/arm/core/cortex_m/Kconfig",
-      419
-    ]
+    "assign",
+    null
   ],
   [
     "CONFIG_NULL_POINTER_EXCEPTION_DETECTION_DWT",
@@ -2693,9 +2934,12 @@
     "CONFIG_SEMIHOST",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      569
+    ]
   ],
   [
     "CONFIG_ARCH_SUPPORTS_ROM_OFFSET",
@@ -2724,10 +2968,10 @@
     "y",
     "int",
     "20",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/arch/Kconfig",
-      217
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      572
     ]
   ],
   [
@@ -2735,19 +2979,22 @@
     "y",
     "hex",
     "0x20000000",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/arch/Kconfig",
-      225
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      573
     ]
   ],
   [
     "CONFIG_NOINIT_SNIPPET_FIRST",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      574
+    ]
   ],
   [
     "CONFIG_GEN_PRIV_STACKS",
@@ -2763,35 +3010,44 @@
     "CONFIG_STACK_GROWS_UP",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      576
+    ]
   ],
   [
     "CONFIG_FRAME_POINTER",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      577
+    ]
   ],
   [
     "CONFIG_ISR_TABLES_LOCAL_DECLARATION",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      582
+    ]
   ],
   [
     "CONFIG_ARCH_DEVICE_STATE_ALIGN",
     "y",
     "int",
     "4",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/arch/Kconfig",
-      547
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      583
     ]
   ],
   [
@@ -2799,11 +3055,8 @@
     "y",
     "bool",
     "y",
-    "default",
-    [
-      "/Users/tylerfield/zephyrproject/zephyr/arch/Kconfig",
-      555
-    ]
+    "assign",
+    null
   ],
   [
     "CONFIG_IRQ_VECTOR_TABLE_JUMP_BY_CODE",
@@ -2817,28 +3070,34 @@
     "CONFIG_SRAM_SW_ISR_TABLE",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      586
+    ]
   ],
   [
     "CONFIG_EXCEPTION_DEBUG",
     "y",
     "bool",
     "y",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/arch/Kconfig",
-      638
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      587
     ]
   ],
   [
     "CONFIG_SIMPLIFIED_EXCEPTION_CODES",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      588
+    ]
   ],
   [
     "CONFIG_ARCH_HAS_TIMING_FUNCTIONS",
@@ -2984,9 +3243,12 @@
     "CONFIG_CACHE_DOUBLEMAP",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      620
+    ]
   ],
   [
     "CONFIG_TOOLCHAIN_HAS_BUILTIN_FFS",
@@ -3014,10 +3276,10 @@
     "y",
     "int",
     "16",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/kernel/Kconfig",
-      30
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      629
     ]
   ],
   [
@@ -3025,10 +3287,10 @@
     "y",
     "int",
     "0",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/kernel/Kconfig",
-      73
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      630
     ]
   ],
   [
@@ -3058,54 +3320,63 @@
     "y",
     "int",
     "-127",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/kernel/Kconfig",
-      86
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      633
     ]
   ],
   [
     "CONFIG_SCHED_DEADLINE",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      634
+    ]
   ],
   [
     "CONFIG_THREAD_STACK_INFO",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      635
+    ]
   ],
   [
     "CONFIG_THREAD_CUSTOM_DATA",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      636
+    ]
   ],
   [
     "CONFIG_SCHED_DUMB",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      637
+    ]
   ],
   [
     "CONFIG_SCHED_SIMPLE",
     "y",
     "bool",
     "y",
-    "default",
-    [
-      "/Users/tylerfield/zephyrproject/zephyr/kernel/Kconfig",
-      309
-    ]
+    "assign",
+    null
   ],
   [
     "CONFIG_SCHED_SCALABLE",
@@ -3127,9 +3398,12 @@
     "CONFIG_WAITQ_DUMB",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      641
+    ]
   ],
   [
     "CONFIG_WAITQ_SCALABLE",
@@ -3144,11 +3418,8 @@
     "y",
     "bool",
     "y",
-    "default",
-    [
-      "/Users/tylerfield/zephyrproject/zephyr/kernel/Kconfig",
-      369
-    ]
+    "assign",
+    null
   ],
   [
     "CONFIG_LIBC_ERRNO",
@@ -3165,10 +3436,10 @@
     "y",
     "bool",
     "y",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/kernel/Kconfig",
-      406
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      649
     ]
   ],
   [
@@ -3176,10 +3447,10 @@
     "y",
     "bool",
     "y",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/kernel/Kconfig",
-      430
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      650
     ]
   ],
   [
@@ -3187,10 +3458,10 @@
     "y",
     "bool",
     "y",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/kernel/Kconfig",
-      459
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      656
     ]
   ],
   [
@@ -3198,10 +3469,10 @@
     "y",
     "string",
     "Booting Zephyr OS build",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/kernel/Kconfig",
-      468
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      657
     ]
   ],
   [
@@ -3209,96 +3480,120 @@
     "y",
     "int",
     "0",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/kernel/Kconfig",
-      475
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      658
     ]
   ],
   [
     "CONFIG_BOOT_CLEAR_SCREEN",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      659
+    ]
   ],
   [
     "CONFIG_THREAD_MONITOR",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      660
+    ]
   ],
   [
     "CONFIG_THREAD_NAME",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      661
+    ]
   ],
   [
     "CONFIG_THREAD_RUNTIME_STATS",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      662
+    ]
   ],
   [
     "CONFIG_THREAD_RUNTIME_STACK_SAFETY",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      663
+    ]
   ],
   [
     "CONFIG_OBJ_CORE",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      666
+    ]
   ],
   [
     "CONFIG_WORKQUEUE_WORK_TIMEOUT",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      667
+    ]
   ],
   [
     "CONFIG_SYSTEM_WORKQUEUE_PRIORITY",
     "y",
     "int",
     "-1",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/kernel/Kconfig",
-      617
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      672
     ]
   ],
   [
     "CONFIG_SYSTEM_WORKQUEUE_NO_YIELD",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      673
+    ]
   ],
   [
     "CONFIG_SYSTEM_WORKQUEUE_WORK_TIMEOUT_MS",
     "y",
     "int",
     "0",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/kernel/Kconfig",
-      635
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      674
     ]
   ],
   [
@@ -3326,10 +3621,10 @@
     "y",
     "bool",
     "y",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/kernel/Kconfig",
-      685
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      692
     ]
   ],
   [
@@ -3337,70 +3632,88 @@
     "y",
     "int",
     "0",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/kernel/Kconfig",
-      704
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      693
     ]
   ],
   [
     "CONFIG_TIMESLICE_PER_THREAD",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      694
+    ]
   ],
   [
     "CONFIG_TIMER_OBSERVER",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      695
+    ]
   ],
   [
     "CONFIG_POLL",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      701
+    ]
   ],
   [
     "CONFIG_MEM_SLAB_POINTER_VALIDATE",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      702
+    ]
   ],
   [
     "CONFIG_MEM_SLAB_TRACE_MAX_UTILIZATION",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      703
+    ]
   ],
   [
     "CONFIG_NUM_MBOX_ASYNC_MSGS",
     "y",
     "int",
     "10",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/kernel/Kconfig",
-      753
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      704
     ]
   ],
   [
     "CONFIG_EVENTS",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      705
+    ]
   ],
   [
     "CONFIG_HEAP_MEM_POOL_SIZE",
@@ -3409,17 +3722,20 @@
     "2048",
     "assign",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/prj.conf",
-      3
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      706
     ]
   ],
   [
     "CONFIG_HEAP_MEM_POOL_IGNORE_MIN",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      707
+    ]
   ],
   [
     "CONFIG_SWAP_NONATOMIC",
@@ -3436,10 +3752,10 @@
     "y",
     "bool",
     "y",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/kernel/Kconfig",
-      879
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      711
     ]
   ],
   [
@@ -3447,19 +3763,22 @@
     "y",
     "int",
     "365",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/kernel/Kconfig",
-      890
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      712
     ]
   ],
   [
     "CONFIG_TICKET_SPINLOCKS",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      727
+    ]
   ],
   [
     "CONFIG_TOOLCHAIN_SUPPORTS_THREAD_LOCAL_STORAGE",
@@ -3497,53 +3816,65 @@
     "y",
     "bool",
     "y",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/kernel/Kconfig",
-      1128
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      733
     ]
   ],
   [
     "CONFIG_BOOTARGS",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      734
+    ]
   ],
   [
     "CONFIG_DEVICE_MUTABLE",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      740
+    ]
   ],
   [
     "CONFIG_DEVICE_DT_METADATA",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      741
+    ]
   ],
   [
     "CONFIG_DEVICE_DEINIT_SUPPORT",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      742
+    ]
   ],
   [
     "CONFIG_KERNEL_INIT_PRIORITY_OBJECTS",
     "y",
     "int",
     "30",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/kernel/Kconfig.device",
-      51
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      748
     ]
   ],
   [
@@ -3551,10 +3882,10 @@
     "y",
     "int",
     "35",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/kernel/Kconfig.device",
-      59
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      749
     ]
   ],
   [
@@ -3562,10 +3893,10 @@
     "y",
     "int",
     "40",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/kernel/Kconfig.device",
-      67
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      750
     ]
   ],
   [
@@ -3573,10 +3904,10 @@
     "y",
     "int",
     "50",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/kernel/Kconfig.device",
-      73
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      751
     ]
   ],
   [
@@ -3584,204 +3915,164 @@
     "y",
     "int",
     "90",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/kernel/Kconfig.device",
-      81
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      752
     ]
   ],
   [
     "CONFIG_SOC_EARLY_RESET_HOOK",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      768
+    ]
   ],
   [
     "CONFIG_SOC_PREP_HOOK",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      769
+    ]
   ],
   [
     "CONFIG_SOC_LATE_INIT_HOOK",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      770
+    ]
   ],
   [
     "CONFIG_SOC_PER_CORE_INIT_HOOK",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      771
+    ]
   ],
   [
     "CONFIG_BOARD_EARLY_INIT_HOOK",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      772
+    ]
   ],
   [
     "CONFIG_BOARD_LATE_INIT_HOOK",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      773
+    ]
   ],
   [
     "CONFIG_ADC",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      779
+    ]
   ],
   [
     "CONFIG_AUDIO",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      780
+    ]
   ],
   [
     "CONFIG_AUXDISPLAY",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      781
+    ]
   ],
   [
     "CONFIG_BBRAM",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      782
+    ]
   ],
   [
     "CONFIG_CAN",
     "y",
     "bool",
-    "y",
+    "n",
     "assign",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/prj.conf",
-      14
-    ]
-  ],
-  [
-    "CONFIG_CAN_INIT_PRIORITY",
-    "y",
-    "int",
-    "80",
-    "default",
-    [
-      "/Users/tylerfield/zephyrproject/zephyr/drivers/can/Kconfig",
-      22
-    ]
-  ],
-  [
-    "CONFIG_CAN_DEFAULT_BITRATE",
-    "y",
-    "int",
-    "125000",
-    "default",
-    [
-      "/Users/tylerfield/zephyrproject/zephyr/drivers/can/Kconfig",
-      28
-    ]
-  ],
-  [
-    "CONFIG_CAN_SAMPLE_POINT_MARGIN",
-    "y",
-    "int",
-    "50",
-    "default",
-    [
-      "/Users/tylerfield/zephyrproject/zephyr/drivers/can/Kconfig",
-      43
-    ]
-  ],
-  [
-    "CONFIG_CAN_ACCEPT_RTR",
-    "y",
-    "bool",
-    null,
-    "unset",
-    null
-  ],
-  [
-    "CONFIG_CAN_FD_MODE",
-    "y",
-    "bool",
-    null,
-    "unset",
-    null
-  ],
-  [
-    "CONFIG_CAN_MANUAL_RECOVERY_MODE",
-    "y",
-    "bool",
-    null,
-    "unset",
-    null
-  ],
-  [
-    "CONFIG_CAN_RX_TIMESTAMP",
-    "y",
-    "bool",
-    null,
-    "unset",
-    null
-  ],
-  [
-    "CONFIG_CAN_TRANSCEIVER_INIT_PRIORITY",
-    "y",
-    "int",
-    "45",
-    "default",
-    [
-      "/Users/tylerfield/zephyrproject/zephyr/drivers/can/transceiver/Kconfig",
-      10
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      783
     ]
   ],
   [
     "CONFIG_CHARGER",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      784
+    ]
   ],
   [
     "CONFIG_CLOCK_CONTROL_FIXED_RATE_CLOCK",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      785
+    ]
   ],
   [
     "CONFIG_CLOCK_CONTROL_STM32_CUBE",
     "y",
     "bool",
     "y",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/drivers/clock_control/Kconfig.stm32",
-      11
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      786
     ]
   ],
   [
@@ -3799,19 +4090,22 @@
     "CONFIG_COMPARATOR",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      788
+    ]
   ],
   [
     "CONFIG_CONSOLE_INPUT_MAX_LINE_LEN",
     "y",
     "int",
     "128",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/drivers/console/Kconfig",
-      16
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      789
     ]
   ],
   [
@@ -3828,19 +4122,22 @@
     "CONFIG_CONSOLE_HANDLER",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      791
+    ]
   ],
   [
     "CONFIG_CONSOLE_INIT_PRIORITY",
     "y",
     "int",
     "60",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/drivers/console/Kconfig",
-      37
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      792
     ]
   ],
   [
@@ -3850,294 +4147,393 @@
     "y",
     "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/boards/st/nucleo_f103rb/nucleo_f103rb_defconfig",
-      7
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      793
     ]
   ],
   [
     "CONFIG_UART_CONSOLE_DEBUG_SERVER_HOOKS",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      794
+    ]
   ],
   [
     "CONFIG_UART_CONSOLE_MCUMGR",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      795
+    ]
   ],
   [
     "CONFIG_RAM_CONSOLE",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      796
+    ]
   ],
   [
     "CONFIG_IPM_CONSOLE_SENDER",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      797
+    ]
   ],
   [
     "CONFIG_IPM_CONSOLE_RECEIVER",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      798
+    ]
   ],
   [
     "CONFIG_UART_MCUMGR",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      799
+    ]
   ],
   [
     "CONFIG_EFI_CONSOLE",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      800
+    ]
   ],
   [
     "CONFIG_COREDUMP_DEVICE",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      801
+    ]
   ],
   [
     "CONFIG_CRC_DRIVER",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      802
+    ]
   ],
   [
     "CONFIG_CRYPTO",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      803
+    ]
   ],
   [
     "CONFIG_DAC",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      804
+    ]
   ],
   [
     "CONFIG_DAI",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      805
+    ]
   ],
   [
     "CONFIG_DEBUG_DRIVER",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      806
+    ]
   ],
   [
     "CONFIG_DISK_DRIVERS",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      807
+    ]
   ],
   [
     "CONFIG_DISPLAY",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      808
+    ]
   ],
   [
     "CONFIG_DMA",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      809
+    ]
   ],
   [
     "CONFIG_DP_DRIVER",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      810
+    ]
   ],
   [
     "CONFIG_EDAC",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      811
+    ]
   ],
   [
     "CONFIG_EEPROM",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      812
+    ]
   ],
   [
     "CONFIG_ENTROPY_GENERATOR",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      813
+    ]
   ],
   [
     "CONFIG_ESPI",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      814
+    ]
   ],
   [
     "CONFIG_ARM_SCMI",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      819
+    ]
   ],
   [
     "CONFIG_FPGA",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      822
+    ]
   ],
   [
     "CONFIG_FUEL_GAUGE",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      823
+    ]
   ],
   [
     "CONFIG_GNSS",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      824
+    ]
   ],
   [
     "CONFIG_GPIO_GET_DIRECTION",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      825
+    ]
   ],
   [
     "CONFIG_GPIO_GET_CONFIG",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      826
+    ]
   ],
   [
     "CONFIG_GPIO_ENABLE_DISABLE_INTERRUPT",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      827
+    ]
   ],
   [
     "CONFIG_GPIO_STM32",
     "y",
     "bool",
     "y",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/drivers/gpio/Kconfig.stm32",
-      9
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      828
     ]
   ],
   [
     "CONFIG_HAPTICS",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      829
+    ]
   ],
   [
     "CONFIG_HWSPINLOCK",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      830
+    ]
   ],
   [
     "CONFIG_I2C",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      831
+    ]
   ],
   [
     "CONFIG_I2S",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      832
+    ]
   ],
   [
     "CONFIG_I3C",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      833
+    ]
   ],
   [
     "CONFIG_INTC_INIT_PRIORITY",
     "y",
     "int",
     "40",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/drivers/interrupt_controller/Kconfig",
-      51
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      838
     ]
   ],
   [
@@ -4145,10 +4541,10 @@
     "y",
     "bool",
     "y",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/drivers/interrupt_controller/Kconfig.stm32",
-      11
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      839
     ]
   ],
   [
@@ -4156,131 +4552,176 @@
     "y",
     "bool",
     "y",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/drivers/interrupt_controller/Kconfig.stm32",
-      18
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      840
     ]
   ],
   [
     "CONFIG_IPM",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      843
+    ]
   ],
   [
     "CONFIG_LED",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      844
+    ]
   ],
   [
     "CONFIG_LED_STRIP",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      845
+    ]
   ],
   [
     "CONFIG_LORA",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      846
+    ]
   ],
   [
     "CONFIG_MBOX",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      847
+    ]
   ],
   [
     "CONFIG_MDIO",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      848
+    ]
   ],
   [
     "CONFIG_MIPI_DBI",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      849
+    ]
   ],
   [
     "CONFIG_TIMEAWARE_GPIO",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      860
+    ]
   ],
   [
     "CONFIG_MM_DRV",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      863
+    ]
   ],
   [
     "CONFIG_MSPI",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      864
+    ]
   ],
   [
     "CONFIG_OPAMP",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      865
+    ]
   ],
   [
     "CONFIG_OTP",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      866
+    ]
   ],
   [
     "CONFIG_PCIE",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      867
+    ]
   ],
   [
     "CONFIG_PCIE_ENDPOINT",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      868
+    ]
   ],
   [
     "CONFIG_PECI",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      869
+    ]
   ],
   [
     "CONFIG_PINCTRL",
@@ -4296,43 +4737,55 @@
     "CONFIG_PINCTRL_DYNAMIC",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      871
+    ]
   ],
   [
     "CONFIG_PINCTRL_KEEP_SLEEP_STATE",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      872
+    ]
   ],
   [
     "CONFIG_PINCTRL_MCHP_COMMON",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      873
+    ]
   ],
   [
     "CONFIG_PINCTRL_NPCX_EX",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      874
+    ]
   ],
   [
     "CONFIG_PINCTRL_STM32",
     "y",
     "bool",
     "y",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/drivers/pinctrl/Kconfig.stm32",
-      6
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      875
     ]
   ],
   [
@@ -4340,61 +4793,76 @@
     "y",
     "int",
     "2",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/drivers/pinctrl/Kconfig.stm32",
-      13
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      876
     ]
   ],
   [
     "CONFIG_PM_CPU_OPS",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      877
+    ]
   ],
   [
     "CONFIG_PS2",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      878
+    ]
   ],
   [
     "CONFIG_PSI5",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      879
+    ]
   ],
   [
     "CONFIG_PTP_CLOCK",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      880
+    ]
   ],
   [
     "CONFIG_PWM",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      881
+    ]
   ],
   [
     "CONFIG_RESET_INIT_PRIORITY",
     "y",
     "int",
     "35",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/drivers/reset/Kconfig",
-      21
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      882
     ]
   ],
   [
@@ -4402,51 +4870,66 @@
     "y",
     "bool",
     "y",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/drivers/reset/Kconfig.stm32",
-      6
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      887
     ]
   ],
   [
     "CONFIG_RETAINED_MEM",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      888
+    ]
   ],
   [
     "CONFIG_RTC",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      889
+    ]
   ],
   [
     "CONFIG_SDHC",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      890
+    ]
   ],
   [
     "CONFIG_SENSOR",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      891
+    ]
   ],
   [
     "CONFIG_SENT",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      892
+    ]
   ],
   [
     "CONFIG_SERIAL_HAS_DRIVER",
@@ -4483,94 +4966,121 @@
     "y",
     "int",
     "50",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/drivers/serial/Kconfig",
-      36
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      900
     ]
   ],
   [
     "CONFIG_UART_ASYNC_API",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      901
+    ]
   ],
   [
     "CONFIG_UART_LINE_CTRL",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      902
+    ]
   ],
   [
     "CONFIG_UART_DRV_CMD",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      903
+    ]
   ],
   [
     "CONFIG_UART_WIDE_DATA",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      904
+    ]
   ],
   [
     "CONFIG_UART_PIPE",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      905
+    ]
   ],
   [
     "CONFIG_UART_ASYNC_RX_HELPER",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      906
+    ]
   ],
   [
     "CONFIG_UART_NPCX_FIFO_EX",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      911
+    ]
   ],
   [
     "CONFIG_UART_STM32",
     "y",
     "bool",
     "y",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/drivers/serial/Kconfig.stm32",
-      8
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      912
     ]
   ],
   [
     "CONFIG_SMBUS",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      913
+    ]
   ],
   [
     "CONFIG_STEPPER",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      914
+    ]
   ],
   [
     "CONFIG_TIMER_HAS_64BIT_CYCLE_COUNTER",
@@ -4586,27 +5096,33 @@
     "CONFIG_TIMER_READS_ITS_FREQUENCY_AT_RUNTIME",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      920
+    ]
   ],
   [
     "CONFIG_SYSTEM_CLOCK_SLOPPY_IDLE",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      921
+    ]
   ],
   [
     "CONFIG_SYSTEM_CLOCK_INIT_PRIORITY",
     "y",
     "int",
     "0",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/drivers/timer/Kconfig",
-      35
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      922
     ]
   ],
   [
@@ -4644,10 +5160,10 @@
     "y",
     "bool",
     "y",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/drivers/timer/Kconfig.cortex_m_systick",
-      33
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      926
     ]
   ],
   [
@@ -4655,136 +5171,184 @@
     "y",
     "bool",
     "y",
-    "default",
+    "assign",
     null
   ],
   [
     "CONFIG_USB_BC12",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      930
+    ]
   ],
   [
     "CONFIG_UDC_DRIVER",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      931
+    ]
   ],
   [
     "CONFIG_UHC_DRIVER",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      932
+    ]
   ],
   [
     "CONFIG_UVB",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      933
+    ]
   ],
   [
     "CONFIG_USB_DEVICE_DRIVER",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      934
+    ]
   ],
   [
     "CONFIG_USBC_TCPC_DRIVER",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      941
+    ]
   ],
   [
     "CONFIG_USBC_VBUS_DRIVER",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      942
+    ]
   ],
   [
     "CONFIG_USBC_PPC_DRIVER",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      943
+    ]
   ],
   [
     "CONFIG_VIDEO",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      944
+    ]
   ],
   [
     "CONFIG_VIRTIO",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      945
+    ]
   ],
   [
     "CONFIG_VIRTUALIZATION",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      946
+    ]
   ],
   [
     "CONFIG_W1",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      947
+    ]
   ],
   [
     "CONFIG_TEE",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      948
+    ]
   ],
   [
     "CONFIG_REQUIRES_FULL_LIBC",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      951
+    ]
   ],
   [
     "CONFIG_REQUIRES_FLOAT_PRINTF",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      952
+    ]
   ],
   [
     "CONFIG_LIBC_ALLOW_LESS_THAN_64BIT_TIME",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      953
+    ]
   ],
   [
     "CONFIG_FULL_LIBC_SUPPORTED",
@@ -4843,11 +5407,8 @@
     "y",
     "bool",
     "y",
-    "default",
-    [
-      "/Users/tylerfield/zephyrproject/zephyr/lib/libc/Kconfig",
-      81
-    ]
+    "assign",
+    null
   ],
   [
     "CONFIG_NEWLIB_LIBC",
@@ -4889,17 +5450,23 @@
     "CONFIG_COMMON_LIBC_ASCTIME_R",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      968
+    ]
   ],
   [
     "CONFIG_COMMON_LIBC_CTIME_R",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      969
+    ]
   ],
   [
     "CONFIG_COMMON_LIBC_TIME",
@@ -4916,9 +5483,10 @@
     "y",
     "bool",
     "y",
-    "imply",
+    "assign",
     [
-      "PICOLIBC && PICOLIBC_SUPPORTED && <choice LIBC_IMPLEMENTATION>"
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      971
     ]
   ],
   [
@@ -4926,10 +5494,10 @@
     "y",
     "bool",
     "y",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/lib/libc/common/Kconfig",
-      88
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      972
     ]
   ],
   [
@@ -4937,19 +5505,22 @@
     "y",
     "bool",
     "y",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/lib/libc/common/Kconfig",
-      97
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      973
     ]
   ],
   [
     "CONFIG_COMMON_LIBC_REMOVE",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      974
+    ]
   ],
   [
     "CONFIG_PICOLIBC_USE_MODULE",
@@ -4964,11 +5535,8 @@
     "y",
     "bool",
     "y",
-    "default",
-    [
-      "/Users/tylerfield/zephyrproject/zephyr/lib/libc/picolibc/Kconfig",
-      8
-    ]
+    "assign",
+    null
   ],
   [
     "CONFIG_PICOLIBC_IO_FLOAT",
@@ -4983,21 +5551,18 @@
     "y",
     "bool",
     "y",
-    "default",
-    [
-      "/Users/tylerfield/zephyrproject/zephyr/lib/libc/picolibc/Kconfig",
-      34
-    ]
+    "assign",
+    null
   ],
   [
     "CONFIG_STDOUT_CONSOLE",
     "y",
     "bool",
     "y",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/lib/libc/Kconfig",
-      173
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      979
     ]
   ],
   [
@@ -5018,8 +5583,8 @@
     "y",
     "assign",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/prj.conf",
-      19
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      986
     ]
   ],
   [
@@ -5046,11 +5611,8 @@
     "y",
     "bool",
     "y",
-    "default",
-    [
-      "/Users/tylerfield/zephyrproject/zephyr/lib/cpp/Kconfig",
-      39
-    ]
+    "assign",
+    null
   ],
   [
     "CONFIG_STD_CPP14",
@@ -5104,20 +5666,20 @@
     "CONFIG_REQUIRES_FULL_LIBCPP",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      996
+    ]
   ],
   [
     "CONFIG_MINIMAL_LIBCPP",
     "y",
     "bool",
     "y",
-    "default",
-    [
-      "/Users/tylerfield/zephyrproject/zephyr/lib/cpp/Kconfig",
-      106
-    ]
+    "assign",
+    null
   ],
   [
     "CONFIG_GLIBCXX_LIBCPP",
@@ -5147,82 +5709,97 @@
     "CONFIG_SYS_HASH_FUNC32",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1010
+    ]
   ],
   [
     "CONFIG_SYS_HASH_MAP",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1016
+    ]
   ],
   [
     "CONFIG_SYS_HEAP_STRESS",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1022
+    ]
   ],
   [
     "CONFIG_SYS_HEAP_INFO",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1023
+    ]
   ],
   [
     "CONFIG_SYS_HEAP_ALLOC_LOOPS",
     "y",
     "int",
     "3",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/lib/heap/Kconfig",
-      36
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1024
     ]
   ],
   [
     "CONFIG_SYS_HEAP_RUNTIME_STATS",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1025
+    ]
   ],
   [
     "CONFIG_SYS_HEAP_ARRAY_SIZE",
     "y",
     "int",
     "0",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/lib/heap/Kconfig",
-      57
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1026
     ]
   ],
   [
     "CONFIG_SYS_HEAP_LISTENER",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1027
+    ]
   ],
   [
     "CONFIG_SYS_HEAP_SMALL_ONLY",
     "y",
     "bool",
     "y",
-    "default",
-    [
-      "/Users/tylerfield/zephyrproject/zephyr/lib/heap/Kconfig",
-      84
-    ]
+    "assign",
+    null
   ],
   [
     "CONFIG_SYS_HEAP_BIG_ONLY",
@@ -5244,73 +5821,100 @@
     "CONFIG_MULTI_HEAP",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1031
+    ]
   ],
   [
     "CONFIG_SHARED_MULTI_HEAP",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1032
+    ]
   ],
   [
     "CONFIG_SYS_MEM_BLOCKS",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1038
+    ]
   ],
   [
     "CONFIG_MIDI2_UMP_STREAM_RESPONDER",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1044
+    ]
   ],
   [
     "CONFIG_NET_BUF",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1047
+    ]
   ],
   [
     "CONFIG_ZVFS_OPEN_IGNORE_MIN",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1052
+    ]
   ],
   [
     "CONFIG_PRINTK_SYNC",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1053
+    ]
   ],
   [
     "CONFIG_MPSC_PBUF",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1054
+    ]
   ],
   [
     "CONFIG_SPSC_PBUF",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1055
+    ]
   ],
   [
     "CONFIG_HAS_POWEROFF",
@@ -5326,20 +5930,20 @@
     "CONFIG_POWEROFF",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1057
+    ]
   ],
   [
     "CONFIG_CBPRINTF_COMPLETE",
     "y",
     "bool",
     "y",
-    "default",
-    [
-      "/Users/tylerfield/zephyrproject/zephyr/lib/os/Kconfig.cbprintf",
-      6
-    ]
+    "assign",
+    null
   ],
   [
     "CONFIG_CBPRINTF_NANO",
@@ -5354,11 +5958,8 @@
     "y",
     "bool",
     "y",
-    "default",
-    [
-      "/Users/tylerfield/zephyrproject/zephyr/lib/os/Kconfig.cbprintf",
-      29
-    ]
+    "assign",
+    null
   ],
   [
     "CONFIG_CBPRINTF_REDUCED_INTEGRAL",
@@ -5372,41 +5973,56 @@
     "CONFIG_CBPRINTF_FP_SUPPORT",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1062
+    ]
   ],
   [
     "CONFIG_CBPRINTF_FP_A_SUPPORT",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1063
+    ]
   ],
   [
     "CONFIG_CBPRINTF_LIBC_SUBSTS",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1064
+    ]
   ],
   [
     "CONFIG_CBPRINTF_PACKAGE_LONGDOUBLE",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1065
+    ]
   ],
   [
     "CONFIG_CBPRINTF_STATIC_PACKAGE_CHECK_ALIGNMENT",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1066
+    ]
   ],
   [
     "CONFIG_CBPRINTF_CONVERT_CHECK_PTR",
@@ -5423,33 +6039,45 @@
     "CONFIG_ZVFS",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1068
+    ]
   ],
   [
     "CONFIG_CPU_LOAD_METRIC",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1069
+    ]
   ],
   [
     "CONFIG_POSIX_SYSTEM_INTERFACES",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1075
+    ]
   ],
   [
     "CONFIG_POSIX_API",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1076
+    ]
   ],
   [
     "CONFIG_POSIX_AEP_CHOICE_NONE",
@@ -5464,11 +6092,8 @@
     "y",
     "bool",
     "y",
-    "default",
-    [
-      "/Users/tylerfield/zephyrproject/zephyr/lib/posix/Kconfig.profile",
-      29
-    ]
+    "assign",
+    null
   ],
   [
     "CONFIG_POSIX_AEP_CHOICE_BASE",
@@ -5536,36 +6161,42 @@
     "CONFIG_EVENTFD",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1093
+    ]
   ],
   [
     "CONFIG_SMF",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1094
+    ]
   ],
   [
     "CONFIG_LIBGCC_RTLIB",
     "y",
     "bool",
     "y",
-    "default",
-    [
-      "/Users/tylerfield/zephyrproject/zephyr/lib/runtime/Kconfig",
-      13
-    ]
+    "assign",
+    null
   ],
   [
     "CONFIG_JSON_LIBRARY",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1100
+    ]
   ],
   [
     "CONFIG_RING_BUFFER",
@@ -5581,49 +6212,67 @@
     "CONFIG_RING_BUFFER_LARGE",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1102
+    ]
   ],
   [
     "CONFIG_NOTIFY",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1103
+    ]
   ],
   [
     "CONFIG_BASE64",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1104
+    ]
   ],
   [
     "CONFIG_ONOFF",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1105
+    ]
   ],
   [
     "CONFIG_UTF8",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1106
+    ]
   ],
   [
     "CONFIG_COBS",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1107
+    ]
   ],
   [
     "CONFIG_GETOPT",
@@ -5639,140 +6288,166 @@
     "CONFIG_GETOPT_LONG",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1109
+    ]
   ],
   [
     "CONFIG_TIMEUTIL_APPLY_SKEW",
     "y",
     "bool",
     "y",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/lib/utils/Kconfig",
-      103
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1110
     ]
   ],
   [
     "CONFIG_UUID",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1116
+    ]
   ],
   [
     "CONFIG_MIN_HEAP",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1119
+    ]
   ],
   [
     "CONFIG_BINDESC",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1125
+    ]
   ],
   [
     "CONFIG_BT",
     "y",
     "bool",
-    null,
-    "unset",
-    null
-  ],
-  [
-    "CONFIG_CANOPEN",
-    "y",
-    "bool",
-    null,
-    "unset",
-    null
-  ],
-  [
-    "CONFIG_ISOTP",
-    "y",
-    "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1126
+    ]
   ],
   [
     "CONFIG_CONSOLE_SUBSYS",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1133
+    ]
   ],
   [
     "CONFIG_CPU_FREQ",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1134
+    ]
   ],
   [
     "CONFIG_CRC",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1135
+    ]
   ],
   [
     "CONFIG_DAP",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1136
+    ]
   ],
   [
     "CONFIG_THREAD_ANALYZER",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1141
+    ]
   ],
   [
     "CONFIG_DEBUG",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1147
+    ]
   ],
   [
     "CONFIG_UBSAN",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1148
+    ]
   ],
   [
     "CONFIG_STACK_USAGE",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1149
+    ]
   ],
   [
     "CONFIG_STACK_SENTINEL",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1150
+    ]
   ],
   [
     "CONFIG_PRINTK",
@@ -5798,292 +6473,397 @@
     "CONFIG_FORCE_NO_ASSERT",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1153
+    ]
   ],
   [
     "CONFIG_ASSERT_VERBOSE",
     "y",
     "bool",
     "y",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/subsys/debug/Kconfig",
-      240
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1154
     ]
   ],
   [
     "CONFIG_ASSERT_NO_FILE_INFO",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1155
+    ]
   ],
   [
     "CONFIG_ASSERT_NO_COND_INFO",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1156
+    ]
   ],
   [
     "CONFIG_ASSERT_NO_MSG_INFO",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1157
+    ]
   ],
   [
     "CONFIG_ASSERT_TEST",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1158
+    ]
   ],
   [
     "CONFIG_OVERRIDE_FRAME_POINTER_DEFAULT",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1159
+    ]
   ],
   [
     "CONFIG_DEBUG_THREAD_INFO",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1160
+    ]
   ],
   [
     "CONFIG_DEBUG_COREDUMP",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1161
+    ]
   ],
   [
     "CONFIG_SYMTAB",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1162
+    ]
   ],
   [
     "CONFIG_MIPI_STP_DECODER",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1165
+    ]
   ],
   [
     "CONFIG_CS_TRACE_DEFMT",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1166
+    ]
   ],
   [
     "CONFIG_CPU_LOAD",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1167
+    ]
   ],
   [
     "CONFIG_DISK_ACCESS",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1168
+    ]
   ],
   [
     "CONFIG_DSP",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1169
+    ]
   ],
   [
     "CONFIG_EMUL",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1170
+    ]
   ],
   [
     "CONFIG_CHARACTER_FRAMEBUFFER",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1171
+    ]
   ],
   [
     "CONFIG_FILE_SYSTEM_LIB_LINK",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1176
+    ]
   ],
   [
     "CONFIG_FILE_SYSTEM",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1177
+    ]
   ],
   [
     "CONFIG_ZMS",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1178
+    ]
   ],
   [
     "CONFIG_GNSS_RTK",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1181
+    ]
   ],
   [
     "CONFIG_INSTRUMENTATION",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1182
+    ]
   ],
   [
     "CONFIG_RPMSG_SERVICE",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1187
+    ]
   ],
   [
     "CONFIG_IPC_SERVICE",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1188
+    ]
   ],
   [
     "CONFIG_OPENAMP_RSC_TABLE",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1189
+    ]
   ],
   [
     "CONFIG_JWT",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1192
+    ]
   ],
   [
     "CONFIG_LLEXT",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1193
+    ]
   ],
   [
     "CONFIG_LLEXT_EDK",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1194
+    ]
   ],
   [
     "CONFIG_LOG_OUTPUT",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1199
+    ]
   ],
   [
     "CONFIG_MEM_ATTR",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1202
+    ]
   ],
   [
     "CONFIG_EC_HOST_CMD",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1211
+    ]
   ],
   [
     "CONFIG_OSDP",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1214
+    ]
   ],
   [
     "CONFIG_MODBUS",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1217
+    ]
   ],
   [
     "CONFIG_MODEM_MODULES",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1218
+    ]
   ],
   [
     "CONFIG_NETWORKING",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1223
+    ]
   ],
   [
     "CONFIG_NVMEM",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1226
+    ]
   ],
   [
     "CONFIG_HAS_PM",
@@ -6099,255 +6879,342 @@
     "CONFIG_PM_POLICY_LATENCY_STANDALONE",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1232
+    ]
   ],
   [
     "CONFIG_MCTP",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1238
+    ]
   ],
   [
     "CONFIG_PROFILING",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1246
+    ]
   ],
   [
     "CONFIG_TEST_RANDOM_GENERATOR",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1251
+    ]
   ],
   [
     "CONFIG_TIMER_RANDOM_INITIAL_STATE",
     "y",
     "int",
     "123456789",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/subsys/random/Kconfig",
-      33
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1252
     ]
   ],
   [
     "CONFIG_CSPRNG_NEEDED",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1253
+    ]
   ],
   [
     "CONFIG_RTIO",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1256
+    ]
   ],
   [
     "CONFIG_MMC_STACK",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1261
+    ]
   ],
   [
     "CONFIG_SDMMC_STACK",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1262
+    ]
   ],
   [
     "CONFIG_SDIO_STACK",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1263
+    ]
   ],
   [
     "CONFIG_SECURE_STORAGE",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1266
+    ]
   ],
   [
     "CONFIG_SETTINGS",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1267
+    ]
   ],
   [
     "CONFIG_SHELL",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1268
+    ]
   ],
   [
     "CONFIG_STATS",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1269
+    ]
   ],
   [
     "CONFIG_STREAM_FLASH",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1274
+    ]
   ],
   [
     "CONFIG_TASK_WDT",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1277
+    ]
   ],
   [
     "CONFIG_ZTEST",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1282
+    ]
   ],
   [
     "CONFIG_ZTEST_MOCKING",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1283
+    ]
   ],
   [
     "CONFIG_ZTRESS",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1284
+    ]
   ],
   [
     "CONFIG_TEST",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1285
+    ]
   ],
   [
     "CONFIG_TEST_USERSPACE",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1286
+    ]
   ],
   [
     "CONFIG_FORCE_COVERAGE",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1292
+    ]
   ],
   [
     "CONFIG_COVERAGE_DUMP_PATH_EXCLUDE",
     "y",
     "string",
     "",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/subsys/testsuite/Kconfig.coverage",
-      96
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1293
     ]
   ],
   [
     "CONFIG_TIMING_FUNCTIONS",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1296
+    ]
   ],
   [
     "CONFIG_TRACING",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1297
+    ]
   ],
   [
     "CONFIG_USB_DEVICE_STACK",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1298
+    ]
   ],
   [
     "CONFIG_USB_DEVICE_STACK_NEXT",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1299
+    ]
   ],
   [
     "CONFIG_USB_HOST_STACK",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1300
+    ]
   ],
   [
     "CONFIG_USBC_STACK",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1301
+    ]
   ],
   [
     "CONFIG_ZBUS",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1302
+    ]
   ],
   [
     "CONFIG_MODULES",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1303
+    ]
   ],
   [
     "CONFIG_TOOLCHAIN_ZEPHYR_0_17",
@@ -6395,11 +7262,8 @@
     "y",
     "bool",
     "y",
-    "default",
-    [
-      "/Users/tylerfield/zephyrproject/zephyr/Kconfig.zephyr",
-      62
-    ]
+    "assign",
+    null
   ],
   [
     "CONFIG_LINKER_ORPHAN_SECTION_ERROR",
@@ -6414,10 +7278,10 @@
     "y",
     "hex",
     "0",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/Kconfig.zephyr",
-      119
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1320
     ]
   ],
   [
@@ -6425,10 +7289,10 @@
     "y",
     "hex",
     "0",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/Kconfig.zephyr",
-      147
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1321
     ]
   ],
   [
@@ -6447,11 +7311,8 @@
     "y",
     "bool",
     "y",
-    "default",
-    [
-      "/Users/tylerfield/zephyrproject/zephyr/Kconfig.zephyr",
-      162
-    ]
+    "assign",
+    null
   ],
   [
     "CONFIG_CMAKE_LINKER_GENERATOR",
@@ -6465,36 +7326,45 @@
     "CONFIG_HAVE_CUSTOM_LINKER_SCRIPT",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1325
+    ]
   ],
   [
     "CONFIG_LINKER_SORT_BY_ALIGNMENT",
     "y",
     "bool",
     "y",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/Kconfig.zephyr",
-      212
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1326
     ]
   ],
   [
     "CONFIG_LINKER_USE_BOOT_SECTION",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1331
+    ]
   ],
   [
     "CONFIG_LINKER_USE_PINNED_SECTION",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1332
+    ]
   ],
   [
     "CONFIG_LINKER_GENERIC_SECTIONS_PRESENT_AT_BOOT",
@@ -6512,10 +7382,10 @@
     "y",
     "bool",
     "y",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/Kconfig.zephyr",
-      286
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1334
     ]
   ],
   [
@@ -6523,10 +7393,10 @@
     "y",
     "hex",
     "0xE015E015",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/Kconfig.zephyr",
-      302
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1335
     ]
   ],
   [
@@ -6555,9 +7425,12 @@
     "CONFIG_LINKER_DEVNULL_MEMORY",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1340
+    ]
   ],
   [
     "CONFIG_STD_C90",
@@ -6588,11 +7461,8 @@
     "y",
     "bool",
     "y",
-    "default",
-    [
-      "/Users/tylerfield/zephyrproject/zephyr/Kconfig.zephyr",
-      385
-    ]
+    "assign",
+    null
   ],
   [
     "CONFIG_STD_C23",
@@ -6616,36 +7486,42 @@
     "CONFIG_GNU_C_EXTENSIONS",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1352
+    ]
   ],
   [
     "CONFIG_CODING_GUIDELINE_CHECK",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1353
+    ]
   ],
   [
     "CONFIG_COMPILER_FREESTANDING",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1354
+    ]
   ],
   [
     "CONFIG_SIZE_OPTIMIZATIONS",
     "y",
     "bool",
     "y",
-    "default",
-    [
-      "/Users/tylerfield/zephyrproject/zephyr/Kconfig.zephyr",
-      486
-    ]
+    "assign",
+    null
   ],
   [
     "CONFIG_SIZE_OPTIMIZATIONS_AGGRESSIVE",
@@ -6683,35 +7559,44 @@
     "CONFIG_COMPILER_WARNINGS_AS_ERRORS",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1360
+    ]
   ],
   [
     "CONFIG_DEPRECATION_TEST",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1361
+    ]
   ],
   [
     "CONFIG_COMPILER_SAVE_TEMPS",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1362
+    ]
   ],
   [
     "CONFIG_COMPILER_TRACK_MACRO_EXPANSION",
     "y",
     "bool",
     "y",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/Kconfig.zephyr",
-      563
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1363
     ]
   ],
   [
@@ -6719,10 +7604,10 @@
     "y",
     "bool",
     "y",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/Kconfig.zephyr",
-      571
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1364
     ]
   ],
   [
@@ -6738,11 +7623,8 @@
     "y",
     "bool",
     "y",
-    "default",
-    [
-      "/Users/tylerfield/zephyrproject/zephyr/Kconfig.zephyr",
-      578
-    ]
+    "assign",
+    null
   ],
   [
     "CONFIG_FORTIFY_SOURCE_RUN_TIME",
@@ -6756,17 +7638,23 @@
     "CONFIG_COMPILER_OPT",
     "y",
     "string",
-    null,
-    "unset",
-    null
+    "",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1368
+    ]
   ],
   [
     "CONFIG_MISRA_SANE",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1369
+    ]
   ],
   [
     "CONFIG_TOOLCHAIN_SUPPORTS_VLA_IN_STATEMENTS",
@@ -6800,21 +7688,18 @@
     "y",
     "bool",
     "y",
-    "default",
-    [
-      "/Users/tylerfield/zephyrproject/zephyr/Kconfig.zephyr",
-      636
-    ]
+    "assign",
+    null
   ],
   [
     "CONFIG_KERNEL_BIN_NAME",
     "y",
     "string",
     "zephyr",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/Kconfig.zephyr",
-      660
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1380
     ]
   ],
   [
@@ -6822,155 +7707,197 @@
     "y",
     "bool",
     "y",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/Kconfig.zephyr",
-      666
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1381
     ]
   ],
   [
     "CONFIG_OUTPUT_SYMBOLS",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1382
+    ]
   ],
   [
     "CONFIG_OUTPUT_PRINT_MEMORY_USAGE",
     "y",
     "bool",
     "y",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/Kconfig.zephyr",
-      708
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1383
     ]
   ],
   [
     "CONFIG_CLEANUP_INTERMEDIATE_FILES",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1384
+    ]
   ],
   [
     "CONFIG_BUILD_GAP_FILL_PATTERN",
     "y",
     "hex",
     "0xFF",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/Kconfig.zephyr",
-      729
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1385
     ]
   ],
   [
     "CONFIG_BUILD_NO_GAP_FILL",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1386
+    ]
   ],
   [
     "CONFIG_BUILD_OUTPUT_HEX_GAP_FILL",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1387
+    ]
   ],
   [
     "CONFIG_BUILD_OUTPUT_EXE",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1388
+    ]
   ],
   [
     "CONFIG_BUILD_OUTPUT_S19_GAP_FILL",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1389
+    ]
   ],
   [
     "CONFIG_BUILD_OUTPUT_UF2",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1390
+    ]
   ],
   [
     "CONFIG_BUILD_OUTPUT_MOT",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1391
+    ]
   ],
   [
     "CONFIG_BUILD_OUTPUT_STRIPPED",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1392
+    ]
   ],
   [
     "CONFIG_BUILD_OUTPUT_COMPRESS_DEBUG_SECTIONS",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1393
+    ]
   ],
   [
     "CONFIG_BUILD_ALIGN_LMA",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1394
+    ]
   ],
   [
     "CONFIG_APPLICATION_DEFINED_SYSCALL",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1395
+    ]
   ],
   [
     "CONFIG_MAKEFILE_EXPORTS",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1396
+    ]
   ],
   [
     "CONFIG_BUILD_OUTPUT_META",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1397
+    ]
   ],
   [
     "CONFIG_BUILD_OUTPUT_STRIP_PATHS",
     "y",
     "bool",
     "y",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/Kconfig.zephyr",
-      974
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1398
     ]
   ],
   [
@@ -6978,75 +7905,87 @@
     "y",
     "bool",
     "y",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/Kconfig.zephyr",
-      988
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1399
     ]
   ],
   [
     "CONFIG_EMIT_ALL_SYSCALLS",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1400
+    ]
   ],
   [
     "CONFIG_WARN_DEPRECATED",
     "y",
     "bool",
     "y",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/Kconfig.zephyr",
-      1020
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1403
     ]
   ],
   [
     "CONFIG_WARN_EXPERIMENTAL",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1404
+    ]
   ],
   [
     "CONFIG_ENFORCE_ZEPHYR_STDINT",
     "y",
     "bool",
     "y",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/Kconfig.zephyr",
-      1056
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1405
     ]
   ],
   [
     "CONFIG_IS_BOOTLOADER",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1411
+    ]
   ],
   [
     "CONFIG_BOOTLOADER_BOSSA",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "n",
+    "assign",
+    [
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1412
+    ]
   ],
   [
     "CONFIG_LEGACY_GENERATED_INCLUDE_PATH",
     "y",
     "bool",
     "y",
-    "default",
+    "assign",
     [
-      "/Users/tylerfield/zephyrproject/zephyr/Kconfig.zephyr",
-      1126
+      "/Users/tylerfield/zephyrproject/build/zephyr/.config",
+      1418
     ]
   ]
 ]

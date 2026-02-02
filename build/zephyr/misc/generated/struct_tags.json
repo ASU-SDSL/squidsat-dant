@@ -9,7 +9,6 @@
         "websocket_context"
     ],
     "__subsystem": [
-        "can_driver_api",
         "gpio_driver_api",
         "reset_driver_api",
         "shared_irq_driver_api",
@@ -18,6 +17,7 @@
         "auxdisplay_driver_api",
         "bbram_driver_api",
         "bt_hci_driver_api",
+        "can_driver_api",
         "cellular_driver_api",
         "charger_driver_api",
         "clock_control_driver_api",

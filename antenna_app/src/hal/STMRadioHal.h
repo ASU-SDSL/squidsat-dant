@@ -1,6 +1,9 @@
 
 #include <zephyr/drivers/can.h>
 #include <zephyr/kernel.h>
+#include <zephyr/sys_clock.h>
+#include <zephyr/sys/util.h>
+#include <zephyr/sys/time_units.h>
 #include <zephyr/drivers/gpio.h>
 #include <zephyr/drivers/spi.h>
 #include <stdio.h>
@@ -9,13 +12,24 @@
 #include <stm32f101x6.h>
 #include "RadioLib.h"
 
-class STMRadioHal : public RadioLibHal {
+#include <map>
 
+static std::map<uint32_t, void (*)(void)> isrs;
+static void zephyrGeneralISR(const struct device *dev, struct gpio_callback *cb, uint32_t pins){
+    for (auto &entry : isrs) {
+        uint32_t pin = entry.first;
+        if (pins & BIT(pin)) {
+            entry.second();  
+        }
+    }
+}
+
+class STMRadioHal : public RadioLibHal {
 public:
-    STMRadioHal(const struct device* spi, uint32_t spi_speed = 2000000)
-    : RadioLibHal(0, 1, 0, 1, 0, 1), 
+    STMRadioHal(const struct device* spi, const struct device* gpio, uint32_t spi_speed = 2000000)
+    : RadioLibHal(GPIO_INPUT, GPIO_OUTPUT, 0, 1, GPIO_INT_EDGE_RISING, GPIO_INT_EDGE_FALLING), 
     _spi(spi), _spi_speed(spi_speed),
-    gpio_dev(gpio_dev)
+    gpio_dev(gpio)
     {
         printf("Radio HAL initialized\n");
     }
@@ -32,13 +46,13 @@ public:
 
     void pinMode(uint32_t pin, uint32_t value) override {
         if(pin == RADIOLIB_NC){return;}
-        // how do i initialize the pins for can?
+        gpio_pin_configure(gpio_dev, pin, value);
     }
 
     void digitalWrite(uint32_t pin, uint32_t value) override {
         if (pin == RADIOLIB_NC) {return;}
         
-        // Use Zephyr GPIO API instead of STM32 HAL
+        // may not work
         gpio_pin_set(gpio_dev, pin, value);
     }
 
@@ -52,13 +66,21 @@ public:
 
     typedef void(* 	gpio_callback_handler_t) (const struct device *port, struct gpio_callback *cb, gpio_port_pins_t pins);
     void attachInterrupt(uint32_t interruptNum, void (*interruptCb)(void), uint32_t mode) override {
-        // Zephyr GPIO interrupt setup
-        // This is a simplified example; actual implementation may vary
-        if(interruptNum == RADIOLIB_NC){return;}
+        if (interruptNum == RADIOLIB_NC) return;
 
-        gpio_init_callback(&gpio_cb_data, reinterpret_cast<gpio_callback_handler_t>(interruptCb), BIT(interruptNum));
-        gpio_add_callback(gpio_dev, &gpio_cb_data);
+        isrs[interruptNum] = interruptCb;
+
+        gpio_pin_configure(gpio_dev, interruptNum, GPIO_INPUT);
         gpio_pin_interrupt_configure(gpio_dev, interruptNum, mode);
+
+        uint32_t mask = 0;
+        for (auto &e : isrs) {
+            mask |= BIT(e.first);
+        }
+
+        gpio_remove_callback(gpio_dev, &gpio_cb_data);
+        gpio_init_callback(&gpio_cb_data, zephyrGeneralISR, mask);
+        gpio_add_callback(gpio_dev, &gpio_cb_data);
     }
 
     void detachInterrupt(uint32_t interruptNum) override {
@@ -68,6 +90,7 @@ public:
         // Disabling the interrupt with the Zephyr GPIO API
         gpio_pin_interrupt_configure(gpio_dev, interruptNum, GPIO_INT_DISABLE);
         gpio_remove_callback(gpio_dev, &gpio_cb_data);
+        isrs.erase(interruptNum);
     }
 
     void delay(unsigned long ms) override {
@@ -75,7 +98,7 @@ public:
     }
 
     void delayMicroseconds(unsigned long us) override {
-        k_msleep(us / 1000); // pretty sure this is meant to specify sleep in microseconds
+        k_busy_wait(us); // pretty sure this is meant to specify sleep in microseconds
     }
 
     unsigned long millis() override {
@@ -87,23 +110,20 @@ public:
     }
     
     long pulseIn(uint32_t pin, uint32_t state, unsigned long timeout) override {
-        printf("pulseIn\n");
         if (pin == RADIOLIB_NC) {
             return 0;
         }
 
         gpio_pin_configure(gpio_dev, pin, GPIO_INPUT);
-        uint32_t start = this->micros();
-        uint32_t curtick = this->micros();
-        uint32_t timeoutMicros = timeout; // * 1000; 
+        uint32_t start = micros();
 
-        while (gpio_pin_get(gpio_dev, pin) == state) {
-            if ((this->micros() - curtick) > timeoutMicros) {
+        while (gpio_pin_get(gpio_dev, pin) == (int)state) {
+            if ((micros() - start) > timeout) {
                 return 0;
             }
         }
-
-        return (this->micros() - start);
+    
+        return micros() - start;
     }
 
     void spiBegin() override {
@@ -122,7 +142,6 @@ public:
         const uint32_t _spi_speed;
         const struct device *_spi;
         struct spi_config _spi_cfg;
-        int _spiHandle = -1;
         struct gpio_callback gpio_cb_data;
         const struct device* gpio_dev;
     };

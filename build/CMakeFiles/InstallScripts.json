@@ -70,8 +70,6 @@
 		"/Users/tylerfield/zephyrproject/build/zephyr/drivers/usb/common/cmake_install.cmake",
 		"/Users/tylerfield/zephyrproject/build/zephyr/drivers/usb/common/stm32/cmake_install.cmake",
 		"/Users/tylerfield/zephyrproject/build/zephyr/drivers/usb_c/cmake_install.cmake",
-		"/Users/tylerfield/zephyrproject/build/zephyr/drivers/can/cmake_install.cmake",
-		"/Users/tylerfield/zephyrproject/build/zephyr/drivers/can/transceiver/cmake_install.cmake",
 		"/Users/tylerfield/zephyrproject/build/zephyr/drivers/clock_control/cmake_install.cmake",
 		"/Users/tylerfield/zephyrproject/build/zephyr/drivers/console/cmake_install.cmake",
 		"/Users/tylerfield/zephyrproject/build/zephyr/drivers/gpio/cmake_install.cmake",
