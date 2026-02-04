@@ -267,7 +267,7 @@ Discarded input sections
  .data          0x0000000000000000        0x0 app/libapp.a(radio.cpp.obj)
  .bss           0x0000000000000000        0x0 app/libapp.a(radio.cpp.obj)
  .debug_line    0x0000000000000000        0x0 app/libapp.a(radio.cpp.obj)
- .debug_str     0x0000000000000000      0x246 app/libapp.a(radio.cpp.obj)
+ .debug_str     0x0000000000000000      0x242 app/libapp.a(radio.cpp.obj)
  .comment       0x0000000000000000       0x21 app/libapp.a(radio.cpp.obj)
  .text          0x0000000000000000        0x0 app/libapp.a(radio_hal.cpp.obj)
  .data          0x0000000000000000        0x0 app/libapp.a(radio_hal.cpp.obj)
