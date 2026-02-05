@@ -1,3 +1,5 @@
+#ifndef STMRadioHal
+#define STMRadioHal
 
 #include <zephyr/drivers/can.h>
 #include <zephyr/kernel.h>
@@ -146,3 +148,5 @@ public:
         const struct device* gpio_dev;
     };
 ;
+
+#endif
