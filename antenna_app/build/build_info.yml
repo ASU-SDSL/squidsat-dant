@@ -1,0 +1,58 @@
+cmake:
+  application:
+    configuration-dir: '/Users/tylerfield/zephyrproject/antenna_app'
+    source-dir: '/Users/tylerfield/zephyrproject/antenna_app'
+  board:
+    name: 'nucleo_f103rb'
+    path:
+     - '/Users/tylerfield/zephyrproject/zephyr/boards/st/nucleo_f103rb'
+    qualifiers: 'stm32f103xb'
+    revision: ''
+  devicetree:
+    bindings-dirs:
+     - '/Users/tylerfield/zephyrproject/zephyr/dts/bindings'
+    files:
+     - '/Users/tylerfield/zephyrproject/zephyr/boards/st/nucleo_f103rb/nucleo_f103rb.dts'
+    include-dirs:
+     - '/Users/tylerfield/zephyrproject/modules/hal/ambiq/dts'
+     - '/Users/tylerfield/zephyrproject/modules/hal/atmel/include'
+     - '/Users/tylerfield/zephyrproject/modules/hal/bouffalolab/include'
+     - '/Users/tylerfield/zephyrproject/modules/hal/bouffalolab/include/zephyr'
+     - '/Users/tylerfield/zephyrproject/modules/hal/gigadevice/include'
+     - '/Users/tylerfield/zephyrproject/modules/hal/microchip/include'
+     - '/Users/tylerfield/zephyrproject/modules/hal/microchip/dts'
+     - '/Users/tylerfield/zephyrproject/modules/hal/nuvoton/dts'
+     - '/Users/tylerfield/zephyrproject/modules/hal/nxp/dts'
+     - '/Users/tylerfield/zephyrproject/modules/hal/stm32/dts'
+     - '/Users/tylerfield/zephyrproject/modules/hal/ti/dts'
+     - '/Users/tylerfield/zephyrproject/zephyr/include'
+     - '/Users/tylerfield/zephyrproject/zephyr/include/zephyr'
+     - '/Users/tylerfield/zephyrproject/zephyr/dts/common'
+     - '/Users/tylerfield/zephyrproject/zephyr/dts/vendor'
+     - '/Users/tylerfield/zephyrproject/zephyr/dts/rx'
+     - '/Users/tylerfield/zephyrproject/zephyr/dts/x86'
+     - '/Users/tylerfield/zephyrproject/zephyr/dts/xtensa'
+     - '/Users/tylerfield/zephyrproject/zephyr/dts/sparc'
+     - '/Users/tylerfield/zephyrproject/zephyr/dts/riscv'
+     - '/Users/tylerfield/zephyrproject/zephyr/dts/posix'
+     - '/Users/tylerfield/zephyrproject/zephyr/dts/arm64'
+     - '/Users/tylerfield/zephyrproject/zephyr/dts/arm'
+     - '/Users/tylerfield/zephyrproject/zephyr/dts/arc'
+     - '/Users/tylerfield/zephyrproject/zephyr/dts'
+  kconfig:
+    files:
+     - '/Users/tylerfield/zephyrproject/zephyr/boards/st/nucleo_f103rb/nucleo_f103rb_defconfig'
+     - '/Users/tylerfield/zephyrproject/antenna_app/prj.conf'
+    user-files:
+     - '/Users/tylerfield/zephyrproject/antenna_app/prj.conf'
+  toolchain:
+    name: 'zephyr'
+    path: '/Users/tylerfield/zephyr-sdk/zephyr-sdk-0.17.4'
+  zephyr:
+    version: '4.3.99'
+    zephyr-base: '/Users/tylerfield/zephyrproject/zephyr'
+version: '0.1.0'
+west:
+  command: '/opt/homebrew/bin/west build -b nucleo_f103rb'
+  topdir: '/Users/tylerfield/zephyrproject'
+  version: '1.5.0'

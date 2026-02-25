@@ -4,7 +4,21 @@
             "name": "Mac",
             "includePath": [
                 "${workspaceFolder}/**",
-                "${workspaceFolder}/zephyr/include"
+                "${workspaceFolder}/zephyr/include",
+                "${workspaceFolder}/antenna_app/lib/RadioLib/src",
+                "${workspaceFolder}/antenna_app/src",
+                "/Library/Developer/CommandLineTools/SDKs/MacOSX26.0.sdk/System/Library/Frameworks/Kernel.framework/Versions/A/Headers/kern"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/clang",
+            "cStandard": "c17",
+            "cppStandard": "c++14",
+            "intelliSenseMode": "macos-clang-arm64"
+        },
+        {
+            "name": "mac",
+            "includePath": [
+                "${workspaceFolder}/**"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/clang",

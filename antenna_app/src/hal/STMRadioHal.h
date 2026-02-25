@@ -1,18 +1,20 @@
-#ifndef STMRadioHal
-#define STMRadioHal
+
+#pragma once
 
 #include <zephyr/drivers/can.h>
 #include <zephyr/kernel.h>
+#include <zephyr/device.h>
 #include <zephyr/sys_clock.h>
 #include <zephyr/sys/util.h>
 #include <zephyr/sys/time_units.h>
 #include <zephyr/drivers/gpio.h>
 #include <zephyr/drivers/spi.h>
 #include <stdio.h>
-#include <stm32f1xx_hal_gpio.h>
+#include <string.h>
+// #include <stm32f1xx_hal_gpio.h>
 
-#include <stm32f101x6.h>
-#include "RadioLib.h"
+// #include <stm32f101x6.h>
+#include <RadioLib.h>
 
 #include <map>
 
@@ -33,6 +35,8 @@ public:
     _spi(spi), _spi_speed(spi_speed),
     gpio_dev(gpio)
     {
+        // Initialize SPI config with safe defaults
+        memset(&_spi_cfg, 0, sizeof(_spi_cfg));
         printf("Radio HAL initialized\n");
     }
 
@@ -46,9 +50,16 @@ public:
         spiEnd();
     }
 
-    void pinMode(uint32_t pin, uint32_t value) override {
+    void pinMode(uint32_t pin, uint32_t mode) override {
         if(pin == RADIOLIB_NC){return;}
-        gpio_pin_configure(gpio_dev, pin, value);
+        
+        gpio_flags_t flags = 0;
+        if (mode == GPIO_OUTPUT) {
+            flags = GPIO_OUTPUT;
+        } else if (mode == GPIO_INPUT) {
+            flags = GPIO_INPUT;
+        }
+        gpio_pin_configure(gpio_dev, pin, flags);
     }
 
     void digitalWrite(uint32_t pin, uint32_t value) override {
@@ -108,7 +119,8 @@ public:
     }
 
     unsigned long micros() override {
-        return k_uptime_get() * 1000;
+        //return (unsigned long)k_ticks_to_us_near64(k_uptime_ticks());
+        return (unsigned long)(k_uptime_get() * 1000ULL);
     }
     
     long pulseIn(uint32_t pin, uint32_t state, unsigned long timeout) override {
@@ -124,9 +136,16 @@ public:
                 return 0;
             }
         }
+
+        uint32_t pulse_start = micros();
+        while (gpio_pin_get(gpio_dev, pin) == (int)state) {
+            if ((micros() - pulse_start) > timeout) return 0;
+        }
     
-        return micros() - start;
+        return (long)(micros() - pulse_start);
     }
+
+
 
     void spiBegin() override {
         printf("spiBegin\n");
@@ -137,7 +156,44 @@ public:
             SPI_MODE_CPOL |
             SPI_MODE_CPHA;
         _spi_cfg.slave = 0;
-        _spi_cfg.cs.gpio.port = nullptr;
+        // Disable automatic GPIO CS control - RadioLib handles CS manually
+        _spi_cfg.cs.cs_is_gpio = false;
+    }
+
+    
+    void spiBeginTransaction() override {
+    }
+    void spiEndTransaction() override {
+    }
+
+    void spiTransfer(uint8_t *out, size_t len, uint8_t *in) override {
+        struct spi_buf tx_buf = {
+            .buf = out,
+            .len = len,
+        };
+
+    /* Describe RX memory */
+        struct spi_buf rx_buf = {
+            .buf = in,
+            .len = len,
+        };
+
+    /* Wrap buffers into sets */
+        struct spi_buf_set tx_set = {
+            .buffers = &tx_buf,
+            .count = 1,
+        };
+
+        struct spi_buf_set rx_set = {
+            .buffers = &rx_buf,
+            .count = 1,
+        };
+
+        spi_transceive(_spi, &_spi_cfg, &tx_set, &rx_set);
+    }
+
+    void spiEnd() override {
+        // I read that the spi is managed by the kernel and doesn't need to be ended.
     }
 
     private:
@@ -149,4 +205,3 @@ public:
     };
 ;
 
-#endif
