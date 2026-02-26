@@ -1,0 +1,17 @@
+# Zephyr build directory
+build/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# IDE settings
+.vscode/
+.idea/
+
+# Local configuration
+.west/
+zephyr/
+modules/
+# (Only ignore zephyr/ and modules/ if you are using a workspace 
+# where these are managed by west and not part of your app repo)

@@ -1,0 +1,43 @@
+/ {
+    chosen {
+        /* Links the CAN driver to your code's DEVICE_DT_GET(DT_CHOSEN(zephyr_canbus)) */
+        zephyr,canbus = &can1;
+    };
+
+    /* Most STM32F103 boards already have 'led0' defined in the base DTS, 
+       but we ensure the alias is set here for the blinky code. */
+    aliases {
+        led0 = &green_led_1;
+		/* Define the sw0 alias so your code can find the button */
+        sw0 = &user_button_1;
+    };
+
+    leds {
+        compatible = "gpio-leds";
+        green_led_1: led_1 {
+            gpios = <&gpioa 5 GPIO_ACTIVE_HIGH>;
+            label = "User LED";
+        };
+    };
+
+	/* Add the buttons node here */
+    buttons {
+        compatible = "gpio-keys";
+        user_button_1: button_1 {
+            /* PC13 is the standard B1 button on the Nucleo-F103RB */
+            gpios = <&gpioc 13 GPIO_ACTIVE_LOW>;
+            label = "User Button";
+        };
+    };
+};
+
+/* CAN configuration */
+&can1 {
+    status = "okay";
+    pinctrl-0 = <&can_rx_pa11 &can_tx_pa12>;
+    pinctrl-names = "default";
+    bus-speed = <500000>;
+    
+    /* Optional: If you have a transceiver with a standby pin */
+    /* standby-gpios = <&gpiob 0 GPIO_ACTIVE_HIGH>; */
+};
