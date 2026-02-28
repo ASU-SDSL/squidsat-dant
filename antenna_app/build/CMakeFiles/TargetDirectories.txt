@@ -17,6 +17,7 @@
 /Users/tylerfield/zephyrproject/antenna_app/build/CMakeFiles/pristine.dir
 /Users/tylerfield/zephyrproject/antenna_app/build/CMakeFiles/zephyr_property_target.dir
 /Users/tylerfield/zephyrproject/antenna_app/build/CMakeFiles/app.dir
+/Users/tylerfield/zephyrproject/antenna_app/build/CMakeFiles/radiolib.dir
 /Users/tylerfield/zephyrproject/antenna_app/build/CMakeFiles/edit_cache.dir
 /Users/tylerfield/zephyrproject/antenna_app/build/CMakeFiles/rebuild_cache.dir
 /Users/tylerfield/zephyrproject/antenna_app/build/zephyr/CMakeFiles/zephyr.dir
@@ -54,9 +55,9 @@
 /Users/tylerfield/zephyrproject/antenna_app/build/zephyr/lib/CMakeFiles/rebuild_cache.dir
 /Users/tylerfield/zephyrproject/antenna_app/build/zephyr/lib/libc/CMakeFiles/edit_cache.dir
 /Users/tylerfield/zephyrproject/antenna_app/build/zephyr/lib/libc/CMakeFiles/rebuild_cache.dir
-/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/lib/libc/picolibc/CMakeFiles/lib__libc__picolibc.dir
-/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/lib/libc/picolibc/CMakeFiles/edit_cache.dir
-/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/lib/libc/picolibc/CMakeFiles/rebuild_cache.dir
+/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/lib/libc/newlib/CMakeFiles/lib__libc__newlib.dir
+/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/lib/libc/newlib/CMakeFiles/edit_cache.dir
+/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/lib/libc/newlib/CMakeFiles/rebuild_cache.dir
 /Users/tylerfield/zephyrproject/antenna_app/build/zephyr/lib/libc/common/CMakeFiles/lib__libc__common.dir
 /Users/tylerfield/zephyrproject/antenna_app/build/zephyr/lib/libc/common/CMakeFiles/edit_cache.dir
 /Users/tylerfield/zephyrproject/antenna_app/build/zephyr/lib/libc/common/CMakeFiles/rebuild_cache.dir
@@ -198,6 +199,11 @@
 /Users/tylerfield/zephyrproject/antenna_app/build/zephyr/drivers/serial/CMakeFiles/drivers__serial.dir
 /Users/tylerfield/zephyrproject/antenna_app/build/zephyr/drivers/serial/CMakeFiles/edit_cache.dir
 /Users/tylerfield/zephyrproject/antenna_app/build/zephyr/drivers/serial/CMakeFiles/rebuild_cache.dir
+/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/drivers/spi/CMakeFiles/drivers__spi.dir
+/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/drivers/spi/CMakeFiles/edit_cache.dir
+/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/drivers/spi/CMakeFiles/rebuild_cache.dir
+/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/drivers/spi/spi_nxp_lpspi/CMakeFiles/edit_cache.dir
+/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/drivers/spi/spi_nxp_lpspi/CMakeFiles/rebuild_cache.dir
 /Users/tylerfield/zephyrproject/antenna_app/build/zephyr/drivers/timer/CMakeFiles/drivers__timer.dir
 /Users/tylerfield/zephyrproject/antenna_app/build/zephyr/drivers/timer/CMakeFiles/edit_cache.dir
 /Users/tylerfield/zephyrproject/antenna_app/build/zephyr/drivers/timer/CMakeFiles/rebuild_cache.dir

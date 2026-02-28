@@ -399,44 +399,35 @@
     "CONFIG_INPUT",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      43
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_WIFI",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      44
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_REGULATOR",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      45
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_SYSTEM_WORKQUEUE_STACK_SIZE",
     "y",
     "int",
     "1024",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      46
+      "/Users/tylerfield/zephyrproject/zephyr/kernel/Kconfig",
+      611
     ]
   ],
   [
@@ -446,8 +437,8 @@
     "2048",
     "assign",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      47
+      "/Users/tylerfield/zephyrproject/antenna_app/prj.conf",
+      2
     ]
   ],
   [
@@ -457,75 +448,76 @@
     "y",
     "assign",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      48
+      "/Users/tylerfield/zephyrproject/zephyr/boards/st/nucleo_f103rb/nucleo_f103rb_defconfig",
+      4
     ]
   ],
   [
     "CONFIG_SPI",
     "y",
     "bool",
-    "n",
+    "y",
     "assign",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      49
+      "/Users/tylerfield/zephyrproject/antenna_app/prj.conf",
+      4
     ]
   ],
   [
     "CONFIG_MIPI_DSI",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      50
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_MEMC",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      51
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_MODEM",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      52
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_UART_INTERRUPT_DRIVEN",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      53
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_GPIO_HOGS",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      54
-    ]
+    null,
+    "unset",
+    null
+  ],
+  [
+    "CONFIG_SPI_STM32_INTERRUPT",
+    "y",
+    "bool",
+    null,
+    "unset",
+    null
+  ],
+  [
+    "CONFIG_SPI_STM32_DMA",
+    "y",
+    "bool",
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_NUM_IRQS",
@@ -543,10 +535,10 @@
     "y",
     "int",
     "72000000",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      56
+      "/Users/tylerfield/zephyrproject/zephyr/soc/st/stm32/Kconfig.defconfig",
+      61
     ]
   ],
   [
@@ -554,10 +546,10 @@
     "y",
     "int",
     "128",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      57
+      "/Users/tylerfield/zephyrproject/zephyr/arch/Kconfig",
+      248
     ]
   ],
   [
@@ -565,10 +557,10 @@
     "y",
     "hex",
     "0x8000000",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      58
+      "/Users/tylerfield/zephyrproject/zephyr/soc/st/stm32/Kconfig.defconfig",
+      105
     ]
   ],
   [
@@ -576,32 +568,29 @@
     "y",
     "int",
     "1",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      59
+      "/Users/tylerfield/zephyrproject/zephyr/kernel/Kconfig.smp",
+      43
     ]
   ],
   [
     "CONFIG_SOC_RESET_HOOK",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      60
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_CLOCK_CONTROL",
     "y",
     "bool",
     "y",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      61
+      "/Users/tylerfield/zephyrproject/zephyr/soc/st/stm32/Kconfig.defconfig",
+      18
     ]
   ],
   [
@@ -609,10 +598,10 @@
     "y",
     "int",
     "256",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      62
+      "/Users/tylerfield/zephyrproject/zephyr/kernel/Kconfig",
+      176
     ]
   ],
   [
@@ -620,10 +609,10 @@
     "y",
     "int",
     "2048",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      63
+      "/Users/tylerfield/zephyrproject/zephyr/kernel/Kconfig",
+      185
     ]
   ],
   [
@@ -631,10 +620,10 @@
     "y",
     "int",
     "10000",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      64
+      "/Users/tylerfield/zephyrproject/zephyr/kernel/Kconfig",
+      833
     ]
   ],
   [
@@ -642,10 +631,10 @@
     "y",
     "bool",
     "y",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      65
+      "/Users/tylerfield/zephyrproject/zephyr/Kconfig.zephyr",
+      757
     ]
   ],
   [
@@ -653,10 +642,10 @@
     "y",
     "hex",
     "0",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      66
+      "/Users/tylerfield/zephyrproject/zephyr/Kconfig.zephyr",
+      134
     ]
   ],
   [
@@ -664,10 +653,10 @@
     "y",
     "string",
     "__start",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      67
+      "/Users/tylerfield/zephyrproject/zephyr/Kconfig.zephyr",
+      206
     ]
   ],
   [
@@ -675,10 +664,9 @@
     "y",
     "bool",
     "y",
-    "assign",
+    "imply",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      68
+      "CPU_CORTEX_M && ARM"
     ]
   ],
   [
@@ -695,56 +683,44 @@
     "CONFIG_COUNTER",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      70
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_SRAM_VECTOR_TABLE",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      71
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_SHARED_INTERRUPTS",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      72
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_STM32_FLASH_PREFETCH",
     "y",
     "bool",
     "y",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      73
+      "/Users/tylerfield/zephyrproject/zephyr/soc/st/stm32/Kconfig",
+      37
     ]
   ],
   [
     "CONFIG_PM_DEVICE",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      74
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_ICACHE_LINE_SIZE",
@@ -773,10 +749,10 @@
     "y",
     "bool",
     "y",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      77
+      "/Users/tylerfield/zephyrproject/zephyr/kernel/Kconfig",
+      1094
     ]
   ],
   [
@@ -784,10 +760,10 @@
     "y",
     "bool",
     "y",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      78
+      "/Users/tylerfield/zephyrproject/zephyr/drivers/timer/Kconfig.cortex_m_systick",
+      11
     ]
   ],
   [
@@ -795,98 +771,83 @@
     "y",
     "int",
     "1",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      79
+      "/Users/tylerfield/zephyrproject/zephyr/soc/st/stm32/Kconfig.defconfig",
+      92
     ]
   ],
   [
     "CONFIG_USE_DT_CODE_PARTITION",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      80
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_STM32_BACKUP_PROTECTION",
     "y",
     "bool",
     "y",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      81
+      "/Users/tylerfield/zephyrproject/zephyr/soc/st/stm32/Kconfig.defconfig",
+      127
     ]
   ],
   [
     "CONFIG_MULTI_LEVEL_INTERRUPTS",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      82
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_PM",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      83
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_ZERO_LATENCY_IRQS",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      84
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_NUM_METAIRQ_PRIORITIES",
     "y",
     "int",
     "0",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      85
+      "/Users/tylerfield/zephyrproject/zephyr/kernel/Kconfig",
+      94
     ]
   ],
   [
     "CONFIG_POWER_DOMAIN",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      86
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_NUM_PREEMPT_PRIORITIES",
     "y",
     "int",
     "15",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      87
+      "/Users/tylerfield/zephyrproject/zephyr/kernel/Kconfig",
+      55
     ]
   ],
   [
@@ -904,54 +865,48 @@
     "y",
     "bool",
     "y",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      89
+      "/Users/tylerfield/zephyrproject/zephyr/arch/Kconfig",
+      525
     ]
   ],
   [
     "CONFIG_DYNAMIC_INTERRUPTS",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      90
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_GEN_ISR_TABLES",
     "y",
     "bool",
     "y",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      91
+      "/Users/tylerfield/zephyrproject/zephyr/arch/arm/core/cortex_m/Kconfig",
+      325
     ]
   ],
   [
     "CONFIG_INIT_STACKS",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      92
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_TIMESLICE_SIZE",
     "y",
     "int",
     "20",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      93
+      "/Users/tylerfield/zephyrproject/zephyr/kernel/Kconfig",
+      693
     ]
   ],
   [
@@ -959,10 +914,10 @@
     "y",
     "hex",
     "0",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      94
+      "/Users/tylerfield/zephyrproject/zephyr/Kconfig.zephyr",
+      106
     ]
   ],
   [
@@ -970,66 +925,51 @@
     "y",
     "bool",
     "y",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      95
+      "/Users/tylerfield/zephyrproject/zephyr/kernel/Kconfig",
+      869
     ]
   ],
   [
     "CONFIG_INIT_ARCH_HW_AT_BOOT",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      96
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_BUILD_OUTPUT_S19",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      97
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_ROMSTART_RELOCATION_ROM",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      98
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_FLASH",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      99
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_CPU_HAS_CUSTOM_FIXED_SOC_MPU_REGIONS",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      100
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_GPIO",
@@ -1038,64 +978,49 @@
     "y",
     "assign",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      101
+      "/Users/tylerfield/zephyrproject/zephyr/boards/st/nucleo_f103rb/nucleo_f103rb_defconfig",
+      10
     ]
   ],
   [
     "CONFIG_MFD",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      102
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_CODE_DATA_RELOCATION_SRAM",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      103
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_CACHE",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      104
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_LOG",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      105
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_CODE_DATA_RELOCATION",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      106
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_RESET",
@@ -1112,55 +1037,46 @@
     "y",
     "int",
     "4",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      108
+      "/Users/tylerfield/zephyrproject/zephyr/arch/Kconfig",
+      583
     ]
   ],
   [
     "CONFIG_ASSERT",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      109
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_DEVICE_DEPS",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      110
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_UART_USE_RUNTIME_CONFIGURE",
     "y",
     "bool",
     "y",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      111
+      "/Users/tylerfield/zephyrproject/zephyr/drivers/serial/Kconfig",
+      53
     ]
   ],
   [
     "CONFIG_SYSCON",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      112
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_SOC_EARLY_INIT_HOOK",
@@ -1179,53 +1095,36 @@
     "y",
     "assign",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      114
+      "/Users/tylerfield/zephyrproject/zephyr/boards/st/nucleo_f103rb/nucleo_f103rb_defconfig",
+      6
     ]
   ],
   [
     "CONFIG_WINSTREAM",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      115
-    ]
-  ],
-  [
-    "CONFIG_COMMON_LIBC_MALLOC_ARENA_SIZE",
-    "y",
-    "int",
-    "-1",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      116
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_GEN_SW_ISR_TABLE",
     "y",
     "bool",
     "y",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      117
+      "/Users/tylerfield/zephyrproject/zephyr/arch/Kconfig",
+      572
     ]
   ],
   [
     "CONFIG_REBOOT",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      118
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_GEN_IRQ_START_VECTOR",
@@ -1254,10 +1153,10 @@
     "y",
     "int",
     "4",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      121
+      "/Users/tylerfield/zephyrproject/zephyr/arch/Kconfig",
+      537
     ]
   ],
   [
@@ -1275,33 +1174,27 @@
     "CONFIG_BOOTLOADER_MCUBOOT",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      123
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_SCHED_CPU_MASK",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      124
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_KERNEL_MEM_POOL",
     "y",
     "bool",
     "y",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      125
+      "/Users/tylerfield/zephyrproject/zephyr/kernel/Kconfig",
+      775
     ]
   ],
   [
@@ -1309,66 +1202,54 @@
     "y",
     "bool",
     "y",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      126
+      "/Users/tylerfield/zephyrproject/zephyr/kernel/Kconfig",
+      14
     ]
   ],
   [
     "CONFIG_OUTPUT_DISASSEMBLY",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      127
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_LINKER_USE_RELAX",
     "y",
     "bool",
     "y",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      128
+      "/Users/tylerfield/zephyrproject/zephyr/Kconfig.zephyr",
+      318
     ]
   ],
   [
     "CONFIG_WATCHDOG",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      129
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_BUILD_ONLY_NO_BLOBS",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      134
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_ACPI",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      147
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_ZEPHYR_ACPICA_MODULE",
@@ -1418,12 +1299,9 @@
     "CONFIG_CMSIS_DSP",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      164
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_ZEPHYR_CMSIS_NN_MODULE",
@@ -1440,12 +1318,9 @@
     "CONFIG_CMSIS_NN",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      171
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_ZEPHYR_CMSIS_6_MODULE",
@@ -1472,12 +1347,9 @@
     "CONFIG_CMSIS_M_CHECK_DEVICE_DEFINES",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      179
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_ZEPHYR_FATFS_MODULE",
@@ -1560,12 +1432,9 @@
     "CONFIG_ETHOS_U",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      219
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_ZEPHYR_HAL_ETHOS_U_MODULE",
@@ -1604,12 +1473,9 @@
     "CONFIG_USE_INFINEON_ABSTRACTION_RTOS",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      233
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_ZEPHYR_HAL_INTEL_MODULE",
@@ -1780,12 +1646,9 @@
     "CONFIG_TDK_HAL",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      303
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_ZEPHYR_HAL_TELINK_MODULE",
@@ -1846,12 +1709,9 @@
     "CONFIG_WIFI_NM_WPA_SUPPLICANT",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      327
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_ZEPHYR_HOSTAP_MODULE",
@@ -1912,12 +1772,9 @@
     "CONFIG_LIBSBC",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      344
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_ZEPHYR_LITTLEFS_MODULE",
@@ -1956,12 +1813,9 @@
     "CONFIG_HAS_SEMTECH_RADIO_DRIVERS",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      363
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_ZEPHYR_LVGL_MODULE",
@@ -1989,23 +1843,17 @@
     "CONFIG_PSA_CRYPTO",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      376
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_MBEDTLS",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      377
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_ZEPHYR_MCUBOOT_MODULE",
@@ -2044,12 +1892,9 @@
     "CONFIG_NANOPB",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      387
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_ZEPHYR_NRF_WIFI_MODULE",
@@ -2066,12 +1911,9 @@
     "CONFIG_NRF70_BUSLIB",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      394
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_ZEPHYR_OPEN_AMP_MODULE",
@@ -2088,12 +1930,9 @@
     "CONFIG_OPENTHREAD",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      402
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_ZEPHYR_OPENTHREAD_MODULE",
@@ -2110,12 +1949,9 @@
     "CONFIG_PERCEPIO_DFM",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      413
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_ZEPHYR_PERCEPIO_MODULE",
@@ -2132,12 +1968,9 @@
     "CONFIG_PICOLIBC_MODULE",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      420
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_ZEPHYR_PICOLIBC_MODULE",
@@ -2175,12 +2008,9 @@
     "CONFIG_USE_SEGGER_RTT",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      429
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_ZEPHYR_TF_M_TESTS_MODULE",
@@ -2208,12 +2038,9 @@
     "CONFIG_BUILD_WITH_TFA",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      438
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_ZEPHYR_TRUSTED_FIRMWARE_M_MODULE",
@@ -2252,12 +2079,9 @@
     "CONFIG_ZCBOR",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      457
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_ZEPHYR_NRF_HW_MODELS_MODULE",
@@ -2274,67 +2098,49 @@
     "CONFIG_LIBMETAL",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      461
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_LVGL",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      462
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_HAS_MEC_HAL",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      463
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_HAS_MPFS_HAL",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      464
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_HAS_MEC5_HAL",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      465
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_OPENAMP",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      466
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_HAS_STM32CUBE",
@@ -2360,34 +2166,25 @@
     "CONFIG_MIPI_SYST_LIB",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      469
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_HAS_TELINK_DRIVERS",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      470
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_MCUBOOT_BOOTUTIL_LIB",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      471
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_BOARD",
@@ -2426,12 +2223,9 @@
     "CONFIG_NET_DRIVERS",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      493
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_BOARD_NUCLEO_F103RB",
@@ -2543,33 +2337,27 @@
     "CONFIG_HWINFO",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      513
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_STM32_ENABLE_DEBUG_SLEEP_STOP",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      514
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_SWJ_ANALOG_PRIORITY",
     "y",
     "int",
     "49",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      515
+      "/Users/tylerfield/zephyrproject/zephyr/soc/st/stm32/common/Kconfig",
+      37
     ]
   ],
   [
@@ -2586,22 +2374,19 @@
     "CONFIG_BUILD_OUTPUT_INFO_HEADER",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      517
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_GPIO_INIT_PRIORITY",
     "y",
     "int",
     "40",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      518
+      "/Users/tylerfield/zephyrproject/zephyr/drivers/gpio/Kconfig",
+      50
     ]
   ],
   [
@@ -2619,12 +2404,9 @@
     "CONFIG_EXTRA_EXCEPTION_INFO",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      522
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_ARCH_HAS_SINGLE_THREAD_SUPPORT",
@@ -2660,12 +2442,9 @@
     "CONFIG_ARM_ZIMAGE_HEADER",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      530
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_ISA_THUMB2",
@@ -2693,10 +2472,10 @@
     "y",
     "bool",
     "y",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      533
+      "/Users/tylerfield/zephyrproject/zephyr/arch/arm/core/Kconfig",
+      134
     ]
   ],
   [
@@ -2704,43 +2483,37 @@
     "y",
     "bool",
     "y",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      534
+      "/Users/tylerfield/zephyrproject/zephyr/arch/arm/core/Kconfig",
+      152
     ]
   ],
   [
     "CONFIG_RUNTIME_NMI",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      535
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_PLATFORM_SPECIFIC_INIT",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      536
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_FAULT_DUMP",
     "y",
     "int",
     "2",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      537
+      "/Users/tylerfield/zephyrproject/zephyr/arch/arm/core/Kconfig",
+      180
     ]
   ],
   [
@@ -2748,10 +2521,10 @@
     "y",
     "bool",
     "y",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      538
+      "/Users/tylerfield/zephyrproject/zephyr/arch/arm/core/Kconfig",
+      299
     ]
   ],
   [
@@ -2759,8 +2532,11 @@
     "y",
     "bool",
     "y",
-    "assign",
-    null
+    "default",
+    [
+      "/Users/tylerfield/zephyrproject/zephyr/arch/arm/core/Kconfig",
+      307
+    ]
   ],
   [
     "CONFIG_FP16_ALT",
@@ -2844,53 +2620,44 @@
     "CONFIG_SW_VECTOR_RELAY",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      552
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_CORTEX_M_DWT",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      553
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_CORTEX_M_DEBUG_MONITOR_HOOK",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      554
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_TRAP_UNALIGNED_ACCESS",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      555
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_NULL_POINTER_EXCEPTION_DETECTION_NONE",
     "y",
     "bool",
     "y",
-    "assign",
-    null
+    "default",
+    [
+      "/Users/tylerfield/zephyrproject/zephyr/arch/arm/core/cortex_m/Kconfig",
+      419
+    ]
   ],
   [
     "CONFIG_NULL_POINTER_EXCEPTION_DETECTION_DWT",
@@ -2934,12 +2701,9 @@
     "CONFIG_SEMIHOST",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      569
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_ARCH_SUPPORTS_ROM_OFFSET",
@@ -2968,10 +2732,10 @@
     "y",
     "int",
     "20",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      572
+      "/Users/tylerfield/zephyrproject/zephyr/arch/Kconfig",
+      217
     ]
   ],
   [
@@ -2979,22 +2743,19 @@
     "y",
     "hex",
     "0x20000000",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      573
+      "/Users/tylerfield/zephyrproject/zephyr/arch/Kconfig",
+      225
     ]
   ],
   [
     "CONFIG_NOINIT_SNIPPET_FIRST",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      574
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_GEN_PRIV_STACKS",
@@ -3010,44 +2771,35 @@
     "CONFIG_STACK_GROWS_UP",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      576
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_FRAME_POINTER",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      577
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_ISR_TABLES_LOCAL_DECLARATION",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      582
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_ARCH_DEVICE_STATE_ALIGN",
     "y",
     "int",
     "4",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      583
+      "/Users/tylerfield/zephyrproject/zephyr/arch/Kconfig",
+      547
     ]
   ],
   [
@@ -3055,8 +2807,11 @@
     "y",
     "bool",
     "y",
-    "assign",
-    null
+    "default",
+    [
+      "/Users/tylerfield/zephyrproject/zephyr/arch/Kconfig",
+      555
+    ]
   ],
   [
     "CONFIG_IRQ_VECTOR_TABLE_JUMP_BY_CODE",
@@ -3070,34 +2825,28 @@
     "CONFIG_SRAM_SW_ISR_TABLE",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      586
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_EXCEPTION_DEBUG",
     "y",
     "bool",
     "y",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      587
+      "/Users/tylerfield/zephyrproject/zephyr/arch/Kconfig",
+      638
     ]
   ],
   [
     "CONFIG_SIMPLIFIED_EXCEPTION_CODES",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      588
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_ARCH_HAS_TIMING_FUNCTIONS",
@@ -3243,12 +2992,9 @@
     "CONFIG_CACHE_DOUBLEMAP",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      620
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_TOOLCHAIN_HAS_BUILTIN_FFS",
@@ -3276,10 +3022,10 @@
     "y",
     "int",
     "16",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      629
+      "/Users/tylerfield/zephyrproject/zephyr/kernel/Kconfig",
+      30
     ]
   ],
   [
@@ -3287,10 +3033,10 @@
     "y",
     "int",
     "0",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      630
+      "/Users/tylerfield/zephyrproject/zephyr/kernel/Kconfig",
+      73
     ]
   ],
   [
@@ -3320,63 +3066,54 @@
     "y",
     "int",
     "-127",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      633
+      "/Users/tylerfield/zephyrproject/zephyr/kernel/Kconfig",
+      86
     ]
   ],
   [
     "CONFIG_SCHED_DEADLINE",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      634
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_THREAD_STACK_INFO",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      635
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_THREAD_CUSTOM_DATA",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      636
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_SCHED_DUMB",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      637
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_SCHED_SIMPLE",
     "y",
     "bool",
     "y",
-    "assign",
-    null
+    "default",
+    [
+      "/Users/tylerfield/zephyrproject/zephyr/kernel/Kconfig",
+      309
+    ]
   ],
   [
     "CONFIG_SCHED_SCALABLE",
@@ -3398,12 +3135,9 @@
     "CONFIG_WAITQ_DUMB",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      641
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_WAITQ_SCALABLE",
@@ -3418,17 +3152,10 @@
     "y",
     "bool",
     "y",
-    "assign",
-    null
-  ],
-  [
-    "CONFIG_LIBC_ERRNO",
-    "n",
-    "bool",
-    "y",
-    "select",
+    "default",
     [
-      "PICOLIBC && THREAD_LOCAL_STORAGE && PICOLIBC_SUPPORTED && <choice LIBC_IMPLEMENTATION>"
+      "/Users/tylerfield/zephyrproject/zephyr/kernel/Kconfig",
+      369
     ]
   ],
   [
@@ -3436,21 +3163,10 @@
     "y",
     "bool",
     "y",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      649
-    ]
-  ],
-  [
-    "CONFIG_CURRENT_THREAD_USE_TLS",
-    "y",
-    "bool",
-    "y",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      650
+      "/Users/tylerfield/zephyrproject/zephyr/kernel/Kconfig",
+      406
     ]
   ],
   [
@@ -3458,10 +3174,10 @@
     "y",
     "bool",
     "y",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      656
+      "/Users/tylerfield/zephyrproject/zephyr/kernel/Kconfig",
+      459
     ]
   ],
   [
@@ -3469,10 +3185,10 @@
     "y",
     "string",
     "Booting Zephyr OS build",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      657
+      "/Users/tylerfield/zephyrproject/zephyr/kernel/Kconfig",
+      468
     ]
   ],
   [
@@ -3480,120 +3196,96 @@
     "y",
     "int",
     "0",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      658
+      "/Users/tylerfield/zephyrproject/zephyr/kernel/Kconfig",
+      475
     ]
   ],
   [
     "CONFIG_BOOT_CLEAR_SCREEN",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      659
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_THREAD_MONITOR",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      660
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_THREAD_NAME",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      661
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_THREAD_RUNTIME_STATS",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      662
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_THREAD_RUNTIME_STACK_SAFETY",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      663
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_OBJ_CORE",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      666
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_WORKQUEUE_WORK_TIMEOUT",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      667
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_SYSTEM_WORKQUEUE_PRIORITY",
     "y",
     "int",
     "-1",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      672
+      "/Users/tylerfield/zephyrproject/zephyr/kernel/Kconfig",
+      617
     ]
   ],
   [
     "CONFIG_SYSTEM_WORKQUEUE_NO_YIELD",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      673
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_SYSTEM_WORKQUEUE_WORK_TIMEOUT_MS",
     "y",
     "int",
     "0",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      674
+      "/Users/tylerfield/zephyrproject/zephyr/kernel/Kconfig",
+      635
     ]
   ],
   [
@@ -3621,10 +3313,10 @@
     "y",
     "bool",
     "y",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      692
+      "/Users/tylerfield/zephyrproject/zephyr/kernel/Kconfig",
+      685
     ]
   ],
   [
@@ -3632,88 +3324,70 @@
     "y",
     "int",
     "0",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      693
+      "/Users/tylerfield/zephyrproject/zephyr/kernel/Kconfig",
+      704
     ]
   ],
   [
     "CONFIG_TIMESLICE_PER_THREAD",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      694
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_TIMER_OBSERVER",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      695
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_POLL",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      701
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_MEM_SLAB_POINTER_VALIDATE",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      702
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_MEM_SLAB_TRACE_MAX_UTILIZATION",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      703
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_NUM_MBOX_ASYNC_MSGS",
     "y",
     "int",
     "10",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      704
+      "/Users/tylerfield/zephyrproject/zephyr/kernel/Kconfig",
+      753
     ]
   ],
   [
     "CONFIG_EVENTS",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      705
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_HEAP_MEM_POOL_SIZE",
@@ -3722,20 +3396,17 @@
     "2048",
     "assign",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      706
+      "/Users/tylerfield/zephyrproject/antenna_app/prj.conf",
+      3
     ]
   ],
   [
     "CONFIG_HEAP_MEM_POOL_IGNORE_MIN",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      707
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_SWAP_NONATOMIC",
@@ -3752,10 +3423,10 @@
     "y",
     "bool",
     "y",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      711
+      "/Users/tylerfield/zephyrproject/zephyr/kernel/Kconfig",
+      879
     ]
   ],
   [
@@ -3763,22 +3434,19 @@
     "y",
     "int",
     "365",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      712
+      "/Users/tylerfield/zephyrproject/zephyr/kernel/Kconfig",
+      890
     ]
   ],
   [
     "CONFIG_TICKET_SPINLOCKS",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      727
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_TOOLCHAIN_SUPPORTS_THREAD_LOCAL_STORAGE",
@@ -3794,11 +3462,9 @@
     "CONFIG_THREAD_LOCAL_STORAGE",
     "y",
     "bool",
-    "y",
-    "select",
-    [
-      "PICOLIBC_USE_TOOLCHAIN && ARCH_HAS_THREAD_LOCAL_STORAGE && TOOLCHAIN_SUPPORTS_THREAD_LOCAL_STORAGE && y = y && <choice PICOLIBC_SOURCE>"
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_TOOLCHAIN_SUPPORTS_STATIC_INIT_GNU",
@@ -3816,65 +3482,53 @@
     "y",
     "bool",
     "y",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      733
+      "/Users/tylerfield/zephyrproject/zephyr/kernel/Kconfig",
+      1128
     ]
   ],
   [
     "CONFIG_BOOTARGS",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      734
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_DEVICE_MUTABLE",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      740
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_DEVICE_DT_METADATA",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      741
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_DEVICE_DEINIT_SUPPORT",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      742
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_KERNEL_INIT_PRIORITY_OBJECTS",
     "y",
     "int",
     "30",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      748
+      "/Users/tylerfield/zephyrproject/zephyr/kernel/Kconfig.device",
+      51
     ]
   ],
   [
@@ -3882,10 +3536,10 @@
     "y",
     "int",
     "35",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      749
+      "/Users/tylerfield/zephyrproject/zephyr/kernel/Kconfig.device",
+      59
     ]
   ],
   [
@@ -3893,10 +3547,10 @@
     "y",
     "int",
     "40",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      750
+      "/Users/tylerfield/zephyrproject/zephyr/kernel/Kconfig.device",
+      67
     ]
   ],
   [
@@ -3904,10 +3558,10 @@
     "y",
     "int",
     "50",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      751
+      "/Users/tylerfield/zephyrproject/zephyr/kernel/Kconfig.device",
+      73
     ]
   ],
   [
@@ -3915,164 +3569,125 @@
     "y",
     "int",
     "90",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      752
+      "/Users/tylerfield/zephyrproject/zephyr/kernel/Kconfig.device",
+      81
     ]
   ],
   [
     "CONFIG_SOC_EARLY_RESET_HOOK",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      768
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_SOC_PREP_HOOK",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      769
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_SOC_LATE_INIT_HOOK",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      770
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_SOC_PER_CORE_INIT_HOOK",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      771
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_BOARD_EARLY_INIT_HOOK",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      772
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_BOARD_LATE_INIT_HOOK",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      773
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_ADC",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      779
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_AUDIO",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      780
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_AUXDISPLAY",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      781
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_BBRAM",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      782
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_CAN",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      783
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_CHARGER",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      784
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_CLOCK_CONTROL_FIXED_RATE_CLOCK",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      785
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_CLOCK_CONTROL_STM32_CUBE",
     "y",
     "bool",
     "y",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      786
+      "/Users/tylerfield/zephyrproject/zephyr/drivers/clock_control/Kconfig.stm32",
+      11
     ]
   ],
   [
@@ -4090,22 +3705,19 @@
     "CONFIG_COMPARATOR",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      788
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_CONSOLE_INPUT_MAX_LINE_LEN",
     "y",
     "int",
     "128",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      789
+      "/Users/tylerfield/zephyrproject/zephyr/drivers/console/Kconfig",
+      16
     ]
   ],
   [
@@ -4122,22 +3734,19 @@
     "CONFIG_CONSOLE_HANDLER",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      791
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_CONSOLE_INIT_PRIORITY",
     "y",
     "int",
     "60",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      792
+      "/Users/tylerfield/zephyrproject/zephyr/drivers/console/Kconfig",
+      37
     ]
   ],
   [
@@ -4147,393 +3756,294 @@
     "y",
     "assign",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      793
+      "/Users/tylerfield/zephyrproject/zephyr/boards/st/nucleo_f103rb/nucleo_f103rb_defconfig",
+      7
     ]
   ],
   [
     "CONFIG_UART_CONSOLE_DEBUG_SERVER_HOOKS",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      794
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_UART_CONSOLE_MCUMGR",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      795
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_RAM_CONSOLE",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      796
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_IPM_CONSOLE_SENDER",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      797
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_IPM_CONSOLE_RECEIVER",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      798
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_UART_MCUMGR",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      799
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_EFI_CONSOLE",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      800
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_COREDUMP_DEVICE",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      801
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_CRC_DRIVER",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      802
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_CRYPTO",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      803
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_DAC",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      804
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_DAI",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      805
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_DEBUG_DRIVER",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      806
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_DISK_DRIVERS",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      807
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_DISPLAY",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      808
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_DMA",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      809
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_DP_DRIVER",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      810
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_EDAC",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      811
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_EEPROM",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      812
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_ENTROPY_GENERATOR",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      813
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_ESPI",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      814
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_ARM_SCMI",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      819
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_FPGA",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      822
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_FUEL_GAUGE",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      823
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_GNSS",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      824
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_GPIO_GET_DIRECTION",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      825
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_GPIO_GET_CONFIG",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      826
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_GPIO_ENABLE_DISABLE_INTERRUPT",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      827
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_GPIO_STM32",
     "y",
     "bool",
     "y",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      828
+      "/Users/tylerfield/zephyrproject/zephyr/drivers/gpio/Kconfig.stm32",
+      9
     ]
   ],
   [
     "CONFIG_HAPTICS",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      829
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_HWSPINLOCK",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      830
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_I2C",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      831
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_I2S",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      832
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_I3C",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      833
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_INTC_INIT_PRIORITY",
     "y",
     "int",
     "40",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      838
+      "/Users/tylerfield/zephyrproject/zephyr/drivers/interrupt_controller/Kconfig",
+      51
     ]
   ],
   [
@@ -4541,10 +4051,10 @@
     "y",
     "bool",
     "y",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      839
+      "/Users/tylerfield/zephyrproject/zephyr/drivers/interrupt_controller/Kconfig.stm32",
+      11
     ]
   ],
   [
@@ -4552,176 +4062,131 @@
     "y",
     "bool",
     "y",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      840
+      "/Users/tylerfield/zephyrproject/zephyr/drivers/interrupt_controller/Kconfig.stm32",
+      18
     ]
   ],
   [
     "CONFIG_IPM",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      843
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_LED",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      844
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_LED_STRIP",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      845
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_LORA",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      846
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_MBOX",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      847
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_MDIO",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      848
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_MIPI_DBI",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      849
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_TIMEAWARE_GPIO",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      860
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_MM_DRV",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      863
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_MSPI",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      864
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_OPAMP",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      865
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_OTP",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      866
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_PCIE",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      867
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_PCIE_ENDPOINT",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      868
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_PECI",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      869
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_PINCTRL",
@@ -4730,62 +4195,51 @@
     "y",
     "select",
     [
-      "UART_STM32 && DT_HAS_ST_STM32_UART_ENABLED && SERIAL"
+      "UART_STM32 && DT_HAS_ST_STM32_UART_ENABLED && SERIAL",
+      "SPI_STM32 && DT_HAS_ST_STM32_SPI_ENABLED && SPI"
     ]
   ],
   [
     "CONFIG_PINCTRL_DYNAMIC",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      871
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_PINCTRL_KEEP_SLEEP_STATE",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      872
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_PINCTRL_MCHP_COMMON",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      873
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_PINCTRL_NPCX_EX",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      874
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_PINCTRL_STM32",
     "y",
     "bool",
     "y",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      875
+      "/Users/tylerfield/zephyrproject/zephyr/drivers/pinctrl/Kconfig.stm32",
+      6
     ]
   ],
   [
@@ -4793,76 +4247,61 @@
     "y",
     "int",
     "2",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      876
+      "/Users/tylerfield/zephyrproject/zephyr/drivers/pinctrl/Kconfig.stm32",
+      13
     ]
   ],
   [
     "CONFIG_PM_CPU_OPS",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      877
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_PS2",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      878
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_PSI5",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      879
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_PTP_CLOCK",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      880
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_PWM",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      881
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_RESET_INIT_PRIORITY",
     "y",
     "int",
     "35",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      882
+      "/Users/tylerfield/zephyrproject/zephyr/drivers/reset/Kconfig",
+      21
     ]
   ],
   [
@@ -4870,66 +4309,51 @@
     "y",
     "bool",
     "y",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      887
+      "/Users/tylerfield/zephyrproject/zephyr/drivers/reset/Kconfig.stm32",
+      6
     ]
   ],
   [
     "CONFIG_RETAINED_MEM",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      888
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_RTC",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      889
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_SDHC",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      890
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_SENSOR",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      891
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_SENT",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      892
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_SERIAL_HAS_DRIVER",
@@ -4966,121 +4390,170 @@
     "y",
     "int",
     "50",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      900
+      "/Users/tylerfield/zephyrproject/zephyr/drivers/serial/Kconfig",
+      36
     ]
   ],
   [
     "CONFIG_UART_ASYNC_API",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      901
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_UART_LINE_CTRL",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      902
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_UART_DRV_CMD",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      903
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_UART_WIDE_DATA",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      904
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_UART_PIPE",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      905
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_UART_ASYNC_RX_HELPER",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      906
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_UART_NPCX_FIFO_EX",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      911
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_UART_STM32",
     "y",
     "bool",
     "y",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      912
+      "/Users/tylerfield/zephyrproject/zephyr/drivers/serial/Kconfig.stm32",
+      8
     ]
   ],
   [
     "CONFIG_SMBUS",
     "y",
     "bool",
-    "n",
-    "assign",
+    null,
+    "unset",
+    null
+  ],
+  [
+    "CONFIG_SPI_ASYNC",
+    "y",
+    "bool",
+    null,
+    "unset",
+    null
+  ],
+  [
+    "CONFIG_SPI_RTIO",
+    "y",
+    "bool",
+    null,
+    "unset",
+    null
+  ],
+  [
+    "CONFIG_SPI_SLAVE",
+    "y",
+    "bool",
+    null,
+    "unset",
+    null
+  ],
+  [
+    "CONFIG_SPI_EXTENDED_MODES",
+    "y",
+    "bool",
+    null,
+    "unset",
+    null
+  ],
+  [
+    "CONFIG_SPI_INIT_PRIORITY",
+    "y",
+    "int",
+    "50",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      913
+      "/Users/tylerfield/zephyrproject/zephyr/drivers/spi/Kconfig",
+      77
+    ]
+  ],
+  [
+    "CONFIG_SPI_COMPLETION_TIMEOUT_TOLERANCE",
+    "y",
+    "int",
+    "200",
+    "default",
+    [
+      "/Users/tylerfield/zephyrproject/zephyr/drivers/spi/Kconfig",
+      83
+    ]
+  ],
+  [
+    "CONFIG_SPI_STM32",
+    "y",
+    "bool",
+    "y",
+    "default",
+    [
+      "/Users/tylerfield/zephyrproject/zephyr/drivers/spi/Kconfig.stm32",
+      8
+    ]
+  ],
+  [
+    "CONFIG_SPI_STM32_USE_HW_SS",
+    "y",
+    "bool",
+    "y",
+    "default",
+    [
+      "/Users/tylerfield/zephyrproject/zephyr/drivers/spi/Kconfig.stm32",
+      32
     ]
   ],
   [
     "CONFIG_STEPPER",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      914
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_TIMER_HAS_64BIT_CYCLE_COUNTER",
@@ -5096,33 +4569,27 @@
     "CONFIG_TIMER_READS_ITS_FREQUENCY_AT_RUNTIME",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      920
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_SYSTEM_CLOCK_SLOPPY_IDLE",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      921
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_SYSTEM_CLOCK_INIT_PRIORITY",
     "y",
     "int",
     "0",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      922
+      "/Users/tylerfield/zephyrproject/zephyr/drivers/timer/Kconfig",
+      35
     ]
   ],
   [
@@ -5160,10 +4627,10 @@
     "y",
     "bool",
     "y",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      926
+      "/Users/tylerfield/zephyrproject/zephyr/drivers/timer/Kconfig.cortex_m_systick",
+      33
     ]
   ],
   [
@@ -5171,184 +4638,136 @@
     "y",
     "bool",
     "y",
-    "assign",
+    "default",
     null
   ],
   [
     "CONFIG_USB_BC12",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      930
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_UDC_DRIVER",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      931
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_UHC_DRIVER",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      932
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_UVB",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      933
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_USB_DEVICE_DRIVER",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      934
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_USBC_TCPC_DRIVER",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      941
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_USBC_VBUS_DRIVER",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      942
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_USBC_PPC_DRIVER",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      943
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_VIDEO",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      944
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_VIRTIO",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      945
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_VIRTUALIZATION",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      946
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_W1",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      947
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_TEE",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      948
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_REQUIRES_FULL_LIBC",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      951
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_REQUIRES_FLOAT_PRINTF",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      952
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_LIBC_ALLOW_LESS_THAN_64BIT_TIME",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      953
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_FULL_LIBC_SUPPORTED",
@@ -5406,16 +4825,16 @@
     "CONFIG_PICOLIBC",
     "y",
     "bool",
-    "y",
-    "assign",
+    null,
+    "unset",
     null
   ],
   [
     "CONFIG_NEWLIB_LIBC",
     "y",
     "bool",
-    null,
-    "unset",
+    "y",
+    "assign",
     null
   ],
   [
@@ -5443,30 +4862,24 @@
     "y",
     "select",
     [
-      "PICOLIBC && PICOLIBC_SUPPORTED && <choice LIBC_IMPLEMENTATION>"
+      "NEWLIB_LIBC && NEWLIB_LIBC_SUPPORTED && <choice LIBC_IMPLEMENTATION>"
     ]
   ],
   [
     "CONFIG_COMMON_LIBC_ASCTIME_R",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      968
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_COMMON_LIBC_CTIME_R",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      969
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_COMMON_LIBC_TIME",
@@ -5475,55 +4888,49 @@
     "y",
     "imply",
     [
-      "PICOLIBC && PICOLIBC_SUPPORTED && <choice LIBC_IMPLEMENTATION>"
+      "NEWLIB_LIBC && NEWLIB_LIBC_SUPPORTED && <choice LIBC_IMPLEMENTATION>"
     ]
   ],
   [
     "CONFIG_COMMON_LIBC_MALLOC",
     "y",
     "bool",
-    "y",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      971
-    ]
-  ],
-  [
-    "CONFIG_COMMON_LIBC_CALLOC",
-    "y",
-    "bool",
-    "y",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      972
-    ]
-  ],
-  [
-    "CONFIG_COMMON_LIBC_REALLOCARRAY",
-    "y",
-    "bool",
-    "y",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      973
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_COMMON_LIBC_REMOVE",
     "y",
     "bool",
+    null,
+    "unset",
+    null
+  ],
+  [
+    "CONFIG_NEWLIB_LIBC_NANO",
+    "y",
+    "bool",
     "n",
     "assign",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      974
+      "/Users/tylerfield/zephyrproject/antenna_app/prj.conf",
+      14
     ]
   ],
   [
-    "CONFIG_PICOLIBC_USE_MODULE",
+    "CONFIG_NEWLIB_LIBC_MIN_REQUIRED_HEAP_SIZE",
+    "y",
+    "int",
+    "8192",
+    "default",
+    [
+      "/Users/tylerfield/zephyrproject/zephyr/lib/libc/newlib/Kconfig",
+      27
+    ]
+  ],
+  [
+    "CONFIG_NEWLIB_LIBC_FLOAT_PRINTF",
     "y",
     "bool",
     null,
@@ -5531,15 +4938,7 @@
     null
   ],
   [
-    "CONFIG_PICOLIBC_USE_TOOLCHAIN",
-    "y",
-    "bool",
-    "y",
-    "assign",
-    null
-  ],
-  [
-    "CONFIG_PICOLIBC_IO_FLOAT",
+    "CONFIG_NEWLIB_LIBC_FLOAT_SCANF",
     "y",
     "bool",
     null,
@@ -5547,12 +4946,31 @@
     null
   ],
   [
-    "CONFIG_PICOLIBC_IO_LONG_LONG",
+    "CONFIG_NEWLIB_LIBC_HEAP_LISTENER",
+    "y",
+    "bool",
+    null,
+    "unset",
+    null
+  ],
+  [
+    "CONFIG_NEWLIB_LIBC_CUSTOM_SBRK",
+    "y",
+    "bool",
+    null,
+    "unset",
+    null
+  ],
+  [
+    "CONFIG_NEWLIB_LIBC_USE_POSIX_LIMITS_H",
     "y",
     "bool",
     "y",
-    "assign",
-    null
+    "default",
+    [
+      "/Users/tylerfield/zephyrproject/zephyr/lib/libc/newlib/Kconfig",
+      75
+    ]
   ],
   [
     "CONFIG_STDOUT_CONSOLE",
@@ -5561,8 +4979,8 @@
     "y",
     "assign",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      979
+      "/Users/tylerfield/zephyrproject/antenna_app/prj.conf",
+      10
     ]
   ],
   [
@@ -5572,8 +4990,7 @@
     "y",
     "select",
     [
-      "PICOLIBC && PICOLIBC_SUPPORTED && <choice LIBC_IMPLEMENTATION>",
-      "COMMON_LIBC_MALLOC && COMMON_LIBC_MALLOC_ARENA_SIZE != 0"
+      "NEWLIB_LIBC && NEWLIB_LIBC_SUPPORTED && <choice LIBC_IMPLEMENTATION>"
     ]
   ],
   [
@@ -5583,19 +5000,19 @@
     "y",
     "assign",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      986
+      "/Users/tylerfield/zephyrproject/antenna_app/prj.conf",
+      20
     ]
   ],
   [
     "CONFIG_STD_CPP_VERSION",
     "n",
     "int",
-    "201103",
+    "201703",
     "default",
     [
       "/Users/tylerfield/zephyrproject/zephyr/lib/cpp/Kconfig",
-      18
+      20
     ]
   ],
   [
@@ -5610,8 +5027,8 @@
     "CONFIG_STD_CPP11",
     "y",
     "bool",
-    "y",
-    "assign",
+    null,
+    "unset",
     null
   ],
   [
@@ -5626,8 +5043,8 @@
     "CONFIG_STD_CPP17",
     "y",
     "bool",
-    null,
-    "unset",
+    "y",
+    "assign",
     null
   ],
   [
@@ -5666,20 +5083,20 @@
     "CONFIG_REQUIRES_FULL_LIBCPP",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      996
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_MINIMAL_LIBCPP",
     "y",
     "bool",
     "y",
-    "assign",
-    null
+    "default",
+    [
+      "/Users/tylerfield/zephyrproject/zephyr/lib/cpp/Kconfig",
+      106
+    ]
   ],
   [
     "CONFIG_GLIBCXX_LIBCPP",
@@ -5709,97 +5126,82 @@
     "CONFIG_SYS_HASH_FUNC32",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1010
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_SYS_HASH_MAP",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1016
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_SYS_HEAP_STRESS",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1022
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_SYS_HEAP_INFO",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1023
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_SYS_HEAP_ALLOC_LOOPS",
     "y",
     "int",
     "3",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1024
+      "/Users/tylerfield/zephyrproject/zephyr/lib/heap/Kconfig",
+      36
     ]
   ],
   [
     "CONFIG_SYS_HEAP_RUNTIME_STATS",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1025
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_SYS_HEAP_ARRAY_SIZE",
     "y",
     "int",
     "0",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1026
+      "/Users/tylerfield/zephyrproject/zephyr/lib/heap/Kconfig",
+      57
     ]
   ],
   [
     "CONFIG_SYS_HEAP_LISTENER",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1027
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_SYS_HEAP_SMALL_ONLY",
     "y",
     "bool",
     "y",
-    "assign",
-    null
+    "default",
+    [
+      "/Users/tylerfield/zephyrproject/zephyr/lib/heap/Kconfig",
+      84
+    ]
   ],
   [
     "CONFIG_SYS_HEAP_BIG_ONLY",
@@ -5821,100 +5223,73 @@
     "CONFIG_MULTI_HEAP",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1031
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_SHARED_MULTI_HEAP",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1032
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_SYS_MEM_BLOCKS",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1038
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_MIDI2_UMP_STREAM_RESPONDER",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1044
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_NET_BUF",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1047
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_ZVFS_OPEN_IGNORE_MIN",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1052
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_PRINTK_SYNC",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1053
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_MPSC_PBUF",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1054
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_SPSC_PBUF",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1055
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_HAS_POWEROFF",
@@ -5930,20 +5305,20 @@
     "CONFIG_POWEROFF",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1057
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_CBPRINTF_COMPLETE",
     "y",
     "bool",
     "y",
-    "assign",
-    null
+    "default",
+    [
+      "/Users/tylerfield/zephyrproject/zephyr/lib/os/Kconfig.cbprintf",
+      6
+    ]
   ],
   [
     "CONFIG_CBPRINTF_NANO",
@@ -5958,8 +5333,11 @@
     "y",
     "bool",
     "y",
-    "assign",
-    null
+    "default",
+    [
+      "/Users/tylerfield/zephyrproject/zephyr/lib/os/Kconfig.cbprintf",
+      29
+    ]
   ],
   [
     "CONFIG_CBPRINTF_REDUCED_INTEGRAL",
@@ -5973,56 +5351,60 @@
     "CONFIG_CBPRINTF_FP_SUPPORT",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1062
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_CBPRINTF_FP_A_SUPPORT",
     "y",
     "bool",
-    "n",
-    "assign",
+    null,
+    "unset",
+    null
+  ],
+  [
+    "CONFIG_CBPRINTF_FP_ALWAYS_A",
+    "y",
+    "bool",
+    null,
+    "unset",
+    null
+  ],
+  [
+    "CONFIG_CBPRINTF_N_SPECIFIER",
+    "y",
+    "bool",
+    "y",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1063
+      "/Users/tylerfield/zephyrproject/zephyr/lib/os/Kconfig.cbprintf",
+      107
     ]
   ],
   [
     "CONFIG_CBPRINTF_LIBC_SUBSTS",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1064
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_CBPRINTF_PACKAGE_LONGDOUBLE",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1065
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_CBPRINTF_STATIC_PACKAGE_CHECK_ALIGNMENT",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1066
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_CBPRINTF_CONVERT_CHECK_PTR",
@@ -6039,45 +5421,33 @@
     "CONFIG_ZVFS",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1068
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_CPU_LOAD_METRIC",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1069
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_POSIX_SYSTEM_INTERFACES",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1075
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_POSIX_API",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1076
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_POSIX_AEP_CHOICE_NONE",
@@ -6092,8 +5462,11 @@
     "y",
     "bool",
     "y",
-    "assign",
-    null
+    "default",
+    [
+      "/Users/tylerfield/zephyrproject/zephyr/lib/posix/Kconfig.profile",
+      29
+    ]
   ],
   [
     "CONFIG_POSIX_AEP_CHOICE_BASE",
@@ -6134,7 +5507,7 @@
     "y",
     "select",
     [
-      "PICOLIBC && PICOLIBC_SUPPORTED && <choice LIBC_IMPLEMENTATION>"
+      "NEWLIB_LIBC && NEWLIB_LIBC_SUPPORTED && <choice LIBC_IMPLEMENTATION>"
     ]
   ],
   [
@@ -6161,42 +5534,36 @@
     "CONFIG_EVENTFD",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1093
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_SMF",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1094
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_LIBGCC_RTLIB",
     "y",
     "bool",
     "y",
-    "assign",
-    null
+    "default",
+    [
+      "/Users/tylerfield/zephyrproject/zephyr/lib/runtime/Kconfig",
+      13
+    ]
   ],
   [
     "CONFIG_JSON_LIBRARY",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1100
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_RING_BUFFER",
@@ -6212,67 +5579,49 @@
     "CONFIG_RING_BUFFER_LARGE",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1102
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_NOTIFY",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1103
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_BASE64",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1104
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_ONOFF",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1105
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_UTF8",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1106
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_COBS",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1107
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_GETOPT",
@@ -6288,166 +5637,124 @@
     "CONFIG_GETOPT_LONG",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1109
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_TIMEUTIL_APPLY_SKEW",
     "y",
     "bool",
     "y",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1110
+      "/Users/tylerfield/zephyrproject/zephyr/lib/utils/Kconfig",
+      103
     ]
   ],
   [
     "CONFIG_UUID",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1116
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_MIN_HEAP",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1119
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_BINDESC",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1125
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_BT",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1126
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_CONSOLE_SUBSYS",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1133
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_CPU_FREQ",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1134
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_CRC",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1135
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_DAP",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1136
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_THREAD_ANALYZER",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1141
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_DEBUG",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1147
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_UBSAN",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1148
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_STACK_USAGE",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1149
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_STACK_SENTINEL",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1150
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_PRINTK",
@@ -6473,397 +5780,292 @@
     "CONFIG_FORCE_NO_ASSERT",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1153
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_ASSERT_VERBOSE",
     "y",
     "bool",
     "y",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1154
+      "/Users/tylerfield/zephyrproject/zephyr/subsys/debug/Kconfig",
+      240
     ]
   ],
   [
     "CONFIG_ASSERT_NO_FILE_INFO",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1155
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_ASSERT_NO_COND_INFO",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1156
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_ASSERT_NO_MSG_INFO",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1157
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_ASSERT_TEST",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1158
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_OVERRIDE_FRAME_POINTER_DEFAULT",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1159
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_DEBUG_THREAD_INFO",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1160
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_DEBUG_COREDUMP",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1161
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_SYMTAB",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1162
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_MIPI_STP_DECODER",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1165
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_CS_TRACE_DEFMT",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1166
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_CPU_LOAD",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1167
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_DISK_ACCESS",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1168
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_DSP",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1169
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_EMUL",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1170
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_CHARACTER_FRAMEBUFFER",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1171
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_FILE_SYSTEM_LIB_LINK",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1176
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_FILE_SYSTEM",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1177
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_ZMS",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1178
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_GNSS_RTK",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1181
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_INSTRUMENTATION",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1182
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_RPMSG_SERVICE",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1187
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_IPC_SERVICE",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1188
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_OPENAMP_RSC_TABLE",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1189
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_JWT",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1192
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_LLEXT",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1193
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_LLEXT_EDK",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1194
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_LOG_OUTPUT",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1199
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_MEM_ATTR",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1202
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_EC_HOST_CMD",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1211
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_OSDP",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1214
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_MODBUS",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1217
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_MODEM_MODULES",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1218
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_NETWORKING",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1223
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_NVMEM",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1226
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_HAS_PM",
@@ -6879,342 +6081,255 @@
     "CONFIG_PM_POLICY_LATENCY_STANDALONE",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1232
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_MCTP",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1238
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_PROFILING",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1246
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_TEST_RANDOM_GENERATOR",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1251
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_TIMER_RANDOM_INITIAL_STATE",
     "y",
     "int",
     "123456789",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1252
+      "/Users/tylerfield/zephyrproject/zephyr/subsys/random/Kconfig",
+      33
     ]
   ],
   [
     "CONFIG_CSPRNG_NEEDED",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1253
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_RTIO",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1256
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_MMC_STACK",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1261
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_SDMMC_STACK",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1262
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_SDIO_STACK",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1263
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_SECURE_STORAGE",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1266
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_SETTINGS",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1267
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_SHELL",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1268
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_STATS",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1269
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_STREAM_FLASH",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1274
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_TASK_WDT",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1277
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_ZTEST",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1282
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_ZTEST_MOCKING",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1283
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_ZTRESS",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1284
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_TEST",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1285
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_TEST_USERSPACE",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1286
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_FORCE_COVERAGE",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1292
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_COVERAGE_DUMP_PATH_EXCLUDE",
     "y",
     "string",
     "",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1293
+      "/Users/tylerfield/zephyrproject/zephyr/subsys/testsuite/Kconfig.coverage",
+      96
     ]
   ],
   [
     "CONFIG_TIMING_FUNCTIONS",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1296
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_TRACING",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1297
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_USB_DEVICE_STACK",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1298
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_USB_DEVICE_STACK_NEXT",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1299
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_USB_HOST_STACK",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1300
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_USBC_STACK",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1301
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_ZBUS",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1302
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_MODULES",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1303
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_TOOLCHAIN_ZEPHYR_0_17",
@@ -7262,8 +6377,11 @@
     "y",
     "bool",
     "y",
-    "assign",
-    null
+    "default",
+    [
+      "/Users/tylerfield/zephyrproject/zephyr/Kconfig.zephyr",
+      62
+    ]
   ],
   [
     "CONFIG_LINKER_ORPHAN_SECTION_ERROR",
@@ -7278,10 +6396,10 @@
     "y",
     "hex",
     "0",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1320
+      "/Users/tylerfield/zephyrproject/zephyr/Kconfig.zephyr",
+      119
     ]
   ],
   [
@@ -7289,10 +6407,10 @@
     "y",
     "hex",
     "0",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1321
+      "/Users/tylerfield/zephyrproject/zephyr/Kconfig.zephyr",
+      147
     ]
   ],
   [
@@ -7311,8 +6429,11 @@
     "y",
     "bool",
     "y",
-    "assign",
-    null
+    "default",
+    [
+      "/Users/tylerfield/zephyrproject/zephyr/Kconfig.zephyr",
+      162
+    ]
   ],
   [
     "CONFIG_CMAKE_LINKER_GENERATOR",
@@ -7326,45 +6447,36 @@
     "CONFIG_HAVE_CUSTOM_LINKER_SCRIPT",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1325
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_LINKER_SORT_BY_ALIGNMENT",
     "y",
     "bool",
     "y",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1326
+      "/Users/tylerfield/zephyrproject/zephyr/Kconfig.zephyr",
+      212
     ]
   ],
   [
     "CONFIG_LINKER_USE_BOOT_SECTION",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1331
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_LINKER_USE_PINNED_SECTION",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1332
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_LINKER_GENERIC_SECTIONS_PRESENT_AT_BOOT",
@@ -7382,10 +6494,10 @@
     "y",
     "bool",
     "y",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1334
+      "/Users/tylerfield/zephyrproject/zephyr/Kconfig.zephyr",
+      286
     ]
   ],
   [
@@ -7393,10 +6505,10 @@
     "y",
     "hex",
     "0xE015E015",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1335
+      "/Users/tylerfield/zephyrproject/zephyr/Kconfig.zephyr",
+      302
     ]
   ],
   [
@@ -7425,12 +6537,9 @@
     "CONFIG_LINKER_DEVNULL_MEMORY",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1340
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_STD_C90",
@@ -7461,8 +6570,11 @@
     "y",
     "bool",
     "y",
-    "assign",
-    null
+    "default",
+    [
+      "/Users/tylerfield/zephyrproject/zephyr/Kconfig.zephyr",
+      385
+    ]
   ],
   [
     "CONFIG_STD_C23",
@@ -7486,42 +6598,36 @@
     "CONFIG_GNU_C_EXTENSIONS",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1352
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_CODING_GUIDELINE_CHECK",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1353
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_COMPILER_FREESTANDING",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1354
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_SIZE_OPTIMIZATIONS",
     "y",
     "bool",
     "y",
-    "assign",
-    null
+    "default",
+    [
+      "/Users/tylerfield/zephyrproject/zephyr/Kconfig.zephyr",
+      486
+    ]
   ],
   [
     "CONFIG_SIZE_OPTIMIZATIONS_AGGRESSIVE",
@@ -7559,44 +6665,35 @@
     "CONFIG_COMPILER_WARNINGS_AS_ERRORS",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1360
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_DEPRECATION_TEST",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1361
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_COMPILER_SAVE_TEMPS",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1362
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_COMPILER_TRACK_MACRO_EXPANSION",
     "y",
     "bool",
     "y",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1363
+      "/Users/tylerfield/zephyrproject/zephyr/Kconfig.zephyr",
+      563
     ]
   ],
   [
@@ -7604,10 +6701,10 @@
     "y",
     "bool",
     "y",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1364
+      "/Users/tylerfield/zephyrproject/zephyr/Kconfig.zephyr",
+      571
     ]
   ],
   [
@@ -7623,8 +6720,11 @@
     "y",
     "bool",
     "y",
-    "assign",
-    null
+    "default",
+    [
+      "/Users/tylerfield/zephyrproject/zephyr/Kconfig.zephyr",
+      578
+    ]
   ],
   [
     "CONFIG_FORTIFY_SOURCE_RUN_TIME",
@@ -7638,23 +6738,17 @@
     "CONFIG_COMPILER_OPT",
     "y",
     "string",
-    "",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1368
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_MISRA_SANE",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1369
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_TOOLCHAIN_SUPPORTS_VLA_IN_STATEMENTS",
@@ -7688,18 +6782,21 @@
     "y",
     "bool",
     "y",
-    "assign",
-    null
+    "default",
+    [
+      "/Users/tylerfield/zephyrproject/zephyr/Kconfig.zephyr",
+      636
+    ]
   ],
   [
     "CONFIG_KERNEL_BIN_NAME",
     "y",
     "string",
     "zephyr",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1380
+      "/Users/tylerfield/zephyrproject/zephyr/Kconfig.zephyr",
+      660
     ]
   ],
   [
@@ -7707,197 +6804,155 @@
     "y",
     "bool",
     "y",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1381
+      "/Users/tylerfield/zephyrproject/zephyr/Kconfig.zephyr",
+      666
     ]
   ],
   [
     "CONFIG_OUTPUT_SYMBOLS",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1382
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_OUTPUT_PRINT_MEMORY_USAGE",
     "y",
     "bool",
     "y",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1383
+      "/Users/tylerfield/zephyrproject/zephyr/Kconfig.zephyr",
+      708
     ]
   ],
   [
     "CONFIG_CLEANUP_INTERMEDIATE_FILES",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1384
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_BUILD_GAP_FILL_PATTERN",
     "y",
     "hex",
     "0xFF",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1385
+      "/Users/tylerfield/zephyrproject/zephyr/Kconfig.zephyr",
+      729
     ]
   ],
   [
     "CONFIG_BUILD_NO_GAP_FILL",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1386
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_BUILD_OUTPUT_HEX_GAP_FILL",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1387
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_BUILD_OUTPUT_EXE",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1388
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_BUILD_OUTPUT_S19_GAP_FILL",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1389
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_BUILD_OUTPUT_UF2",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1390
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_BUILD_OUTPUT_MOT",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1391
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_BUILD_OUTPUT_STRIPPED",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1392
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_BUILD_OUTPUT_COMPRESS_DEBUG_SECTIONS",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1393
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_BUILD_ALIGN_LMA",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1394
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_APPLICATION_DEFINED_SYSCALL",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1395
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_MAKEFILE_EXPORTS",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1396
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_BUILD_OUTPUT_META",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1397
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_BUILD_OUTPUT_STRIP_PATHS",
     "y",
     "bool",
     "y",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1398
+      "/Users/tylerfield/zephyrproject/zephyr/Kconfig.zephyr",
+      974
     ]
   ],
   [
@@ -7905,87 +6960,75 @@
     "y",
     "bool",
     "y",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1399
+      "/Users/tylerfield/zephyrproject/zephyr/Kconfig.zephyr",
+      988
     ]
   ],
   [
     "CONFIG_EMIT_ALL_SYSCALLS",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1400
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_WARN_DEPRECATED",
     "y",
     "bool",
     "y",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1403
+      "/Users/tylerfield/zephyrproject/zephyr/Kconfig.zephyr",
+      1020
     ]
   ],
   [
     "CONFIG_WARN_EXPERIMENTAL",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1404
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_ENFORCE_ZEPHYR_STDINT",
     "y",
     "bool",
     "y",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1405
+      "/Users/tylerfield/zephyrproject/zephyr/Kconfig.zephyr",
+      1056
     ]
   ],
   [
     "CONFIG_IS_BOOTLOADER",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1411
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_BOOTLOADER_BOSSA",
     "y",
     "bool",
-    "n",
-    "assign",
-    [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1412
-    ]
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_LEGACY_GENERATED_INCLUDE_PATH",
     "y",
     "bool",
     "y",
-    "assign",
+    "default",
     [
-      "/Users/tylerfield/zephyrproject/antenna_app/build/zephyr/.config",
-      1418
+      "/Users/tylerfield/zephyrproject/zephyr/Kconfig.zephyr",
+      1126
     ]
   ]
 ]

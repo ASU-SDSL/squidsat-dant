@@ -1,7 +1,5 @@
-
 #pragma once
 
-#include <zephyr/drivers/can.h>
 #include <zephyr/kernel.h>
 #include <zephyr/device.h>
 #include <zephyr/sys_clock.h>
@@ -11,38 +9,43 @@
 #include <zephyr/drivers/spi.h>
 #include <stdio.h>
 #include <string.h>
-// #include <stm32f1xx_hal_gpio.h>
-
-// #include <stm32f101x6.h>
 #include <RadioLib.h>
 
-#include <map>
+#define MAX_ISRS 8
 
-static std::map<uint32_t, void (*)(void)> isrs;
-static void zephyrGeneralISR(const struct device *dev, struct gpio_callback *cb, uint32_t pins){
-    for (auto &entry : isrs) {
-        uint32_t pin = entry.first;
-        if (pins & BIT(pin)) {
-            entry.second();  
+struct ISREntry {
+    uint32_t pin;
+    void (*cb)(void);
+    bool used;
+};
+
+static ISREntry isrs[MAX_ISRS];
+
+static void zephyrGeneralISR(const struct device *dev, struct gpio_callback *cb, uint32_t pins) {
+    for (auto &e : isrs) {
+        if (e.used && (pins & BIT(e.pin))) {
+            e.cb();
         }
     }
 }
 
 class STMRadioHal : public RadioLibHal {
 public:
-    STMRadioHal(const struct device* spi, const struct device* gpio, uint32_t spi_speed = 2000000)
-    : RadioLibHal(GPIO_INPUT, GPIO_OUTPUT, 0, 1, GPIO_INT_EDGE_RISING, GPIO_INT_EDGE_FALLING), 
-    _spi(spi), _spi_speed(spi_speed),
-    gpio_dev(gpio)
+    STMRadioHal(const struct device* spi,
+                const struct device* gpio,
+                const struct device* cs_gpio,
+                uint32_t cs_pin,
+                uint32_t spi_speed = 2000000)
+    : RadioLibHal(GPIO_INPUT, GPIO_OUTPUT, 0, 1, GPIO_INT_EDGE_RISING, GPIO_INT_EDGE_FALLING),
+    _spi_speed(spi_speed), _spi(spi),
+    _cs_pin(cs_pin), gpio_dev(gpio), cs_gpio_dev(cs_gpio)
     {
-        // Initialize SPI config with safe defaults
         memset(&_spi_cfg, 0, sizeof(_spi_cfg));
+        memset(isrs, 0, sizeof(isrs));
         printf("Radio HAL initialized\n");
     }
 
     void init() override {
-        // Zephyr CAN configuration is typically done via device tree, not struct
-        // These functions work with the device from device tree
         spiBegin();
     }
 
@@ -51,44 +54,53 @@ public:
     }
 
     void pinMode(uint32_t pin, uint32_t mode) override {
-        if(pin == RADIOLIB_NC){return;}
-        
+        if (pin == RADIOLIB_NC) { return; }
+
         gpio_flags_t flags = 0;
         if (mode == GPIO_OUTPUT) {
             flags = GPIO_OUTPUT;
         } else if (mode == GPIO_INPUT) {
             flags = GPIO_INPUT;
         }
-        gpio_pin_configure(gpio_dev, pin, flags);
+
+        const struct device* dev = (pin == _cs_pin) ? cs_gpio_dev : gpio_dev;
+        gpio_pin_configure(dev, pin, flags);
     }
 
     void digitalWrite(uint32_t pin, uint32_t value) override {
-        if (pin == RADIOLIB_NC) {return;}
-        
-        // may not work
-        gpio_pin_set(gpio_dev, pin, value);
+        if (pin == RADIOLIB_NC) { return; }
+
+        const struct device* dev = (pin == _cs_pin) ? cs_gpio_dev : gpio_dev;
+        gpio_pin_set(dev, pin, value);
     }
 
     uint32_t digitalRead(uint32_t pin) override {
-        if (pin == RADIOLIB_NC) {
-            return 0;
-        }
+        if (pin == RADIOLIB_NC) { return 0; }
 
-        return gpio_pin_get(gpio_dev, pin);
-    } 
+        const struct device* dev = (pin == _cs_pin) ? cs_gpio_dev : gpio_dev;
+        return gpio_pin_get(dev, pin);
+    }
 
-    typedef void(* 	gpio_callback_handler_t) (const struct device *port, struct gpio_callback *cb, gpio_port_pins_t pins);
     void attachInterrupt(uint32_t interruptNum, void (*interruptCb)(void), uint32_t mode) override {
         if (interruptNum == RADIOLIB_NC) return;
 
-        isrs[interruptNum] = interruptCb;
+        // Insert or update entry
+        for (auto &e : isrs) {
+            if (!e.used || e.pin == interruptNum) {
+                e.pin = interruptNum;
+                e.cb = interruptCb;
+                e.used = true;
+                break;
+            }
+        }
 
         gpio_pin_configure(gpio_dev, interruptNum, GPIO_INPUT);
         gpio_pin_interrupt_configure(gpio_dev, interruptNum, mode);
 
+        // Rebuild pin mask
         uint32_t mask = 0;
         for (auto &e : isrs) {
-            mask |= BIT(e.first);
+            if (e.used) mask |= BIT(e.pin);
         }
 
         gpio_remove_callback(gpio_dev, &gpio_cb_data);
@@ -97,13 +109,18 @@ public:
     }
 
     void detachInterrupt(uint32_t interruptNum) override {
-        if (interruptNum == RADIOLIB_NC) {
-            return;
-        }
-        // Disabling the interrupt with the Zephyr GPIO API
+        if (interruptNum == RADIOLIB_NC) { return; }
+
         gpio_pin_interrupt_configure(gpio_dev, interruptNum, GPIO_INT_DISABLE);
         gpio_remove_callback(gpio_dev, &gpio_cb_data);
-        isrs.erase(interruptNum);
+
+        // Remove entry
+        for (auto &e : isrs) {
+            if (e.used && e.pin == interruptNum) {
+                e.used = false;
+                break;
+            }
+        }
     }
 
     void delay(unsigned long ms) override {
@@ -111,7 +128,7 @@ public:
     }
 
     void delayMicroseconds(unsigned long us) override {
-        k_busy_wait(us); // pretty sure this is meant to specify sleep in microseconds
+        k_busy_wait(us);
     }
 
     unsigned long millis() override {
@@ -119,89 +136,85 @@ public:
     }
 
     unsigned long micros() override {
-        //return (unsigned long)k_ticks_to_us_near64(k_uptime_ticks());
         return (unsigned long)(k_uptime_get() * 1000ULL);
     }
-    
+
     long pulseIn(uint32_t pin, uint32_t state, unsigned long timeout) override {
-        if (pin == RADIOLIB_NC) {
-            return 0;
-        }
+        if (pin == RADIOLIB_NC) { return 0; }
 
         gpio_pin_configure(gpio_dev, pin, GPIO_INPUT);
         uint32_t start = micros();
 
         while (gpio_pin_get(gpio_dev, pin) == (int)state) {
-            if ((micros() - start) > timeout) {
-                return 0;
-            }
+            if ((micros() - start) > timeout) { return 0; }
         }
 
         uint32_t pulse_start = micros();
         while (gpio_pin_get(gpio_dev, pin) == (int)state) {
             if ((micros() - pulse_start) > timeout) return 0;
         }
-    
+
         return (long)(micros() - pulse_start);
     }
-
-
 
     void spiBegin() override {
         printf("spiBegin\n");
         _spi_cfg.frequency = _spi_speed;
         _spi_cfg.operation =
             SPI_WORD_SET(8) |
-            SPI_TRANSFER_MSB |
-            SPI_MODE_CPOL |
-            SPI_MODE_CPHA;
+            SPI_TRANSFER_MSB;
         _spi_cfg.slave = 0;
-        // Disable automatic GPIO CS control - RadioLib handles CS manually
-        _spi_cfg.cs.cs_is_gpio = false;
     }
 
-    
-    void spiBeginTransaction() override {
-    }
-    void spiEndTransaction() override {
-    }
+    void spiBeginTransaction() override {}
+    void spiEndTransaction() override {}
 
     void spiTransfer(uint8_t *out, size_t len, uint8_t *in) override {
-        struct spi_buf tx_buf = {
-            .buf = out,
-            .len = len,
-        };
+        if (len == 0U) {
+            return;
+        }
 
-    /* Describe RX memory */
-        struct spi_buf rx_buf = {
-            .buf = in,
-            .len = len,
-        };
+        if ((out != nullptr) && (in != nullptr)) {
+            struct spi_buf tx_buf = { .buf = out, .len = len };
+            struct spi_buf rx_buf = { .buf = in,  .len = len };
+            struct spi_buf_set tx_set = { .buffers = &tx_buf, .count = 1 };
+            struct spi_buf_set rx_set = { .buffers = &rx_buf, .count = 1 };
 
-    /* Wrap buffers into sets */
-        struct spi_buf_set tx_set = {
-            .buffers = &tx_buf,
-            .count = 1,
-        };
+            int err = spi_transceive(_spi, &_spi_cfg, &tx_set, &rx_set);
+            if (err != 0) {
+                printf("spi_transceive failed: %d\n", err);
+            }
+            return;
+        }
 
-        struct spi_buf_set rx_set = {
-            .buffers = &rx_buf,
-            .count = 1,
-        };
+        // Handle half-duplex-like use safely when RadioLib passes null out/in pointers.
+        for (size_t i = 0; i < len; i++) {
+            uint8_t tx = (out != nullptr) ? out[i] : 0xFF;
+            uint8_t rx = 0x00;
+            struct spi_buf tx_buf = { .buf = &tx, .len = 1 };
+            struct spi_buf rx_buf = { .buf = &rx, .len = 1 };
+            struct spi_buf_set tx_set = { .buffers = &tx_buf, .count = 1 };
+            struct spi_buf_set rx_set = { .buffers = &rx_buf, .count = 1 };
 
-        spi_transceive(_spi, &_spi_cfg, &tx_set, &rx_set);
+            int err = spi_transceive(_spi, &_spi_cfg, &tx_set, &rx_set);
+            if (err != 0) {
+                printf("spi_transceive failed: %d at byte %u\n", err, (unsigned)i);
+                return;
+            }
+            if (in != nullptr) {
+                in[i] = rx;
+            }
+        }
     }
 
-    void spiEnd() override {
-        // I read that the spi is managed by the kernel and doesn't need to be ended.
-    }
+    void spiEnd() override {}
 
-    private:
-        const uint32_t _spi_speed;
-        const struct device *_spi;
-        struct spi_config _spi_cfg;
-        struct gpio_callback gpio_cb_data;
-        const struct device* gpio_dev;
-    };
-;
-
+private:
+    const uint32_t _spi_speed;
+    const struct device *_spi;
+    const uint32_t _cs_pin;
+    struct spi_config _spi_cfg;
+    struct gpio_callback gpio_cb_data;
+    const struct device *gpio_dev;
+    const struct device *cs_gpio_dev;
+};

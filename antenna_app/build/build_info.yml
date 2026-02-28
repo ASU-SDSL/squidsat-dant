@@ -53,6 +53,6 @@ cmake:
     zephyr-base: '/Users/tylerfield/zephyrproject/zephyr'
 version: '0.1.0'
 west:
-  command: '/opt/homebrew/bin/west build -b nucleo_f103rb'
+  command: '/opt/homebrew/bin/west build .'
   topdir: '/Users/tylerfield/zephyrproject'
   version: '1.5.0'
