@@ -20,6 +20,12 @@ const struct device *const gpio_port = DEVICE_DT_GET(GPIO_NODE);
 const struct device *const gpio_cs_port = DEVICE_DT_GET(GPIO_CS_NODE);
 
 int count = 0;
+volatile bool tx_done = false;
+
+void onTxDone(void)
+{
+    tx_done = true;
+}
 
 int main(void)
 {
@@ -111,25 +117,44 @@ int main(void)
         return 0;
     }
     printk("[SX1268] Init success!\n");
+
+    radio.setPacketSentAction(onTxDone);
+
+    char msg[64];
+    snprintf(msg, sizeof(msg), "Hello World! #%d", count++);
+    state = radio.startTransmit(msg);
+    if (state != RADIOLIB_ERR_NONE) {
+        printk("[SX1268] startTransmit failed, code %d\n", state);
+        return 0;
+    }
+    printk("[SX1268] First packet started\n");
+
     while (1) {
-        printk("[SX1268] Transmitting packet...\n");
-        
-        char msg[64];
-        snprintf(msg, sizeof(msg), "Hello World! #%d", count++);
-
-        state = radio.transmit(msg);
-
-        if (state == RADIOLIB_ERR_NONE) {
-            printk("success!\n");
-        } else if (state == RADIOLIB_ERR_PACKET_TOO_LONG) {
-            printk("too long!\n");
-        } else if (state == RADIOLIB_ERR_TX_TIMEOUT) {
-            printk("timeout!\n");
-        } else {
-            printk("failed, code %d\n", state);
+        if (!tx_done) {
+            k_msleep(10);
+            continue;
         }
 
-        
+        tx_done = false;
+        state = radio.finishTransmit();
+        if (state == RADIOLIB_ERR_NONE) {
+            printk("[SX1268] TX done\n");
+        } else {
+            printk("[SX1268] finishTransmit failed, code %d\n", state);
+        }
+
         k_msleep(1000);
+
+        snprintf(msg, sizeof(msg), "Hello World! #%d", count++);
+        state = radio.startTransmit(msg);
+        if (state == RADIOLIB_ERR_NONE) {
+            printk("[SX1268] TX started\n");
+        } else if (state == RADIOLIB_ERR_PACKET_TOO_LONG) {
+            printk("[SX1268] TX start failed: too long\n");
+        } else if (state == RADIOLIB_ERR_TX_TIMEOUT) {
+            printk("[SX1268] TX start failed: timeout\n");
+        } else {
+            printk("[SX1268] TX start failed, code %d\n", state);
+        }
     }
 }

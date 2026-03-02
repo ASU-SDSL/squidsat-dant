@@ -23,7 +23,7 @@ static ISREntry isrs[MAX_ISRS];
 
 static void zephyrGeneralISR(const struct device *dev, struct gpio_callback *cb, uint32_t pins) {
     for (auto &e : isrs) {
-        if (e.used && (pins & BIT(e.pin))) {
+        if (e.used && (e.cb != nullptr) && (pins & BIT(e.pin))) {
             e.cb();
         }
     }
@@ -84,14 +84,20 @@ public:
     void attachInterrupt(uint32_t interruptNum, void (*interruptCb)(void), uint32_t mode) override {
         if (interruptNum == RADIOLIB_NC) return;
 
+        bool registered = false;
         // Insert or update entry
         for (auto &e : isrs) {
             if (!e.used || e.pin == interruptNum) {
                 e.pin = interruptNum;
                 e.cb = interruptCb;
                 e.used = true;
+                registered = true;
                 break;
             }
+        }
+        if (!registered) {
+            printf("attachInterrupt failed: ISR table full\n");
+            return;
         }
 
         gpio_pin_configure(gpio_dev, interruptNum, GPIO_INPUT);
