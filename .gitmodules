@@ -1,0 +1,3 @@
+[submodule "antenna_app/lib/RadioLib"]
+	path = antenna_app/lib/RadioLib
+	url = https://github.com/jgromes/RadioLib.git
