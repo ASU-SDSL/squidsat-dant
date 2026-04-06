@@ -35,7 +35,7 @@ class STMRadioHal : public RadioLibHal {
 public:
     STMRadioHal(const struct device* spi, const struct device* gpio, uint32_t spi_speed = 2000000)
     : RadioLibHal(GPIO_INPUT, GPIO_OUTPUT, 0, 1, GPIO_INT_EDGE_RISING, GPIO_INT_EDGE_FALLING), 
-    _spi_speed(spi_speed), _spi(spi),
+    _spi_speed(spi_speed), _spi(spi), _spi_cfg{},
     gpio_dev(gpio)
     {
         printf("Radio HAL initialized\n");
@@ -153,13 +153,13 @@ public:
 
     void spiBegin() override {
         printf("spiBegin\n");
+        _spi_cfg = {};
         _spi_cfg.frequency = _spi_speed;
         _spi_cfg.operation =
             SPI_WORD_SET(8) |
-            SPI_TRANSFER_MSB |
-            SPI_MODE_CPOL |
-            SPI_MODE_CPHA;
+            SPI_TRANSFER_MSB;
         _spi_cfg.slave = 0;
+        _spi_cfg.cs.cs_is_gpio = false; // leave as false, handled by digitalWrite() and other methods 
         _spi_cfg.cs.gpio.port = nullptr;
     }
 
