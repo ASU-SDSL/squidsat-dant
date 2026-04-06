@@ -1,59 +1,138 @@
 #include <zephyr/kernel.h>
+#include <zephyr/sys/printk.h>
 #include <zephyr/drivers/gpio.h>
-#include <zephyr/logging/log.h>
-#include "can_handler.h"
 
-LOG_MODULE_REGISTER(main_app, LOG_LEVEL_INF);
+#include <RadioLib.h>
+#include <STMRadioHal.h>
+#include <zephyr/drivers/spi.h>
+#include <string.h>
 
-/* Devicetree Hardware Pins */
-static const struct gpio_dt_spec led = GPIO_DT_SPEC_GET(DT_ALIAS(led0), gpios);
-static const struct gpio_dt_spec btn = GPIO_DT_SPEC_GET(DT_ALIAS(sw0), gpios);
+#define SPI_DEV    DT_NODELABEL(spi1)
+#define GPIO_NODE  DT_NODELABEL(gpioa)
+#define GPIO_CS_NODE DT_NODELABEL(gpioa)
+#define CS_PIN     4
+#define IRQ_PIN    8
+#define RST_PIN    9
+#define BUSY_PIN   10
 
-int main() {
-    int ret;
-    uint8_t cmd_data[] = {0x01}; // Simple "Blink" command
+const struct device *const spi_bus   = DEVICE_DT_GET(SPI_DEV);
+const struct device *const gpio_port = DEVICE_DT_GET(GPIO_NODE);
+const struct device *const gpio_cs_port = DEVICE_DT_GET(GPIO_CS_NODE);
 
-    /* Initialize Hardware */
-    can_handler_init();
-    
-    if (!gpio_is_ready_dt(&led) || !gpio_is_ready_dt(&btn)) {
-        LOG_ERR("GPIO Hardware not ready");
+int count = 0;
+volatile bool tx_done = false;
+
+void onTxDone(void)
+{
+    tx_done = true;
+}
+
+int main(void)
+{
+    if (!device_is_ready(spi_bus)) {
+        printk("SPI bus not ready\n");
         return 0;
     }
 
-    gpio_pin_configure_dt(&led, GPIO_OUTPUT_INACTIVE);
-    gpio_pin_configure_dt(&btn, GPIO_INPUT);
-
-    LOG_INF("Press B1 (Blue Button) to send CAN message!");
-
-    while (true) {
-        /* --- TRANSMITTER LOGIC --- */
-        /* If button is pressed (B1 is active-low on Nucleo, 
-           but gpio_pin_get_dt handles the logic polarity for you) */
-        if (gpio_pin_get_dt(&btn) > 0) {
-            gpio_pin_set_dt(&led, 1); // Light up LED locally
-            
-            ret = can_handler_send(0x123, cmd_data, sizeof(cmd_data));
-            if (ret == 0) {
-                LOG_INF("Button Pressed: CAN message sent!");
-            }
-            
-            /* Debounce delay so we don't spam the bus */
-            k_msleep(200); 
-            gpio_pin_set_dt(&led, 0);
-        }
-
-        /* --- RECEIVER LOGIC --- */
-        /* Check if the CAN callback signaled us to blink (1ms timeout) */
-        if (k_sem_take(&blink_sem, K_MSEC(1)) == 0) {
-            LOG_INF("Received CAN command! Blinking 10 times...");
-            for (int i = 0; i < 20; i++) { // 20 toggles = 10 blinks
-                gpio_pin_toggle_dt(&led);
-                k_msleep(100);
-            }
-        }
-
-        k_msleep(10); // Small yield to prevent CPU hogging
+    if (!device_is_ready(gpio_port)) {
+        printk("GPIO port not ready\n");
+        return 0;
     }
-    return 0;
+
+    if (!device_is_ready(gpio_cs_port)) {
+        printk("GPIO CS port not ready\n");
+        return 0;
+    }
+
+    // Low-level probe: SX126x GET_STATUS command (0xC0), sweep SPI modes.
+    static const uint16_t mode_bits[4] = {
+        0,
+        SPI_MODE_CPHA,
+        SPI_MODE_CPOL,
+        SPI_MODE_CPOL | SPI_MODE_CPHA
+    };
+    for (int mode = 0; mode < 4; mode++) {
+        struct spi_config probe_cfg = {};
+        probe_cfg.frequency = 1000000;  // STM32F1 SPI1 min is ~281 kHz
+        probe_cfg.operation = SPI_WORD_SET(8) | SPI_TRANSFER_MSB | mode_bits[mode];
+        probe_cfg.slave = 0;
+
+        uint8_t tx_probe[3] = {0xC0, 0x00, 0x00};
+        uint8_t rx_probe[3] = {0x00, 0x00, 0x00};
+        struct spi_buf tx_buf = {.buf = tx_probe, .len = sizeof(tx_probe)};
+        struct spi_buf rx_buf = {.buf = rx_probe, .len = sizeof(rx_probe)};
+        struct spi_buf_set tx_set = {.buffers = &tx_buf, .count = 1};
+        struct spi_buf_set rx_set = {.buffers = &rx_buf, .count = 1};
+
+        gpio_pin_set(gpio_cs_port, CS_PIN, 0);
+        k_busy_wait(5);
+        int probe_err = spi_transceive(spi_bus, &probe_cfg, &tx_set, &rx_set);
+        k_busy_wait(5);
+        gpio_pin_set(gpio_cs_port, CS_PIN, 1);
+
+        printk("[SX1268] probe mode=%d err=%d rx=[0x%02x 0x%02x 0x%02x] busy=%d\n",
+               mode, probe_err, rx_probe[0], rx_probe[1], rx_probe[2],
+               gpio_pin_get(gpio_port, BUSY_PIN));
+    }
+
+    STMRadioHal stm_hal(spi_bus, gpio_port, 2000000);
+    Module module(&stm_hal, CS_PIN, IRQ_PIN, RST_PIN, BUSY_PIN);
+    SX1268 radio(&module);
+
+    printk("[SX1268] Initializing...\n");
+    int state = radio.begin(
+        434.0,  // frequency MHz
+        125.0,  // bandwidth kHz
+        9,      // spreading factor
+        7,      // coding rate
+        0x12,   // sync word
+        10,     // output power dBm
+        8,      // preamble length
+        0       // TCXO voltage (0 = disabled)
+    );
+    if (state != RADIOLIB_ERR_NONE) {
+        printk("[SX1268] Init failed, code %d\n", state);
+        return 0;
+    }
+    printk("[SX1268] Init success!\n");
+
+    radio.setPacketSentAction(onTxDone);
+
+    char msg[64];
+    snprintf(msg, sizeof(msg), "Hello World! #%d", count++);
+    state = radio.startTransmit(msg);
+    if (state != RADIOLIB_ERR_NONE) {
+        printk("[SX1268] startTransmit failed, code %d\n", state);
+        return 0;
+    }
+    printk("[SX1268] First packet started\n");
+
+    while (1) {
+        if (!tx_done) {
+            k_msleep(10);
+            continue;
+        }
+
+        tx_done = false;
+        state = radio.finishTransmit();
+        if (state == RADIOLIB_ERR_NONE) {
+            printk("[SX1268] TX done\n");
+        } else {
+            printk("[SX1268] finishTransmit failed, code %d\n", state);
+        }
+
+        k_msleep(1000);
+
+        snprintf(msg, sizeof(msg), "Hello World! #%d", count++);
+        state = radio.startTransmit(msg);
+        if (state == RADIOLIB_ERR_NONE) {
+            printk("[SX1268] TX started\n");
+        } else if (state == RADIOLIB_ERR_PACKET_TOO_LONG) {
+            printk("[SX1268] TX start failed: too long\n");
+        } else if (state == RADIOLIB_ERR_TX_TIMEOUT) {
+            printk("[SX1268] TX start failed: timeout\n");
+        } else {
+            printk("[SX1268] TX start failed, code %d\n", state);
+        }
+    }
 }

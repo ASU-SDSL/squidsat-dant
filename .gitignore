@@ -15,3 +15,5 @@ zephyr/
 modules/
 # (Only ignore zephyr/ and modules/ if you are using a workspace 
 # where these are managed by west and not part of your app repo)
+
+.DS_Store

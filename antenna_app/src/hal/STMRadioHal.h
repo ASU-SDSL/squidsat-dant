@@ -1,4 +1,6 @@
 
+#pragma once
+
 #include <zephyr/drivers/can.h>
 #include <zephyr/kernel.h>
 #include <zephyr/sys_clock.h>
@@ -9,17 +11,22 @@
 #include <stdio.h>
 #include <stm32f1xx_hal_gpio.h>
 
-#include <stm32f101x6.h>
 #include "RadioLib.h"
 
-#include <map>
+struct isr_entry_t {
+    uint32_t pin;
+    void (*handler)(void);
+};
 
-static std::map<uint32_t, void (*)(void)> isrs;
+static isr_entry_t isrs[8];
+static uint8_t isr_count = 0;
+
 static void zephyrGeneralISR(const struct device *dev, struct gpio_callback *cb, uint32_t pins){
-    for (auto &entry : isrs) {
-        uint32_t pin = entry.first;
-        if (pins & BIT(pin)) {
-            entry.second();  
+    ARG_UNUSED(dev);
+    ARG_UNUSED(cb);
+    for (uint8_t i = 0; i < isr_count; i++) {
+        if ((pins & BIT(isrs[i].pin)) && (isrs[i].handler != nullptr)) {
+            isrs[i].handler();
         }
     }
 }
@@ -28,7 +35,7 @@ class STMRadioHal : public RadioLibHal {
 public:
     STMRadioHal(const struct device* spi, const struct device* gpio, uint32_t spi_speed = 2000000)
     : RadioLibHal(GPIO_INPUT, GPIO_OUTPUT, 0, 1, GPIO_INT_EDGE_RISING, GPIO_INT_EDGE_FALLING), 
-    _spi(spi), _spi_speed(spi_speed),
+    _spi_speed(spi_speed), _spi(spi),
     gpio_dev(gpio)
     {
         printf("Radio HAL initialized\n");
@@ -52,7 +59,6 @@ public:
     void digitalWrite(uint32_t pin, uint32_t value) override {
         if (pin == RADIOLIB_NC) {return;}
         
-        // may not work
         gpio_pin_set(gpio_dev, pin, value);
     }
 
@@ -64,18 +70,29 @@ public:
         return gpio_pin_get(gpio_dev, pin);
     } 
 
-    typedef void(* 	gpio_callback_handler_t) (const struct device *port, struct gpio_callback *cb, gpio_port_pins_t pins);
     void attachInterrupt(uint32_t interruptNum, void (*interruptCb)(void), uint32_t mode) override {
         if (interruptNum == RADIOLIB_NC) return;
 
-        isrs[interruptNum] = interruptCb;
+        bool updated = false;
+        for (uint8_t i = 0; i < isr_count; i++) {
+            if (isrs[i].pin == interruptNum) {
+                isrs[i].handler = interruptCb;
+                updated = true;
+                break;
+            }
+        }
+        if (!updated && isr_count < ARRAY_SIZE(isrs)) {
+            isrs[isr_count].pin = interruptNum;
+            isrs[isr_count].handler = interruptCb;
+            isr_count++;
+        }
 
         gpio_pin_configure(gpio_dev, interruptNum, GPIO_INPUT);
         gpio_pin_interrupt_configure(gpio_dev, interruptNum, mode);
 
         uint32_t mask = 0;
-        for (auto &e : isrs) {
-            mask |= BIT(e.first);
+        for (uint8_t i = 0; i < isr_count; i++) {
+            mask |= BIT(isrs[i].pin);
         }
 
         gpio_remove_callback(gpio_dev, &gpio_cb_data);
@@ -90,7 +107,15 @@ public:
         // Disabling the interrupt with the Zephyr GPIO API
         gpio_pin_interrupt_configure(gpio_dev, interruptNum, GPIO_INT_DISABLE);
         gpio_remove_callback(gpio_dev, &gpio_cb_data);
-        isrs.erase(interruptNum);
+        for (uint8_t i = 0; i < isr_count; i++) {
+            if (isrs[i].pin == interruptNum) {
+                for (uint8_t j = i; j + 1 < isr_count; j++) {
+                    isrs[j] = isrs[j + 1];
+                }
+                isr_count--;
+                break;
+            }
+        }
     }
 
     void delay(unsigned long ms) override {
@@ -136,6 +161,47 @@ public:
             SPI_MODE_CPHA;
         _spi_cfg.slave = 0;
         _spi_cfg.cs.gpio.port = nullptr;
+    }
+
+    void spiBeginTransaction() override {
+        // Chip select is driven by RadioLib using digitalWrite().
+    }
+
+    void spiTransfer(uint8_t* out, size_t len, uint8_t* in) override {
+        if ((out == nullptr) || (len == 0)) {
+            return;
+        }
+
+        struct spi_buf tx_buf = {
+            .buf = out,
+            .len = len,
+        };
+        struct spi_buf_set tx_set = {
+            .buffers = &tx_buf,
+            .count = 1,
+        };
+
+        if (in != nullptr) {
+            struct spi_buf rx_buf = {
+                .buf = in,
+                .len = len,
+            };
+            struct spi_buf_set rx_set = {
+                .buffers = &rx_buf,
+                .count = 1,
+            };
+            (void)spi_transceive(_spi, &_spi_cfg, &tx_set, &rx_set);
+        } else {
+            (void)spi_write(_spi, &_spi_cfg, &tx_set);
+        }
+    }
+
+    void spiEndTransaction() override {
+        // No transaction teardown required for Zephyr SPI API.
+    }
+
+    void spiEnd() override {
+        // Nothing to deinitialize for Zephyr SPI device handle.
     }
 
     private:
