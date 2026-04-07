@@ -1,6 +1,7 @@
 #include <zephyr/kernel.h>
 #include <zephyr/sys/printk.h>
 #include <zephyr/drivers/gpio.h>
+#include <zephyr/logging/log.h>
 
 #include <RadioLib.h>
 #include <STMRadioHal.h>
@@ -15,9 +16,12 @@
 #define RST_PIN    9
 #define BUSY_PIN   10
 
+LOG_MODULE_REGISTER(radio_task, CONFIG_LOG_DEFAULT_LEVEL);
+
 const struct device *const spi_bus   = DEVICE_DT_GET(SPI_DEV);
 const struct device *const gpio_port = DEVICE_DT_GET(GPIO_NODE);
 const struct device *const gpio_cs_port = DEVICE_DT_GET(GPIO_CS_NODE);
+
 
 int count = 0;
 volatile bool tx_done = false;
@@ -31,6 +35,7 @@ int main(void)
 {
     if (!device_is_ready(spi_bus)) {
         printk("SPI bus not ready\n");
+
         return 0;
     }
 
@@ -73,6 +78,8 @@ int main(void)
         printk("[SX1268] probe mode=%d err=%d rx=[0x%02x 0x%02x 0x%02x] busy=%d\n",
                mode, probe_err, rx_probe[0], rx_probe[1], rx_probe[2],
                gpio_pin_get(gpio_port, BUSY_PIN));
+
+        LOG_DBG("busy=%d", gpio_pin_get(gpio_port, BUSY_PIN));
     }
 
     STMRadioHal stm_hal(spi_bus, gpio_port, 2000000);
@@ -90,8 +97,11 @@ int main(void)
         8,      // preamble length
         0       // TCXO voltage (0 = disabled)
     );
+    LOG_INF("init state=%d", state);
+
     if (state != RADIOLIB_ERR_NONE) {
         printk("[SX1268] Init failed, code %d\n", state);
+        LOG_ERR("[SX1268] Init failed, code %d\n", state);
         return 0;
     }
     printk("[SX1268] Init success!\n");
