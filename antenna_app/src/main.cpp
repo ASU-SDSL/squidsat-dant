@@ -7,6 +7,7 @@
 #include <STMRadioHal.h>
 #include <zephyr/drivers/spi.h>
 #include <string.h>
+#include "radio.h"
 
 #define SPI_DEV    DT_NODELABEL(spi1)
 #define GPIO_NODE  DT_NODELABEL(gpioa)
@@ -15,6 +16,9 @@
 #define IRQ_PIN    8
 #define RST_PIN    9
 #define BUSY_PIN   10
+#define RADIO_TEST true
+#define RADIO_TASK_STACK_SIZE 4096
+#define RADIO_TASK_PRIORITY 5
 
 LOG_MODULE_REGISTER(radio_task, CONFIG_LOG_DEFAULT_LEVEL);
 
@@ -22,6 +26,8 @@ const struct device *const spi_bus   = DEVICE_DT_GET(SPI_DEV);
 const struct device *const gpio_port = DEVICE_DT_GET(GPIO_NODE);
 const struct device *const gpio_cs_port = DEVICE_DT_GET(GPIO_CS_NODE);
 
+K_THREAD_STACK_DEFINE(radio_task_stack, RADIO_TASK_STACK_SIZE);
+static struct k_thread radio_task_thread;
 
 int count = 0;
 volatile bool tx_done = false;
@@ -29,6 +35,14 @@ volatile bool tx_done = false;
 void onTxDone(void)
 {
     tx_done = true;
+}
+
+static void radio_queue_entry(void *p1, void *p2, void *p3)
+{
+    ARG_UNUSED(p1);
+    ARG_UNUSED(p2);
+    ARG_UNUSED(p3);
+    radio_task_cpp();
 }
 
 int main(void)
@@ -46,6 +60,25 @@ int main(void)
 
     if (!device_is_ready(gpio_cs_port)) {
         printk("GPIO CS port not ready\n");
+        return 0;
+    }
+
+    if (RADIO_TEST) {
+        init_radio();
+        k_thread_create(
+            &radio_task_thread,
+            radio_task_stack,
+            K_THREAD_STACK_SIZEOF(radio_task_stack),
+            radio_queue_entry,
+            NULL,
+            NULL,
+            NULL,
+            RADIO_TASK_PRIORITY,
+            0,
+            K_NO_WAIT
+        );
+        k_msleep(100);
+        radio_test();
         return 0;
     }
 
@@ -110,6 +143,7 @@ int main(void)
 
     char msg[64];
     snprintf(msg, sizeof(msg), "Hello World! #%d", count++);
+    tx_done = false;
     state = radio.startTransmit(msg);
     if (state != RADIOLIB_ERR_NONE) {
         printk("[SX1268] startTransmit failed, code %d\n", state);
@@ -129,11 +163,13 @@ int main(void)
             printk("[SX1268] TX done\n");
         } else {
             printk("[SX1268] finishTransmit failed, code %d\n", state);
+            (void)radio.standby();
         }
 
         k_msleep(1000);
 
         snprintf(msg, sizeof(msg), "Hello World! #%d", count++);
+        tx_done = false;
         state = radio.startTransmit(msg);
         if (state == RADIOLIB_ERR_NONE) {
             printk("[SX1268] TX started\n");

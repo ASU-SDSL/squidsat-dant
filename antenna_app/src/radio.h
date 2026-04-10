@@ -6,10 +6,10 @@
 #include <stdint.h>
 
 // TODO: verify these constants
-#define RADIO_SX_NSS_PIN 5
-#define RADIO_SX_DIO1_PIN 22
-#define RADIO_SX_NRST_PIN 24
-#define RADIO_SX_BUSY_PIN 23
+#define RADIO_SX_NSS_PIN 4
+#define RADIO_SX_DIO1_PIN 8
+#define RADIO_SX_NRST_PIN 9
+#define RADIO_SX_BUSY_PIN 10
 
 #define RADIO_RFM_NSS_PIN 17
 #define RADIO_RFM_DIO0_PIN 27
@@ -125,6 +125,11 @@ extern "C"
      * @return int16_t 
      */
     int16_t radio_get_SX_state(); 
+
+    /**
+     * @brief Test helper: initialize radio, queue spam messages, and transmit them.
+     */
+    void radio_test();
 #ifdef __cplusplus
 }
 #endif
