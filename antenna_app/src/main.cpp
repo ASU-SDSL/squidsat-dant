@@ -89,6 +89,9 @@ int main(void)
         SPI_MODE_CPOL,
         SPI_MODE_CPOL | SPI_MODE_CPHA
     };
+
+    // -------------------------------    // -------------------------------
+
     for (int mode = 0; mode < 4; mode++) {
         struct spi_config probe_cfg = {};
         probe_cfg.frequency = 1000000;  // STM32F1 SPI1 min is ~281 kHz
@@ -114,6 +117,8 @@ int main(void)
 
         LOG_DBG("busy=%d", gpio_pin_get(gpio_port, BUSY_PIN));
     }
+    
+        // -------------------------------    // -------------------------------
 
     STMRadioHal stm_hal(spi_bus, gpio_port, 2000000);
     Module module(&stm_hal, CS_PIN, IRQ_PIN, RST_PIN, BUSY_PIN);
@@ -150,6 +155,9 @@ int main(void)
         return 0;
     }
     printk("[SX1268] First packet started\n");
+
+
+    // -------------transmit------------------    // -------------transmit------------------
 
     while (1) {
         if (!tx_done) {
