@@ -49,17 +49,19 @@ int main(void)
 {
     if (!device_is_ready(spi_bus)) {
         printk("SPI bus not ready\n");
-
+        LOG_ERR("SPI bus not ready\n");
         return 0;
     }
 
     if (!device_is_ready(gpio_port)) {
         printk("GPIO port not ready\n");
+        LOG_ERR("GPIO port not ready\n");
         return 0;
     }
 
     if (!device_is_ready(gpio_cs_port)) {
         printk("GPIO CS port not ready\n");
+        LOG_ERR("GPIO CS port not ready\n");
         return 0;
     }
 
@@ -143,6 +145,7 @@ int main(void)
         return 0;
     }
     printk("[SX1268] Init success!\n");
+    LOG_INF("[SX1268] Init success!\n");
 
     radio.setPacketSentAction(onTxDone);
 
@@ -152,9 +155,11 @@ int main(void)
     state = radio.startTransmit(msg);
     if (state != RADIOLIB_ERR_NONE) {
         printk("[SX1268] startTransmit failed, code %d\n", state);
+        LOG_ERR("[SX1268] startTransmit failed, code %d\n", state)
         return 0;
     }
     printk("[SX1268] First packet started\n");
+    LOG_INF("[SX1268] First packet started\n");
 
 
     // -------------transmit------------------    // -------------transmit------------------
@@ -169,9 +174,11 @@ int main(void)
         state = radio.finishTransmit();
         if (state == RADIOLIB_ERR_NONE) {
             printk("[SX1268] TX done\n");
+            LOG_INF("[SX1268] TX done\n");
         } else {
             printk("[SX1268] finishTransmit failed, code %d\n", state);
             (void)radio.standby();
+            LOG_ERR("[SX1268] finishTransmit failed, code %d\n", state);
         }
 
         k_msleep(1000);
@@ -181,12 +188,16 @@ int main(void)
         state = radio.startTransmit(msg);
         if (state == RADIOLIB_ERR_NONE) {
             printk("[SX1268] TX started\n");
+            LOG_INF("[SX1268] TX started\n");
         } else if (state == RADIOLIB_ERR_PACKET_TOO_LONG) {
             printk("[SX1268] TX start failed: too long\n");
+            LOG_ERR("[SX1268] TX start failed: too long\n");
         } else if (state == RADIOLIB_ERR_TX_TIMEOUT) {
             printk("[SX1268] TX start failed: timeout\n");
+            LOG_ERR("[SX1268] TX start failed: timeout\n");
         } else {
             printk("[SX1268] TX start failed, code %d\n", state);
+            LOG_ERR("[SX1268] TX start failed, code %d\n", state);
         }
     }
 }
