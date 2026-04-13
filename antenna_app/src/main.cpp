@@ -7,6 +7,7 @@
 #include <STMRadioHal.h>
 #include <zephyr/drivers/spi.h>
 #include <string.h>
+#include "radio.h"
 
 #define SPI_DEV    DT_NODELABEL(spi1)
 #define GPIO_NODE  DT_NODELABEL(gpioa)
@@ -15,6 +16,9 @@
 #define IRQ_PIN    8
 #define RST_PIN    9
 #define BUSY_PIN   10
+#define RADIO_TEST true
+#define RADIO_TASK_STACK_SIZE 4096
+#define RADIO_TASK_PRIORITY 5
 
 LOG_MODULE_REGISTER(radio_task, CONFIG_LOG_DEFAULT_LEVEL);
 
@@ -22,6 +26,8 @@ const struct device *const spi_bus   = DEVICE_DT_GET(SPI_DEV);
 const struct device *const gpio_port = DEVICE_DT_GET(GPIO_NODE);
 const struct device *const gpio_cs_port = DEVICE_DT_GET(GPIO_CS_NODE);
 
+K_THREAD_STACK_DEFINE(radio_task_stack, RADIO_TASK_STACK_SIZE);
+static struct k_thread radio_task_thread;
 
 int count = 0;
 volatile bool tx_done = false;
@@ -29,6 +35,14 @@ volatile bool tx_done = false;
 void onTxDone(void)
 {
     tx_done = true;
+}
+
+static void radio_queue_entry(void *p1, void *p2, void *p3)
+{
+    ARG_UNUSED(p1);
+    ARG_UNUSED(p2);
+    ARG_UNUSED(p3);
+    radio_task_cpp();
 }
 
 int main(void)
@@ -51,6 +65,25 @@ int main(void)
         return 0;
     }
 
+    if (RADIO_TEST) {
+        init_radio();
+        k_thread_create(
+            &radio_task_thread,
+            radio_task_stack,
+            K_THREAD_STACK_SIZEOF(radio_task_stack),
+            radio_queue_entry,
+            NULL,
+            NULL,
+            NULL,
+            RADIO_TASK_PRIORITY,
+            0,
+            K_NO_WAIT
+        );
+        k_msleep(100);
+        radio_test();
+        return 0;
+    }
+
     // Low-level probe: SX126x GET_STATUS command (0xC0), sweep SPI modes.
     static const uint16_t mode_bits[4] = {
         0,
@@ -58,6 +91,9 @@ int main(void)
         SPI_MODE_CPOL,
         SPI_MODE_CPOL | SPI_MODE_CPHA
     };
+
+    // -------------------------------    // -------------------------------
+
     for (int mode = 0; mode < 4; mode++) {
         struct spi_config probe_cfg = {};
         probe_cfg.frequency = 1000000;  // STM32F1 SPI1 min is ~281 kHz
@@ -83,6 +119,8 @@ int main(void)
 
         LOG_DBG("busy=%d", gpio_pin_get(gpio_port, BUSY_PIN));
     }
+    
+        // -------------------------------    // -------------------------------
 
     STMRadioHal stm_hal(spi_bus, gpio_port, 2000000);
     Module module(&stm_hal, CS_PIN, IRQ_PIN, RST_PIN, BUSY_PIN);
@@ -113,6 +151,7 @@ int main(void)
 
     char msg[64];
     snprintf(msg, sizeof(msg), "Hello World! #%d", count++);
+    tx_done = false;
     state = radio.startTransmit(msg);
     if (state != RADIOLIB_ERR_NONE) {
         printk("[SX1268] startTransmit failed, code %d\n", state);
@@ -121,6 +160,9 @@ int main(void)
     }
     printk("[SX1268] First packet started\n");
     LOG_INF("[SX1268] First packet started\n");
+
+
+    // -------------transmit------------------    // -------------transmit------------------
 
     while (1) {
         if (!tx_done) {
@@ -135,12 +177,14 @@ int main(void)
             LOG_INF("[SX1268] TX done\n");
         } else {
             printk("[SX1268] finishTransmit failed, code %d\n", state);
+            (void)radio.standby();
             LOG_ERR("[SX1268] finishTransmit failed, code %d\n", state);
         }
 
         k_msleep(1000);
 
         snprintf(msg, sizeof(msg), "Hello World! #%d", count++);
+        tx_done = false;
         state = radio.startTransmit(msg);
         if (state == RADIOLIB_ERR_NONE) {
             printk("[SX1268] TX started\n");

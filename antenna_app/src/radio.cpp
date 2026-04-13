@@ -66,6 +66,8 @@ void init_radio() {
     configure_radio_pins();
 
     // Initialize SX1268 radio
+    set_rf_switch(0);
+    k_msleep(10);
     module_sx = new Module(hal_sx, RADIO_SX_NSS_PIN, RADIO_SX_DIO1_PIN, RADIO_SX_NRST_PIN, RADIO_SX_BUSY_PIN);
     radio_sx = new SX1268(module_sx);
     sx_state = radio_sx->begin(
@@ -86,25 +88,8 @@ void init_radio() {
         LOG_ERR("SX1268 initialization failed: %d", sx_state);
     }
 
-    // Initialize RFM98 radio
-    module_rfm = new Module(hal_rfm, RADIO_RFM_NSS_PIN, RADIO_RFM_DIO0_PIN, RADIO_RFM_NRST_PIN, RADIO_RFM_DIO1_PIN);
-    radio_rfm = new RFM98(module_rfm);
-    rfm_state = radio_rfm->begin(
-        RADIO_FREQ,
-        RADIO_BW,
-        RADIO_SF,
-        RADIO_CR,
-        RADIO_SYNC_WORD,
-        10,
-        RADIO_PREAMBLE_LEN,
-        RADIO_RFM_GAIN
-    );
-    if (rfm_state == RADIOLIB_ERR_NONE) {
-        rfm_initialized = true;
-        LOG_INF("RFM98 initialized successfully");
-    } else {
-        LOG_ERR("RFM98 initialization failed: %d", rfm_state);
-    }
+    // RFM98 init intentionally skipped for SX-only operation.
+    rfm_initialized = false;
 
     // Set default configuration
     if (sx_initialized) {
@@ -114,16 +99,6 @@ void init_radio() {
         radio_sx->setCodingRate(RADIO_CR);
         radio_sx->setSyncWord(RADIO_SYNC_WORD);
         radio_sx->setPreambleLength(RADIO_PREAMBLE_LEN);
-    }
-
-    if (rfm_initialized) {
-        radio_rfm->setFrequency(RADIO_FREQ);
-        radio_rfm->setBandwidth(RADIO_BW);
-        radio_rfm->setSpreadingFactor(RADIO_SF);
-        radio_rfm->setCodingRate(RADIO_CR);
-        radio_rfm->setSyncWord(RADIO_SYNC_WORD);
-        radio_rfm->setPreambleLength(RADIO_PREAMBLE_LEN);
-        radio_rfm->setOutputPower(RADIO_RFM_GAIN);
     }
 
     LOG_INF("Radio initialization complete");
@@ -137,15 +112,9 @@ static void configure_radio_pins() {
     // Configure RF switch control pin
     gpio_pin_configure(gpio_dev, RADIO_RF_SWITCH_PIN, GPIO_OUTPUT);
 
-    // Configure power enable pins
-    gpio_pin_configure(gpio_dev, RADIO_SX_POWER_PIN, GPIO_OUTPUT);
-    gpio_pin_configure(gpio_dev, RADIO_RFM_POWER_PIN, GPIO_OUTPUT);
-
     // Set initial states
     gpio_pin_set(gpio_dev, RADIO_SX_NSS_PIN, 1);
     gpio_pin_set(gpio_dev, RADIO_RFM_NSS_PIN, 1);
-    gpio_pin_set(gpio_dev, RADIO_SX_POWER_PIN, 0);
-    gpio_pin_set(gpio_dev, RADIO_RFM_POWER_PIN, 0);
 }
 
 static void set_rf_switch(uint8_t radio) {
@@ -304,3 +273,44 @@ int16_t radio_get_SX_state() {
     return sx_state;
 }
 
+void radio_test() {
+    static uint32_t test_counter = 0;
+    char msg[64];
+
+    if (!sx_initialized && !rfm_initialized) {
+        init_radio();
+    }
+
+    if (!sx_initialized) {
+        LOG_ERR("radio_test: SX1268 not initialized (state=%d)", sx_state);
+        return;
+    }
+
+    current_radio = 0;
+    set_rf_switch(0);
+    LOG_INF("Starting radio_test (queue spam)");
+
+    while (1) {
+        int len = snprintf(msg, sizeof(msg), "radio_test #%lu", (unsigned long)test_counter++);
+        if (len <= 0) {
+            LOG_ERR("radio_test snprintf failed");
+            k_msleep(1000);
+            continue;
+        }
+
+        radio_queue_message(msg, (size_t)len);
+
+        if ((test_counter % 10U) == 0U) {
+            LOG_INF("Queued %lu radio_test messages", (unsigned long)test_counter);
+        } else {
+            LOG_DBG("Queued message: %s", msg);
+        }
+
+        if (k_msgq_num_free_get(&radio_msgq) == 0) {
+            LOG_WRN("radio queue full");
+            k_msleep(2000);
+        } else {
+            k_msleep(250);
+        }
+    }
+}
