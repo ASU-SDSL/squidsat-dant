@@ -20,6 +20,29 @@
 #define RADIO_TASK_STACK_SIZE 4096
 #define RADIO_TASK_PRIORITY 5
 
+/*
+BOOT          - CAN, radio, and command are initialized
+WAIT_FOR_OBC  - wait for the OBC to give a starting state
+DEPLOYING     - burn wire and nitinol
+RADIO_IDLE    - ready and waiting for commands
+RADIO_TX      - transmitting telem/packets
+RADIO_RX      - listening for CAN or radio 
+ONLY_OBC_COMS - only listen to OBC, ignore everything else
+FAULT         - an error occurred
+SLEEP         - a low power mode, usually the mode that will be transitioned to between events
+*/
+enum class State{
+    BOOT, 
+    WAIT_FOR_OBC,
+    DEPLOYING,
+    RADIO_IDLE,
+    RADIO_TX,
+    RADIO_RX,
+    ONLY_OBC_COMS,
+    FAULT,
+    SLEEP
+};
+
 LOG_MODULE_REGISTER(radio_task, CONFIG_LOG_DEFAULT_LEVEL);
 
 const struct device *const spi_bus   = DEVICE_DT_GET(SPI_DEV);
@@ -155,7 +178,7 @@ int main(void)
     state = radio.startTransmit(msg);
     if (state != RADIOLIB_ERR_NONE) {
         printk("[SX1268] startTransmit failed, code %d\n", state);
-        LOG_ERR("[SX1268] startTransmit failed, code %d\n", state)
+        LOG_ERR("[SX1268] startTransmit failed, code %d\n", state);
         return 0;
     }
     printk("[SX1268] First packet started\n");
