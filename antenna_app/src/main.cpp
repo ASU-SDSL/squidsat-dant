@@ -23,22 +23,19 @@
 /*
 BOOT          - CAN, radio, and command are initialized
 WAIT_FOR_OBC  - wait for the OBC to give a starting state
+SAFE          - block deployment and other saftey protocols
 DEPLOYING     - burn wire and nitinol
 RADIO_IDLE    - ready and waiting for commands
-RADIO_TX      - transmitting telem/packets
-RADIO_RX      - listening for CAN or radio 
-ONLY_OBC_COMS - only listen to OBC, ignore everything else
 FAULT         - an error occurred
 SLEEP         - a low power mode, usually the mode that will be transitioned to between events
 */
 enum class State{
     BOOT, 
     WAIT_FOR_OBC,
+    SAFE,
     DEPLOYING,
+    DEPLOYED,
     RADIO_IDLE,
-    RADIO_TX,
-    RADIO_RX,
-    ONLY_OBC_COMS,
     FAULT,
     SLEEP
 };
@@ -54,6 +51,23 @@ static struct k_thread radio_task_thread;
 
 int count = 0;
 volatile bool tx_done = false;
+
+void updateState(State& currentState, bool changeState){
+    if(changeState){ // check that we do want to change states (changeState)
+        switch(currentState){
+            case State::BOOT:
+                currentState = State::WAIT_FOR_OBC; // WAIT_FOR_OBC will not have it's own switch because obc will tell us which specific state to be in
+            
+            // case State::WAIT_FOR_OBC:
+
+            case State::DEPLOYING:
+                currentState = State::RADIO_IDLE;
+            case State::RADIO_IDLE:
+                currentState = State::
+        }
+    }
+    
+}
 
 void onTxDone(void)
 {
