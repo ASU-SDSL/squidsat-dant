@@ -16,6 +16,7 @@ target_sources(app PRIVATE
     src/radio.cpp
     src/hal/radio_hal.cpp
     src/can_handler.cpp  # Add your CAN file here too
+    src/metrics.cpp
     ${RADIOLIB_SOURCES}
 )
 

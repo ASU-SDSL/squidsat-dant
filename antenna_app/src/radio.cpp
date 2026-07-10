@@ -1,12 +1,25 @@
 
+/**
+ * @file radio.cpp
+ * @brief Radio initialization, queued operations, retries, and metrics updates.
+ *
+ * The radio task consumes queued operations, routes them to the active radio,
+ * and updates transmit attempt/success/failure, retry, queue-full, fault, and
+ * successful-cycle metrics.
+ */
+
+#include "metrics.h"
 #include "radio.h"
 #include "hal/STMRadioHal.h"
+#include <errno.h>
 #include <zephyr/drivers/gpio.h>
 #include <zephyr/drivers/spi.h>
 #include <zephyr/logging/log.h>
 #include <string.h>
 
 LOG_MODULE_REGISTER(radio, CONFIG_LOG_DEFAULT_LEVEL);
+
+#define RADIO_MAX_TX_RETRIES 3
 
 extern "C" __attribute__((weak)) void telemetry_send_radio_stats(int16_t rssi, int8_t snr, uint8_t radio) {
     ARG_UNUSED(rssi);
@@ -41,19 +54,28 @@ static const struct device* spi_dev = nullptr;
 // Forward declarations
 static void configure_radio_pins();
 static void set_rf_switch(uint8_t radio);
+static int enqueue_radio_operation(const radio_queue_operations_t* op);
 static int16_t transmit_packet(uint8_t* data, size_t size);
 static int16_t get_packet_stats(int16_t* rssi, int8_t* snr);
 
+/**
+ * @brief Initialize GPIO/SPI resources and the active radio module.
+ *
+ * Initialization failures increment the metrics fault counter and leave the
+ * corresponding radio marked uninitialized.
+ */
 void init_radio() {
     // Get GPIO and SPI devices from device tree
     gpio_dev = DEVICE_DT_GET(DT_NODELABEL(gpioa));
     if (!device_is_ready(gpio_dev)) {
+        metrics_inc_fault();
         LOG_ERR("GPIO device not ready");
         return;
     }
 
     spi_dev = DEVICE_DT_GET(DT_NODELABEL(spi1));
     if (!device_is_ready(spi_dev)) {
+        metrics_inc_fault();
         LOG_ERR("SPI device not ready");
         return;
     }
@@ -85,6 +107,7 @@ void init_radio() {
         sx_initialized = true;
         LOG_INF("SX1268 initialized successfully");
     } else {
+        metrics_inc_fault();
         LOG_ERR("SX1268 initialization failed: %d", sx_state);
     }
 
@@ -104,6 +127,9 @@ void init_radio() {
     LOG_INF("Radio initialization complete");
 }
 
+/**
+ * @brief Configure chip-select and RF switch GPIOs for radio use.
+ */
 static void configure_radio_pins() {
     // Configure NSS pins as output
     gpio_pin_configure(gpio_dev, RADIO_SX_NSS_PIN, GPIO_OUTPUT);
@@ -117,10 +143,21 @@ static void configure_radio_pins() {
     gpio_pin_set(gpio_dev, RADIO_RFM_NSS_PIN, 1);
 }
 
+/**
+ * @brief Select which RF path is connected.
+ *
+ * @param radio 0 selects SX1268, 1 selects RFM98.
+ */
 static void set_rf_switch(uint8_t radio) {
     gpio_pin_set(gpio_dev, RADIO_RF_SWITCH_PIN, radio == 0 ? RADIO_RF_SWITCH_SX : RADIO_RF_SWITCH_RFM);
 }
 
+/**
+ * @brief Process queued radio operations forever.
+ *
+ * Transmit operations are the primary source of radio TX metrics. A transmit
+ * is counted once when dequeued; retries are counted inside transmit_packet().
+ */
 void radio_task_cpp() {
     radio_queue_operations_t op;
 
@@ -130,12 +167,34 @@ void radio_task_cpp() {
 
         switch (op.operation_type) {
             case TRANSMIT:
+                metrics_inc_radio_tx_attempt();
+
                 if (current_radio == 0 && sx_initialized) {
                     set_rf_switch(0);
                     sx_state = transmit_packet(op.data_buffer, op.data_size);
+
+                    if (sx_state == RADIOLIB_ERR_NONE) {
+                        metrics_inc_radio_tx_success();
+                        metrics_inc_successful_cycle();
+                    } else {
+                        metrics_inc_radio_tx_failure();
+                        metrics_inc_fault();
+                    }
                 } else if (current_radio == 1 && rfm_initialized) {
                     set_rf_switch(1);
                     rfm_state = transmit_packet(op.data_buffer, op.data_size);
+
+                    if (rfm_state == RADIOLIB_ERR_NONE) {
+                        metrics_inc_radio_tx_success();
+                        metrics_inc_successful_cycle();
+                    } else {
+                        metrics_inc_radio_tx_failure();
+                        metrics_inc_fault();
+                    }
+                } else {
+                    metrics_inc_radio_tx_failure();
+                    metrics_inc_fault();
+                    LOG_WRN("Transmit requested with no initialized radio");
                 }
                 break;
 
@@ -194,20 +253,84 @@ void radio_task_cpp() {
     }
 }
 
+/**
+ * @brief C-compatible Zephyr thread entry for the radio task.
+ *
+ * @param unused_arg Unused thread argument.
+ */
 void radio_task(void *unused_arg) {
     ARG_UNUSED(unused_arg);
     init_radio();
     radio_task_cpp();
 }
 
-static int16_t transmit_packet(uint8_t* data, size_t size) {
-    if (current_radio == 0) {
-        return radio_sx->transmit(data, size);
-    } else {
-        return radio_rfm->transmit(data, size);
+/**
+ * @brief Queue a radio operation and update queue-full/fault metrics on error.
+ *
+ * @param op Operation to enqueue.
+ * @retval 0 if the operation was queued.
+ * @retval negative Zephyr error code from k_msgq_put().
+ */
+static int enqueue_radio_operation(const radio_queue_operations_t* op) {
+    int ret = k_msgq_put(&radio_msgq, op, K_NO_WAIT);
+
+    if (ret < 0) {
+        metrics_inc_radio_queue_full();
+        metrics_inc_fault();
     }
+
+    return ret;
 }
 
+/**
+ * @brief Transmit a packet with bounded retry attempts.
+ *
+ * The first transmit is not counted as a retry. Each additional attempt
+ * increments radio_retries and waits briefly before trying again.
+ *
+ * @param data Packet payload.
+ * @param size Payload size in bytes.
+ * @return RadioLib status code from the successful attempt or final failure.
+ */
+static int16_t transmit_packet(uint8_t* data, size_t size) {
+    int16_t ret;
+
+    if (current_radio == 0) {
+        for (int attempt = 0; attempt <= RADIO_MAX_TX_RETRIES; attempt++) {
+            if (attempt > 0) {
+                metrics_inc_radio_retry();
+                k_msleep(50);
+            }
+
+            ret = radio_sx->transmit(data, size);
+            if (ret == RADIOLIB_ERR_NONE) {
+                return ret;
+            }
+        }
+    } else {
+        for (int attempt = 0; attempt <= RADIO_MAX_TX_RETRIES; attempt++) {
+            if (attempt > 0) {
+                metrics_inc_radio_retry();
+                k_msleep(50);
+            }
+
+            ret = radio_rfm->transmit(data, size);
+            if (ret == RADIOLIB_ERR_NONE) {
+                return ret;
+            }
+        }
+    }
+
+    return ret;
+}
+
+/**
+ * @brief Read packet stats from the active radio.
+ *
+ * @param rssi Output RSSI.
+ * @param snr Output SNR.
+ * @return RADIOLIB_ERR_NONE when stats were read.
+ */
 static int16_t get_packet_stats(int16_t* rssi, int8_t* snr) {
     if (current_radio == 0) {
         *rssi = radio_sx->getRSSI();
@@ -225,13 +348,16 @@ void radio_queue_message(char *buffer, size_t size) {
     op.operation_type = TRANSMIT;
     op.data_buffer = (uint8_t*)k_malloc(size);
     if (op.data_buffer == nullptr) {
+        metrics_inc_fault();
         LOG_ERR("Failed to allocate memory for radio message");
         return;
     }
     memcpy(op.data_buffer, buffer, size);
     op.data_size = size;
 
-    k_msgq_put(&radio_msgq, &op, K_NO_WAIT);
+    if (enqueue_radio_operation(&op) < 0) {
+        k_free(op.data_buffer);
+    }
 }
 
 void radio_set_transmit_power(uint8_t output_power) {
@@ -240,7 +366,7 @@ void radio_set_transmit_power(uint8_t output_power) {
     op.data_buffer = nullptr;
     op.data_size = output_power; // Reusing data_size field for power value
 
-    k_msgq_put(&radio_msgq, &op, K_NO_WAIT);
+    (void)enqueue_radio_operation(&op);
 }
 
 void radio_set_module(radio_operation_type_t op) {
@@ -249,7 +375,7 @@ void radio_set_module(radio_operation_type_t op) {
     queue_op.data_buffer = nullptr;
     queue_op.data_size = 0;
 
-    k_msgq_put(&radio_msgq, &queue_op, K_NO_WAIT);
+    (void)enqueue_radio_operation(&queue_op);
 }
 
 void radio_queue_stat_response() {
@@ -258,7 +384,7 @@ void radio_queue_stat_response() {
     op.data_buffer = nullptr;
     op.data_size = 0;
 
-    k_msgq_put(&radio_msgq, &op, K_NO_WAIT);
+    (void)enqueue_radio_operation(&op);
 }
 
 uint8_t radio_which() {
@@ -293,6 +419,7 @@ void radio_test() {
     while (1) {
         int len = snprintf(msg, sizeof(msg), "radio_test #%lu", (unsigned long)test_counter++);
         if (len <= 0) {
+            metrics_inc_fault();
             LOG_ERR("radio_test snprintf failed");
             k_msleep(1000);
             continue;

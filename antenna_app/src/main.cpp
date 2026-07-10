@@ -1,3 +1,12 @@
+/**
+ * @file main.cpp
+ * @brief Application entry point and top-level radio test flow.
+ *
+ * Startup initializes metrics, persists the boot count, checks core devices,
+ * and starts the active radio test path. Fatal startup failures increment the
+ * metrics fault counter before returning.
+ */
+
 #include <zephyr/kernel.h>
 #include <zephyr/sys/printk.h>
 #include <zephyr/drivers/gpio.h>
@@ -7,6 +16,7 @@
 #include <STMRadioHal.h>
 #include <zephyr/drivers/spi.h>
 #include <string.h>
+#include "metrics.h"
 #include "radio.h"
 
 #define SPI_DEV    DT_NODELABEL(spi1)
@@ -32,11 +42,21 @@ static struct k_thread radio_task_thread;
 int count = 0;
 volatile bool tx_done = false;
 
+/**
+ * @brief RadioLib packet-sent callback used by the manual TX loop.
+ */
 void onTxDone(void)
 {
     tx_done = true;
 }
 
+/**
+ * @brief Zephyr thread entry wrapper for the C++ radio task.
+ *
+ * @param p1 Unused.
+ * @param p2 Unused.
+ * @param p3 Unused.
+ */
 static void radio_queue_entry(void *p1, void *p2, void *p3)
 {
     ARG_UNUSED(p1);
@@ -45,21 +65,32 @@ static void radio_queue_entry(void *p1, void *p2, void *p3)
     radio_task_cpp();
 }
 
+/**
+ * @brief Initialize application services and run the selected radio test path.
+ *
+ * @return 0 if startup exits or the test path returns.
+ */
 int main(void)
 {
+    metrics_init();
+    metrics_inc_boot();
+
     if (!device_is_ready(spi_bus)) {
+        metrics_inc_fault();
         printk("SPI bus not ready\n");
         LOG_ERR("SPI bus not ready\n");
         return 0;
     }
 
     if (!device_is_ready(gpio_port)) {
+        metrics_inc_fault();
         printk("GPIO port not ready\n");
         LOG_ERR("GPIO port not ready\n");
         return 0;
     }
 
     if (!device_is_ready(gpio_cs_port)) {
+        metrics_inc_fault();
         printk("GPIO CS port not ready\n");
         LOG_ERR("GPIO CS port not ready\n");
         return 0;
@@ -140,6 +171,7 @@ int main(void)
     LOG_INF("init state=%d", state);
 
     if (state != RADIOLIB_ERR_NONE) {
+        metrics_inc_fault();
         printk("[SX1268] Init failed, code %d\n", state);
         LOG_ERR("[SX1268] Init failed, code %d\n", state);
         return 0;
@@ -152,10 +184,13 @@ int main(void)
     char msg[64];
     snprintf(msg, sizeof(msg), "Hello World! #%d", count++);
     tx_done = false;
+    metrics_inc_radio_tx_attempt();
     state = radio.startTransmit(msg);
     if (state != RADIOLIB_ERR_NONE) {
+        metrics_inc_radio_tx_failure();
+        metrics_inc_fault();
         printk("[SX1268] startTransmit failed, code %d\n", state);
-        LOG_ERR("[SX1268] startTransmit failed, code %d\n", state)
+        LOG_ERR("[SX1268] startTransmit failed, code %d\n", state);
         return 0;
     }
     printk("[SX1268] First packet started\n");
@@ -173,9 +208,13 @@ int main(void)
         tx_done = false;
         state = radio.finishTransmit();
         if (state == RADIOLIB_ERR_NONE) {
+            metrics_inc_radio_tx_success();
+            metrics_inc_successful_cycle();
             printk("[SX1268] TX done\n");
             LOG_INF("[SX1268] TX done\n");
         } else {
+            metrics_inc_radio_tx_failure();
+            metrics_inc_fault();
             printk("[SX1268] finishTransmit failed, code %d\n", state);
             (void)radio.standby();
             LOG_ERR("[SX1268] finishTransmit failed, code %d\n", state);
@@ -185,17 +224,24 @@ int main(void)
 
         snprintf(msg, sizeof(msg), "Hello World! #%d", count++);
         tx_done = false;
+        metrics_inc_radio_tx_attempt();
         state = radio.startTransmit(msg);
         if (state == RADIOLIB_ERR_NONE) {
             printk("[SX1268] TX started\n");
             LOG_INF("[SX1268] TX started\n");
         } else if (state == RADIOLIB_ERR_PACKET_TOO_LONG) {
+            metrics_inc_radio_tx_failure();
+            metrics_inc_fault();
             printk("[SX1268] TX start failed: too long\n");
             LOG_ERR("[SX1268] TX start failed: too long\n");
         } else if (state == RADIOLIB_ERR_TX_TIMEOUT) {
+            metrics_inc_radio_tx_failure();
+            metrics_inc_fault();
             printk("[SX1268] TX start failed: timeout\n");
             LOG_ERR("[SX1268] TX start failed: timeout\n");
         } else {
+            metrics_inc_radio_tx_failure();
+            metrics_inc_fault();
             printk("[SX1268] TX start failed, code %d\n", state);
             LOG_ERR("[SX1268] TX start failed, code %d\n", state);
         }
