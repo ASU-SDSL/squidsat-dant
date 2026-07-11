@@ -10,7 +10,7 @@ This change adds a small health metrics layer for the antenna application. It tr
 | --- | --- | --- |
 | `boot_count` | Settings/NVS | Number of boots recorded across resets and power cycles. |
 | `fault_count` | Runtime | Recoverable errors observed during this boot. |
-| `radio_tx_attempts` | Runtime | Queued or manual radio transmit operations attempted. |
+| `radio_tx_attempts` | Runtime | Queued radio transmit operations attempted. |
 | `radio_tx_successes` | Runtime | Radio transmit operations that completed successfully. |
 | `radio_tx_failures` | Runtime | Radio transmit operations that failed after retries or setup checks. |
 | `radio_retries` | Runtime | Additional radio transmit attempts after an initial failure. |
@@ -22,7 +22,7 @@ This change adds a small health metrics layer for the antenna application. It tr
 ```text
 antenna_app/src/metrics.h      Public metrics API and snapshot type
 antenna_app/src/metrics.cpp    Atomic counters and persistent boot-count storage
-antenna_app/src/main.cpp       Startup boot/fault metrics and manual TX metrics
+antenna_app/src/main.cpp       State-machine startup boot/fault metrics
 antenna_app/src/radio.cpp      Radio queue, retry, TX, and successful-cycle metrics
 antenna_app/src/can_handler.cpp CAN fault-path metrics
 antenna_app/prj.conf           Settings/NVS/flash configuration
@@ -56,6 +56,7 @@ Expected behavior:
 
 - `main()` calls `metrics_init()` and `metrics_inc_boot()` once at startup.
 - Startup hardware readiness failures increment `fault_count`.
+- Radio initialization failures increment `fault_count` and move startup to the fault/restart path.
 - Radio queued transmit operations increment `radio_tx_attempts`.
 - Successful radio transmit completion increments `radio_tx_successes` and `successful_cycles`.
 - Failed radio transmit completion increments `radio_tx_failures` and `fault_count`.

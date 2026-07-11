@@ -63,21 +63,25 @@ static int16_t get_packet_stats(int16_t* rssi, int8_t* snr);
  *
  * Initialization failures increment the metrics fault counter and leave the
  * corresponding radio marked uninitialized.
+ *
+ * @retval 0 Radio peripherals and the default radio module are ready.
+ * @retval -ENODEV Required GPIO/SPI devices are not ready.
+ * @return Negative RadioLib/status code when radio module setup fails.
  */
-void init_radio() {
+int init_radio() {
     // Get GPIO and SPI devices from device tree
     gpio_dev = DEVICE_DT_GET(DT_NODELABEL(gpioa));
     if (!device_is_ready(gpio_dev)) {
         metrics_inc_fault();
         LOG_ERR("GPIO device not ready");
-        return;
+        return -ENODEV;
     }
 
     spi_dev = DEVICE_DT_GET(DT_NODELABEL(spi1));
     if (!device_is_ready(spi_dev)) {
         metrics_inc_fault();
         LOG_ERR("SPI device not ready");
-        return;
+        return -ENODEV;
     }
 
     // Initialize HAL instances
@@ -109,6 +113,7 @@ void init_radio() {
     } else {
         metrics_inc_fault();
         LOG_ERR("SX1268 initialization failed: %d", sx_state);
+        return sx_state < 0 ? sx_state : -EIO;
     }
 
     // RFM98 init intentionally skipped for SX-only operation.
@@ -125,6 +130,7 @@ void init_radio() {
     }
 
     LOG_INF("Radio initialization complete");
+    return 0;
 }
 
 /**
@@ -260,7 +266,9 @@ void radio_task_cpp() {
  */
 void radio_task(void *unused_arg) {
     ARG_UNUSED(unused_arg);
-    init_radio();
+    if (init_radio() != 0) {
+        return;
+    }
     radio_task_cpp();
 }
 
@@ -404,7 +412,9 @@ void radio_test() {
     char msg[64];
 
     if (!sx_initialized && !rfm_initialized) {
-        init_radio();
+        if (init_radio() != 0) {
+            return;
+        }
     }
 
     if (!sx_initialized) {

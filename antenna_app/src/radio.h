@@ -135,10 +135,15 @@ extern "C"
 #endif
 
 /**
- * @brief Initializes necessary peripherals/settings for the radio task
- * 
+ * @brief Initializes necessary peripherals/settings for the radio task.
+ *
+ * Initialization failures increment the metrics fault counter before returning.
+ *
+ * @retval 0 Radio peripherals and the default radio module are ready.
+ * @retval -ENODEV Required GPIO/SPI devices are not ready.
+ * @return Negative RadioLib/status code when radio module setup fails.
  */
-void init_radio();
+int init_radio();
 
 /**
  * @brief The implementation of the radio task function (Linked to C by radio_task())
