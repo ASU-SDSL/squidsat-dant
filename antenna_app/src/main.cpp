@@ -85,7 +85,7 @@ int main(void)
     while (1) {
         if(fault_take){
             LOG_ERR("Fault flag: FAULT");
-            currentState = State :: FAULT;
+            currentState = State :: FAULT; //set the state to FAULT
         }
         switch (currentState) {
         case State::BOOT: {
