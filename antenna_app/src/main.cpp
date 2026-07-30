@@ -83,7 +83,7 @@ static bool start_radio_thread_once(void)
 int main(void)
 {
     while (1) {
-        if(fault_take){
+        if(fault_take){//execute when it fault_take() return true
             LOG_ERR("Fault flag: FAULT");
             currentState = State :: FAULT; //set the state to FAULT
         }
