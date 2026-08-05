@@ -3,12 +3,13 @@
 #include <zephyr/drivers/gpio.h>
 #include <zephyr/logging/log.h>
 #include <zephyr/sys/reboot.h>
-
+//#include <state_system.h>
 #include <RadioLib.h>
 #include <STMRadioHal.h>
 #include <zephyr/drivers/spi.h>
 #include <string.h>
 #include "radio.h"
+
 
 #define SPI_DEV    DT_NODELABEL(spi1)
 #define GPIO_NODE  DT_NODELABEL(gpioa)

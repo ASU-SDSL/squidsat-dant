@@ -35,7 +35,7 @@ static int16_t sx_state = RADIOLIB_ERR_NONE;
 K_MSGQ_DEFINE(radio_msgq, sizeof(radio_queue_operations_t), RADIO_MAX_QUEUE_ITEMS, 4);
 
 // Device pointers (to be initialized)
-static const struct device* gpio_dev = nullptr;
+static const struct device* gpio_ports[] = {nullptr, nullptr};
 static const struct device* spi_dev = nullptr;
 
 // Forward declarations
@@ -43,12 +43,17 @@ static void configure_radio_pins();
 static void set_rf_switch(uint8_t radio);
 static int16_t transmit_packet(uint8_t* data, size_t size);
 static int16_t get_packet_stats(int16_t* rssi, int8_t* snr);
+static const struct device* radio_gpio_device(uint32_t encoded_pin);
+static gpio_pin_t radio_gpio_pin(uint32_t encoded_pin);
+static void radio_gpio_configure(uint32_t encoded_pin, gpio_flags_t flags);
+static void radio_gpio_set(uint32_t encoded_pin, int value);
 
 void init_radio() {
     // Get GPIO and SPI devices from device tree
-    gpio_dev = DEVICE_DT_GET(DT_NODELABEL(gpioa));
-    if (!device_is_ready(gpio_dev)) {
-        LOG_ERR("GPIO device not ready");
+    gpio_ports[RADIO_GPIO_PORT_A] = DEVICE_DT_GET(DT_NODELABEL(gpioa));
+    gpio_ports[RADIO_GPIO_PORT_B] = DEVICE_DT_GET(DT_NODELABEL(gpiob));
+    if (!device_is_ready(gpio_ports[RADIO_GPIO_PORT_A]) || !device_is_ready(gpio_ports[RADIO_GPIO_PORT_B])) {
+        LOG_ERR("GPIO devices not ready");
         return;
     }
 
@@ -59,8 +64,8 @@ void init_radio() {
     }
 
     // Initialize HAL instances
-    hal_sx = new STMRadioHal(spi_dev, gpio_dev, 2000000);
-    hal_rfm = new STMRadioHal(spi_dev, gpio_dev, 2000000);
+    hal_sx = new STMRadioHal(spi_dev, gpio_ports[RADIO_GPIO_PORT_A], 2000000);
+    hal_rfm = new STMRadioHal(spi_dev, gpio_ports[RADIO_GPIO_PORT_A], 2000000);
 
     // Configure radio pins
     configure_radio_pins();
@@ -104,21 +109,44 @@ void init_radio() {
     LOG_INF("Radio initialization complete");
 }
 
+static const struct device* radio_gpio_device(uint32_t encoded_pin) {
+    uint32_t port = RADIO_GPIO_PORT(encoded_pin);
+    return (port < ARRAY_SIZE(gpio_ports)) ? gpio_ports[port] : nullptr;
+}
+
+static gpio_pin_t radio_gpio_pin(uint32_t encoded_pin) {
+    return (gpio_pin_t)RADIO_GPIO_PIN(encoded_pin);
+}
+
+static void radio_gpio_configure(uint32_t encoded_pin, gpio_flags_t flags) {
+    const struct device* gpio_dev = radio_gpio_device(encoded_pin);
+    if (gpio_dev != nullptr) {
+        gpio_pin_configure(gpio_dev, radio_gpio_pin(encoded_pin), flags);
+    }
+}
+
+static void radio_gpio_set(uint32_t encoded_pin, int value) {
+    const struct device* gpio_dev = radio_gpio_device(encoded_pin);
+    if (gpio_dev != nullptr) {
+        gpio_pin_set(gpio_dev, radio_gpio_pin(encoded_pin), value);
+    }
+}
+
 static void configure_radio_pins() {
     // Configure NSS pins as output
-    gpio_pin_configure(gpio_dev, RADIO_SX_NSS_PIN, GPIO_OUTPUT);
-    gpio_pin_configure(gpio_dev, RADIO_RFM_NSS_PIN, GPIO_OUTPUT);
+    radio_gpio_configure(RADIO_SX_NSS_PIN, GPIO_OUTPUT);
+    radio_gpio_configure(RADIO_RFM_NSS_PIN, GPIO_OUTPUT);
 
     // Configure RF switch control pin
-    gpio_pin_configure(gpio_dev, RADIO_RF_SWITCH_PIN, GPIO_OUTPUT);
+    radio_gpio_configure(RADIO_RF_SWITCH_PIN, GPIO_OUTPUT);
 
     // Set initial states
-    gpio_pin_set(gpio_dev, RADIO_SX_NSS_PIN, 1);
-    gpio_pin_set(gpio_dev, RADIO_RFM_NSS_PIN, 1);
+    radio_gpio_set(RADIO_SX_NSS_PIN, 1);
+    radio_gpio_set(RADIO_RFM_NSS_PIN, 1);
 }
 
 static void set_rf_switch(uint8_t radio) {
-    gpio_pin_set(gpio_dev, RADIO_RF_SWITCH_PIN, radio == 0 ? RADIO_RF_SWITCH_SX : RADIO_RF_SWITCH_RFM);
+    radio_gpio_set(RADIO_RF_SWITCH_PIN, radio == 0 ? RADIO_RF_SWITCH_SX : RADIO_RF_SWITCH_RFM);
 }
 
 void radio_task_cpp() {
