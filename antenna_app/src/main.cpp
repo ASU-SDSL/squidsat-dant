@@ -50,6 +50,31 @@ void onTxDone(void)
     tx_done = true;
 }
 
+static void log_vitals_snapshot(void)
+{
+    const uint8_t active_radio = radio_which();
+    const char *active_radio_name = (active_radio == 0U) ? "SX1268" : "RFM98";
+
+    LOG_INF("Vitals snapshot: uptime=%u ms", k_uptime_get_32());
+    LOG_INF("Radio: active=%s (%u) sx_state=%d rfm_state=%d queue_used=%u queue_free=%u",
+            active_radio_name,
+            active_radio,
+            radio_get_SX_state(),
+            radio_get_RFM_state(),
+            k_msgq_num_used_get(&radio_msgq),
+            k_msgq_num_free_get(&radio_msgq));
+    LOG_INF("Devices: spi_ready=%d gpio_ready=%d gpio_cs_ready=%d",
+            device_is_ready(spi_bus),
+            device_is_ready(gpio_port),
+            device_is_ready(gpio_cs_port));
+
+#if IS_ENABLED(CONFIG_SENSOR)
+    LOG_INF("Sensors: CONFIG_SENSOR enabled, but no sensor devices are registered in DANT app yet");
+#else
+    LOG_INF("Sensors: CONFIG_SENSOR not enabled; no additional sensor vitals available");
+#endif
+}
+
 static void radio_queue_entry(void *p1, void *p2, void *p3)
 {
     ARG_UNUSED(p1);
@@ -135,6 +160,7 @@ int main(void)
 
         case State::VITALS:
             LOG_INF("State: VITALS");
+            log_vitals_snapshot();
             currentState = State::REGULAR;
             break;
 
@@ -156,7 +182,7 @@ int main(void)
 
         case State::FAULT:
             LOG_ERR("State: FAULT");
-            currentState = State::RESTART;
+            currentState = State::SAFE;
             break;
 
         case State::RESTART:

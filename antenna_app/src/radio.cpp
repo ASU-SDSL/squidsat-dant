@@ -44,18 +44,18 @@ static void set_rf_switch(uint8_t radio);
 static int16_t transmit_packet(uint8_t* data, size_t size);
 static int16_t get_packet_stats(int16_t* rssi, int8_t* snr);
 
-void init_radio() {
+int init_radio() {
     // Get GPIO and SPI devices from device tree
     gpio_dev = DEVICE_DT_GET(DT_NODELABEL(gpioa));
     if (!device_is_ready(gpio_dev)) {
         LOG_ERR("GPIO device not ready");
-        return;
+        return -ENODEV;
     }
 
     spi_dev = DEVICE_DT_GET(DT_NODELABEL(spi1));
     if (!device_is_ready(spi_dev)) {
         LOG_ERR("SPI device not ready");
-        return;
+        return -ENODEV;
     }
 
     // Initialize HAL instances
@@ -102,6 +102,7 @@ void init_radio() {
     }
 
     LOG_INF("Radio initialization complete");
+    return sx_initialized ? 0 : sx_state;
 }
 
 static void configure_radio_pins() {
@@ -196,7 +197,7 @@ void radio_task_cpp() {
 
 void radio_task(void *unused_arg) {
     ARG_UNUSED(unused_arg);
-    init_radio();
+    (void)init_radio();
     radio_task_cpp();
 }
 
@@ -278,7 +279,7 @@ void radio_test() {
     char msg[64];
 
     if (!sx_initialized && !rfm_initialized) {
-        init_radio();
+        (void)init_radio();
     }
 
     if (!sx_initialized) {

@@ -137,8 +137,10 @@ extern "C"
 /**
  * @brief Initializes necessary peripherals/settings for the radio task
  * 
+ * @retval 0 if at least one radio initializes successfully.
+ * @retval Negative errno code if required devices are not ready or radio init fails.
  */
-void init_radio();
+int init_radio();
 
 /**
  * @brief The implementation of the radio task function (Linked to C by radio_task())
