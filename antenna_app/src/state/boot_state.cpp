@@ -1,7 +1,7 @@
 #include <boot_state.h>
 #include <state_system.h>
 #include <radio.h>
-#include <radio.cpp>
+
 
 bool check_spi(){
     if(!device_is_ready(device_config.spi_port)){
