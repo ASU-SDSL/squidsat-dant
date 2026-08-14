@@ -44,10 +44,11 @@ bool check_radio_init();
 /**
      * @brief Check if radio_init is ready
      * return false if radio_inti is not ready
+     * Might not need this function
      */
 
 void check_radio_thread();
 /**
      * @brief Check if radio_thread is ready
-     * return false if radio_thread is not ready
+     * if a radio thread is already running and this method is called, it will end it and start a new one.
      */
