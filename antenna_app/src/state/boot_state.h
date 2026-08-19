@@ -16,7 +16,7 @@ typedef enum boot_check {
     radio_thread_ready.
 }; boot_check
 
-void check_spi();
+bool check_spi();
 /**
      * @brief Check if spi is ready
      * return false if spi not ready
@@ -34,7 +34,7 @@ bool check_gpio_cs();
      * return false if gpio_cs is not ready
      */
 
-bool check_CAN();
+bool check_can();
 /**
      * @brief check if CAN is ready
      * return false if CAN is not ready
@@ -47,7 +47,7 @@ bool check_radio_init();
      * Might not need this function
      */
 
-void check_radio_thread();
+bool check_radio_thread();
 /**
      * @brief Check if radio_thread is ready
      * if a radio thread is already running and this method is called, it will end it and start a new one.

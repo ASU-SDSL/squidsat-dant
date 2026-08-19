@@ -39,6 +39,7 @@ const struct device *const spi_bus = DEVICE_DT_GET(SPI_DEV);
 const struct device *const gpio_port = DEVICE_DT_GET(GPIO_NODE);
 const struct device *const gpio_cs_port = DEVICE_DT_GET(GPIO_CS_NODE);
 
+
 K_THREAD_STACK_DEFINE(radio_task_stack, RADIO_TASK_STACK_SIZE);
 static struct k_thread radio_task_thread;
 static bool radio_thread_started = false;
@@ -92,17 +93,18 @@ int main(void)
         case State::BOOT: {
             bool ready = true;
 
-            if (!device_is_ready(spi_bus)) {
+            if (!check_spi(spi_bus)) {
                 LOG_ERR("SPI bus not ready");
                 ready = false;
             }
 
-            if (!device_is_ready(gpio_port)) {
+            if (!check_gpio(gpio_port)) {
+                check_gpio();
                 LOG_ERR("GPIO port not ready");
                 ready = false;
             }
 
-            if (!device_is_ready(gpio_cs_port)) {
+            if (!check_gpio_cs(gpio_cs_port)) {
                 LOG_ERR("GPIO CS port not ready");
                 ready = false;
             }
