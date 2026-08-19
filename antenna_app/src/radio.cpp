@@ -48,19 +48,19 @@ static gpio_pin_t radio_gpio_pin(uint32_t encoded_pin);
 static void radio_gpio_configure(uint32_t encoded_pin, gpio_flags_t flags);
 static void radio_gpio_set(uint32_t encoded_pin, int value);
 
-void init_radio() {
+static int init_radio() {
     // Get GPIO and SPI devices from device tree
     gpio_ports[RADIO_GPIO_PORT_A] = DEVICE_DT_GET(DT_NODELABEL(gpioa));
     gpio_ports[RADIO_GPIO_PORT_B] = DEVICE_DT_GET(DT_NODELABEL(gpiob));
     if (!device_is_ready(gpio_ports[RADIO_GPIO_PORT_A]) || !device_is_ready(gpio_ports[RADIO_GPIO_PORT_B])) {
         LOG_ERR("GPIO devices not ready");
-        return;
+        return -1;
     }
 
     spi_dev = DEVICE_DT_GET(DT_NODELABEL(spi1));
     if (!device_is_ready(spi_dev)) {
         LOG_ERR("SPI device not ready");
-        return;
+        return -1;
     }
 
     // Initialize HAL instances
@@ -107,6 +107,8 @@ void init_radio() {
     }
 
     LOG_INF("Radio initialization complete");
+
+    return 0;
 }
 
 static const struct device* radio_gpio_device(uint32_t encoded_pin) {

@@ -31,8 +31,12 @@ bool check_can(){
     //return true
 }
 
-bool init_radio(){
-    //Might not need this function
+//Might not need this function. Call directly to init_radio() from main.cpp instead of this function
+int check_init_radio(){
+    if(init_radio() != 0){
+        return 1;
+    }
+    return 0;
 }
 
 bool check_radio_thread_once(){

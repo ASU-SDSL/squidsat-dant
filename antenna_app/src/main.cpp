@@ -114,7 +114,7 @@ int main(void)
                 break;
             }
 
-            if (init_radio() != 0) {
+            if (check_init_radio() != 0) {
                 LOG_ERR("Radio init failed");
                 currentState = State::FAULT;
                 break;
