@@ -2,6 +2,7 @@
 #include <state_system.h>
 #include <radio.h>
 
+static struct k_thread radio_task_thread;
 
 bool check_spi(){
     if(!device_is_ready(device_config.spi_port)){
@@ -40,14 +41,21 @@ int check_init_radio(){
 }
 
 bool check_radio_thread_once(){
-    if(radio_thread_running){//placeholder value
+    if(radio_task_thread){//placeholder value 
         k_thread_join(&radio_thread, K_MSEC(1000)); //suspend the thread
     }
-    k_tid_t new_radio_thread = k_thread_create(&radio_thread, radio_stack, 
-                                               K_THREAD_SIZE_OF(radio_stack), 
-                                               radio_thread_entry, NULL, NULL, NULL, 
-                                               RADIO_PRIORITY,0,K_NO_WAIT);
-                                               //create a new thread
+    //create a new thread
+    k_thread_create(
+    &radio_task_thread,
+    radio_task_stack,
+    K_THREAD_STACK_SIZEOF(radio_task_stack),
+    radio_queue_entry,
+    nullptr, nullptr, nullptr,
+    RADIO_TASK_PRIORITY,
+    0,
+    K_NO_WAIT
+);
+
     return true
 }
 

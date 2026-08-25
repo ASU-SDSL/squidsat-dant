@@ -41,7 +41,7 @@ const struct device *const gpio_cs_port = DEVICE_DT_GET(GPIO_CS_NODE);
 
 
 K_THREAD_STACK_DEFINE(radio_task_stack, RADIO_TASK_STACK_SIZE);
-static struct k_thread radio_task_thread;
+//static struct k_thread radio_task_thread;
 static bool radio_thread_started = false;
 
 volatile bool tx_done = false;
@@ -60,6 +60,7 @@ static void radio_queue_entry(void *p1, void *p2, void *p3)
     radio_task_cpp();
 }
 
+/*
 static bool start_radio_thread_once(void)
 {
     if (radio_thread_started) {
@@ -81,7 +82,7 @@ static bool start_radio_thread_once(void)
     radio_thread_started = true;
     return true;
 }
-
+*/
 int main(void)
 {
     while (1) {
