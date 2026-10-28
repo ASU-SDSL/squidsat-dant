@@ -16,3 +16,47 @@ Zephyr workspace and pass the application's absolute path.
   ISO-TP test: `sdsl-can/sdsl-can-lib/tests/payload_size_test`.
 
 The corresponding feature branch supplies each test and its documentation.
+
+## Prerequisites
+
+Install the standard Zephyr dependencies for your OS:
+
+https://docs.zephyrproject.org/latest/develop/getting_started/index.html
+
+You will also need:
+
+- Python 3
+- `west`
+- CMake and Ninja
+- A Zephyr-supported ARM toolchain
+- ST-LINK tools if you want to use `flash.sh`
+
+## First-Time Setup
+
+Create and activate a Python virtual environment from the repository root.
+
+macOS/Linux:
+
+```sh
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip west
+```
+
+Windows PowerShell:
+
+```powershell
+py -3 -m venv .venv
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+.\.venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip west
+```
+
+Initialize the Zephyr workspace and install Python requirements:
+
+```sh
+west init -l antenna_app
+west update
+west zephyr-export
+python -m pip install -r zephyr/scripts/requirements.txt
+```
