@@ -3,6 +3,7 @@
 #include <zephyr/kernel.h>
 #include <zephyr/sys/printk.h>
 
+// Raw CAN smoke test only; ISO-TP tests use the sdsl-can module.
 CAN_MSGQ_DEFINE(can_rx_queue, 4);
 
 static void print_can_state(const struct device *dev)
@@ -37,6 +38,7 @@ static void can_task_entry(void *arg1, void *arg2, void *arg3)
         return;
     }
 
+    // Accept only the standard data ID used by the other test node.
     const struct can_filter filter = {
         .id = 0x123,
         .mask = CAN_STD_ID_MASK,
@@ -62,6 +64,7 @@ static void can_task_entry(void *arg1, void *arg2, void *arg3)
 
     struct can_frame frame = {};
 
+    // A sends one byte; B prints received frames.
     if (IS_ENABLED(CONFIG_DANT_NODE_A)) {
         frame.id = 0x123;
         frame.dlc = 1;
@@ -76,7 +79,7 @@ static void can_task_entry(void *arg1, void *arg2, void *arg3)
             } else {
                 printk("CAN frame sent\n");
             }
-            k_msleep(1000);
+            k_msleep(CONFIG_DANT_TX_PERIOD_MS);
         }
     } else {
         while (true) {
@@ -91,6 +94,7 @@ static void can_task_entry(void *arg1, void *arg2, void *arg3)
     }
 }
 
+// Zephyr starts this worker automatically; main does not call an init API.
 K_THREAD_DEFINE(can_task_id, 1024, can_task_entry,
                 nullptr, nullptr, nullptr,
                 5, 0, 0);

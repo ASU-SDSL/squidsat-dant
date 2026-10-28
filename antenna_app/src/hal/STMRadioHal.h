@@ -34,7 +34,7 @@ static void zephyrGeneralISR(const struct device *dev, struct gpio_callback *cb,
 class STMRadioHal : public RadioLibHal {
 public:
     STMRadioHal(const struct device* spi, const struct device* gpio, uint32_t spi_speed = 2000000)
-    : RadioLibHal(GPIO_INPUT, GPIO_OUTPUT, 0, 1, GPIO_INT_EDGE_RISING, GPIO_INT_EDGE_FALLING),
+    : RadioLibHal(GPIO_INPUT, GPIO_OUTPUT, 0, 1, GPIO_INT_EDGE_RISING, GPIO_INT_EDGE_FALLING), 
     _spi_speed(spi_speed), _spi(spi), _spi_cfg{},
     gpio_dev(gpio)
     {
@@ -58,7 +58,7 @@ public:
 
     void digitalWrite(uint32_t pin, uint32_t value) override {
         if (pin == RADIOLIB_NC) {return;}
-
+        
         gpio_pin_set(gpio_dev, pin, value);
     }
 
@@ -68,7 +68,7 @@ public:
         }
 
         return gpio_pin_get(gpio_dev, pin);
-    }
+    } 
 
     void attachInterrupt(uint32_t interruptNum, void (*interruptCb)(void), uint32_t mode) override {
         if (interruptNum == RADIOLIB_NC) return;
@@ -133,7 +133,7 @@ public:
     unsigned long micros() override {
         return k_uptime_get() * 1000;
     }
-
+    
     long pulseIn(uint32_t pin, uint32_t state, unsigned long timeout) override {
         if (pin == RADIOLIB_NC) {
             return 0;
@@ -147,7 +147,7 @@ public:
                 return 0;
             }
         }
-
+    
         return micros() - start;
     }
 
@@ -159,7 +159,7 @@ public:
             SPI_WORD_SET(8) |
             SPI_TRANSFER_MSB;
         _spi_cfg.slave = 0;
-        _spi_cfg.cs.cs_is_gpio = false; // leave as false, handled by digitalWrite() and other methods
+        _spi_cfg.cs.cs_is_gpio = false; // leave as false, handled by digitalWrite() and other methods 
         _spi_cfg.cs.gpio.port = nullptr;
     }
 

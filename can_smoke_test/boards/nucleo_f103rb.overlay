@@ -1,0 +1,9 @@
+/* Nucleo only: these pins are deployment outputs on the DANT PCB. */
+/ { chosen { zephyr,canbus = &can1; }; };
+&can1 {
+    status = "okay";
+    pinctrl-0 = <&can_rx_pa11 &can_tx_pa12>;
+    pinctrl-names = "default";
+    bitrate = <50000>;
+    sample-point = <750>;
+};

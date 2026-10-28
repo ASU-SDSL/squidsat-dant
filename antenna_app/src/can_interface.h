@@ -6,6 +6,7 @@
 
 using CanReceiveCallback = can_link_rx_handler_t;
 
+// Registers the receive callback and starts the SDSL-CAN transport.
 inline int can_interface_init(
     CanReceiveCallback callback,
     void* user_data = nullptr)
