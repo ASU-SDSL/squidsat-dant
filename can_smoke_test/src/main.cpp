@@ -1,4 +1,7 @@
 #include <zephyr/kernel.h>
 
-// The CAN worker is started automatically by Zephyr.
+/**
+ * @brief Leave CAN processing to the automatically started worker.
+ * @return Zero.
+ */
 int main() { return 0; }

@@ -3,9 +3,13 @@
 #include <zephyr/kernel.h>
 #include <zephyr/sys/printk.h>
 
-// Raw CAN smoke test only; ISO-TP tests use the sdsl-can module.
+/** @brief Queue for raw CAN frames; ISO-TP uses the separate module. */
 CAN_MSGQ_DEFINE(can_rx_queue, 4);
 
+/**
+ * @brief Print controller state and hardware error counters.
+ * @param dev CAN controller.
+ */
 static void print_can_state(const struct device *dev)
 {
     enum can_state state;
@@ -18,6 +22,12 @@ static void print_can_state(const struct device *dev)
     }
 }
 
+/**
+ * @brief Send from node A or receive on node B.
+ * @param arg1 Unused thread argument.
+ * @param arg2 Unused thread argument.
+ * @param arg3 Unused thread argument.
+ */
 static void can_task_entry(void *arg1, void *arg2, void *arg3)
 {
     ARG_UNUSED(arg1);
@@ -38,7 +48,7 @@ static void can_task_entry(void *arg1, void *arg2, void *arg3)
         return;
     }
 
-    // Accept only the standard data ID used by the other test node.
+    /* Accept only the standard data ID used by the other test node. */
     const struct can_filter filter = {
         .id = 0x123,
         .mask = CAN_STD_ID_MASK,
@@ -64,7 +74,7 @@ static void can_task_entry(void *arg1, void *arg2, void *arg3)
 
     struct can_frame frame = {};
 
-    // A sends one byte; B prints received frames.
+    /* A sends one byte; B prints received frames. */
     if (IS_ENABLED(CONFIG_DANT_NODE_A)) {
         frame.id = 0x123;
         frame.dlc = 1;
@@ -94,7 +104,7 @@ static void can_task_entry(void *arg1, void *arg2, void *arg3)
     }
 }
 
-// Zephyr starts this worker automatically; main does not call an init API.
+/** @brief CAN worker started automatically by Zephyr. */
 K_THREAD_DEFINE(can_task_id, 1024, can_task_entry,
                 nullptr, nullptr, nullptr,
                 5, 0, 0);

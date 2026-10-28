@@ -19,9 +19,13 @@ static void radio_queue_entry(void *p1, void *p2, void *p3)
     radio_task_cpp();
 }
 
+/**
+ * @brief Initialize the radio and run the packet producer.
+ * @return Zero if initialization fails; otherwise does not return.
+ */
 int main(void)
 {
-    // init_radio() checks the GPIO/SPI devices and initializes the radio.
+    /* init_radio() checks the GPIO/SPI devices and initializes the radio. */
     const int result = init_radio();
     if (result != 0) {
         LOG_ERR("Radio initialization failed: %d; test stopped", result);
@@ -40,7 +44,7 @@ int main(void)
         0,
         K_NO_WAIT);
 
-    // Produce test packets; the worker handles queued radio operations.
+    /* Produce test packets; the worker handles queued radio operations. */
     radio_test();
     return 0;
 }

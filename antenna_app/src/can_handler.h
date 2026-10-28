@@ -1,4 +1,7 @@
+/**
+ * @file
+ * @brief Raw CAN smoke test with no public init/send API.
+ * @details Zephyr starts the worker in can_handler.cpp automatically.
+ * ISO-TP callers use can_interface.h.
+ */
 #pragma once
-
-// The raw CAN test starts through K_THREAD_DEFINE in can_handler.cpp.
-// It has no public init/send API. ISO-TP callers use can_interface.h.
