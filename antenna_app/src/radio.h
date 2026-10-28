@@ -138,7 +138,7 @@ extern "C"
  * @brief Initializes necessary peripherals/settings for the radio task
  * 
  */
-void init_radio();
+int init_radio();
 
 /**
  * @brief The implementation of the radio task function (Linked to C by radio_task())
