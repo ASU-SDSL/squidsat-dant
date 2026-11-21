@@ -1,0 +1,44 @@
+/* DANT REV1 burn wire test: reuse the F103RB SoC definition, not Nucleo wiring. */
+/ {
+    chosen {
+        zephyr,console = &usart1;
+        zephyr,shell-uart = &usart1;
+    };
+    aliases {
+        /delete-property/ sw0;
+    };
+};
+
+&green_led_2 {
+    gpios = <&gpioc 1 GPIO_ACTIVE_HIGH>;
+    label = "DANT REV1 D1";
+};
+
+/* Keep SWD available, release PB4 (deployment output) from JTAG. */
+&pinctrl { swj-cfg = "jtag-disable"; };
+
+/* First boot uses internal HSI, so a crystal fault cannot prevent the test. */
+&clk_hsi { status = "okay"; };
+&clk_hse {
+    /delete-property/ hse-bypass;
+    status = "disabled";
+};
+&pll { status = "disabled"; };
+&rcc {
+    clocks = <&clk_hsi>;
+    clock-frequency = <DT_FREQ_M(8)>;
+    ahb-prescaler = <1>;
+    apb1-prescaler = <1>;
+    apb2-prescaler = <1>;
+};
+
+/* P1 TX=10 (PA9), RX=8 (PA10). PA2 is a deployment output. */
+&usart1 { status = "okay"; current-speed = <115200>; };
+&usart2 { status = "disabled"; };
+&usart3 { status = "disabled"; };
+&can1 { status = "disabled"; };
+&i2c1 { status = "disabled"; };
+&spi1 { status = "disabled"; };
+&spi2 { status = "disabled"; };
+&timers1 { status = "disabled"; };
+&timers2 { status = "disabled"; };
